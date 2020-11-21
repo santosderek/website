@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-md">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('projects') }}">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('experience') }}">Experience</a>
+            </li>
+        </ul>
+    </div>
+    <div class="mx-auto order-0">
+        <a class="navbar-brand mx-auto" href="{{ url_for('home') }}" style="font-size: xx-large;"><b>Derek Santos</b></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#"><img style="width: 1.5em; filter: invert(17%) sepia(0%) saturate(1641%) hue-rotate(158deg) brightness(96%) contrast(93%);" src="{{ url_for('static', filename='images/svg/github.svg') }}"/></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><img style="width: 1.5em; filter: invert(17%) sepia(0%) saturate(1641%) hue-rotate(158deg) brightness(96%) contrast(93%);" src="{{ url_for('static', filename='images/svg/linkedin.svg') }}"/></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><img style="width: 1.5em; filter: invert(17%) sepia(0%) saturate(1641%) hue-rotate(158deg) brightness(96%) contrast(93%);" src="{{ url_for('static', filename='images/svg/envelope.svg') }}"/></a>
+            </li>
+        </ul>
+    </div>
+</nav>
