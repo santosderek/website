@@ -16,6 +16,10 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
+.table td, .table th{
+    border: none; 
+}
+
 .navbar-brand, .nav-link {
     font-family: 'Roboto', sans-serif;
 }
