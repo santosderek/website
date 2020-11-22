@@ -15,7 +15,11 @@ body {
     font-size: x-large;
     font-family: 'Raleway', sans-serif;
 }
+header { }
 
+main {
+    width: 80%;
+}
 a {
     text-decoration: none;
     color: black;
@@ -34,7 +38,6 @@ h2 {
 h3 {
     font-size: 1.5em;
 }
-
 p {
     font-size: 1em;
 }
