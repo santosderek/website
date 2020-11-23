@@ -18,7 +18,8 @@ body {
 header { }
 
 main {
-    width: 80%;
+    /* width: 80%; */
+    padding: 0px 20%;
 }
 a {
     text-decoration: none;
@@ -31,14 +32,17 @@ a:hover {
 
 h1 {
     font-size: 5em;
+    padding: 5% 0%;
 }
 h2 {
     font-size: 2em;
+    padding: 5% 0%;
 }
 h3 {
     font-size: 1.5em;
+    padding: 5% 0%;
 }
-p {
+p, ul li{
     font-size: 1em;
 }
 
@@ -77,4 +81,13 @@ p {
 .jumbotron {
     background-color: black;
     color: white; 
+}
+
+.darkbg {
+    background-color: #252525;
+    color: white;
+}
+
+.career {
+    padding: 5% 0%;
 }
