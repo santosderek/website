@@ -1,621 +1,764 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="row mt-5" style="min-height: 95vh;">
-    <div class="col text-center">
-        <h3 class="w-50">My name is Derek Santos.<br />I am a software developer with a passion for automation and
+<div class="row mt-2 parallax" style="min-height: 95vh;">
+    <div class="col text-center introjumbo">
+        <h3 class="w-50 ">My name is Derek Santos.<br />I am a software developer with a passion for automation and
             orchestration.</h3>
         <p style="color: #b9b9b9;">Scroll below to see my work!</p>
     </div>
 </div>
 
-<div class="jumbotron pl-5">
-    <h1 class="display-4 text-center" id="experience">Experience</h1>
-    <p class="lead text-center">Where my inspiration and hobbies are brought to life.</p>
-    <hr class="my-4">
-</div>
-
-<div class="row">
-    <h2>Career</h2>
-</div>
-
-<div class="row career">
-    <div class="col-12 col-md-6">
-        <h3>Cisco Systems Security Orchestration Internship</h3>
-        <p>Cisco Internship</p>
-        <p>May 2019 – Aug 2019</p>
-        <p>Raleigh, North Carolina, United States</p>
-    </div>
-    <div class="col-12 col-md-6">
-        <ul>
-            <li>Developed custom software in Java as a member of a larger team, to help multiple Cisco customers
-                programmatically interface with Cisco Identity Services Engine (ISE) and Cisco Firepower Management
-                Center (FMC) managing Cisco’s Next-Generation Firewalls and IPS.</li>
-            <li>Developed a WebEx Teams bot and a custom application in Python to increase the productivity of the
-                team.</li>
-            <li>Created an automatic phishing remediation system using Python to help any user send emails to the
-                application in order to flag and contain emails that may be a potential phishing attack.</li>
-            <li>Mentored other interns in various programming and technical tasks.</li>
-        </ul>
-    </div>
-</div>
-
-<div class="row career">
-    <div class="col-12 col-md-6">
-        <h3>Cisco Systems Advanced Services Internship</h3>
-        <p>Cisco Internship</p>
-        <p>May 2018 – Aug 2018</p>
-        <p>Raleigh, North Carolina, United States</p>
-    </div>
-    <div class="col-12 col-md-6">
-        <ul>
-            <li>Created a software solution to assist cyber security experts parse thousands of security event logs
-                from firewalls, Cisco Identity Service Engine (ISE) and Splunk servers.</li>
-            <li>Assisted industry experts to implement, deploy, and troubleshoot Cisco Cisco Firepower Threat
-                Defense (FTD), Cisco ASA, and Cisco ISE technologies on several Cisco customer engagements across
-                the country.</li>
-            <li>Taught Python frameworks and technologies to other fellow interns, that allowed them to parse and
-                analyze incoming network traffic, as well as providing analytics and insights to other engineers and
-                users.</li>
-        </ul>
-    </div>
-</div>
-
-<div class="row career">
-    <div class="col-12 col-md-6">
-        <h3>North Carolina NASA Space Grant Consortium</h3>
-        <p>Representative</p>
-        <p>Nov 2017 – May 2018</p>
-        <p>Raleigh, North Carolina, United States</p>
-    </div>
-    <div class="col-12 col-md-6">
-        <ul>
-            <li>Developed Arduino programs to maintain and control multiple sensors, relays, and data during a
-                five-hour launch to the stratosphere.</li>
-            <li>All Arduino controlled subsystems are to withstand sub-zero temperatures of the stratosphere, while
-                recording data from the attached sensors.</li>
-        </ul>
-    </div>
-</div>
-
-<div class="row career">
-    <div class="col-12 col-md-6">
-        <h3>Insect Tracking System and Algorithm</h3>
-        <p>Research</p>
-        <p>Aug 2014 – May 2018</p>
-        <p>Wake Technical Community College, North Carolina, United States</p>
-    </div>
-    <div class="col-12 col-md-6">
-        <!-- <p>Technologies Used:</p>
-        <ul>
-            <li>C++</li>
-            <li>Python</li>
-            <li>Open Computer Vision</li>
-            <li>SFML</li>
-        </ul>
-        <p>Research:</p> -->
-        <ul>
-            <li>Created an insect tracking algorithm and software written in C++ that is currently being submitted
-                for a patent application with the USPTO.</li>
-            <li>Adopted advanced libraries such as Open Computer Vision (OpenCV), and Simple and Fast Multimedia
-                Library (SFML).</li>
-            <li>Reduced errors commonly found within biology lab experiments when analyzing fruit flies undergoing
-                reactions of ethanol.</li>
-            <li>Scheduled to succeed currently existing methods used in the biology labs.</li>
-        </ul>
-    </div>
-</div>
-
-<div class="row career">
-    <div class="col-12 col-md-6">
-        <h3>North Campus Engineering Club Website</h3>
-        <p>Aug 2014 – May 2018</p>
-        <p>Wake Technical Community College, North Carolina, United States</p>
-    </div>
-    <div class="col-12 col-md-6">
-
-        <!-- <p>Technologies Used:</p>
-        <ul>
-            <li>Nginx</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-        </ul>
-        <p>Accomplishments:</p> -->
-        <ul>
-            <li>Led a team of software developers to improve efficiency and flow of information for the club.</li>
-            <li>Maintained announcements, important dates, and valuable information concerning ongoing projects
-                throughout the club.</li>
-            <li>Developed an online store for the Engineering Club to sell merchandise to individuals around the
-                club environment.</li>
-        </ul>
-    </div>
-</div>
-
-<div class="row career">
-    <div class="col-12 col-md-6">
-        <h3>Trebuchet Firing Mechanism Python</h3>
-        <p>Aug 2014 – May 2018</p>
-        <p>Wake Technical Community College, North Carolina, United States</p>
-    </div>
-    <div class="col-12 col-md-6">
-        <!-- <p>Technologies Used:</p>
-        <ul>
-            <li>Python</li>
-            <li>Raspberry Pi</li>
-        </ul>
-        <p>Accomplishments:</p> -->
-        <ul>
-            <li>Developed and deployed a firing mechanism within a trebuchet using Raspberry Pi and IoT devices.
-            </li>
-            <li>Increased safety of work environment when outfitting the trebuchet with the mechanism using both
-                software and hardware techniques.</li>
-        </ul>
-    </div>
-</div>
-
-<div class="row career">
-    <div class="col-sm-12 col-md-6">
-        <h3>North Carolina State University</h3>
-        <p>Intern</p>
-        <p>May 2017 – Aug 2017</p>
-        <p>North Carolina State University, North Carolina, United States</p>
-    </div>
-    <div class="col-sm-12 col-md-6">
-        <!-- <p>Technologies Used:</p>
-        <ul>
-            <li>Python</li>
-            <li>Bluetooth Low Energy</li>
-        </ul>
-        <p>Accomplishments:</p> -->
-        <ul>
-            <li>Developed a software platform to enable the monitoring of dangerous Volatile Organic Compounds
-                (V.O.C).</li>
-            <li>Created real-time multi-threaded application which gathered and processed data from multiple
-                CMUT
-                gas sensors.</li>
-            <li>Established live graphing over multiple devices using various file transfer protocols.</li>
-            <li>Managed and maintained multiple BLE (Bluetooth Low Energy) connections.</li>
-        </ul>
-    </div>
-</div>
-
-<div class="row career">
-    <div class="col-sm-12 col-md-6">
-        <h3>Cisco DevNet APIC-EM</h3>
-        <p>Aug 2016 – Feb 2017</p>
-        <p>Raleigh-Durham, North Carolina, United States</p>
-    </div>
-    <div class="col-sm-12 col-md-6">
-        <!-- <p>Accomplishments:</p> -->
-        <ul>
-            <li>Completed Cisco's DevNet APIC-EM Northbound REST API learning labs.</li>
-            <li>Gained experience with APIC-EM and its RESTful APIs to create custom applications that could
-                interact with the controller or add dynamic software defined networking (SDN) functionality.</li>
-        </ul>
-    </div>
-</div>
-
-
-<div class="row">
-    <h2>Education</h2>
-</div>
-
-<div class="row">
-    <div class="col-12">
-        <h3>University of North Carolina - Charlotte</h3>
-    </div>
-    <div class="col-sm-12 col-md-6">
-        <p>Bachelor of Science - BS, Computer Science</p>
-        <p>2018 - 2020</p>
-    </div>
-    <div class="col-sm-12 col-md-6">
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-12">
-        <h3>Wake Technical Community College</h3>
-    </div>
-    <div class="col-sm-12 col-md-6">
-        <p>Associate of Engineering, Computer Science</p>
-        <p>2014 - 2018</p>
-
-    </div>
-    <div class="col-sm-12 col-md-6">
-        <p>
-            Inducted Member of the National Society of Leadership and Success
-        </p>
-        <p>
-            Relevant Courses and Technologies:
-        </p>
-        <ul>
-            <li>C++ Programming</li>
-            <li>Java Programming</li>
-            <li>Into to Progamming and Logic</li>
-        </ul>
-    </div>
-</div>
-
-<div class="jumbotron pl-5">
-    <h1 class="display-4 text-center" id="skills">Skills</h1>
-    <p class="lead text-center">Where my inspiration and hobbies are brought to life.</p>
-    <hr class="my-4">
-</div>
-
-<div class="row">
-    <div class="col-sm-12 col-md-12">
-        <h2><b>Technologies</b></h2>
-    </div>
-    <div class="col-sm-6 col-md-6 justify-content-around">
-        <table class="table table-hover">
-            <tbody>
-                <tr>
-                    <td scope="row">Python</td>
-                    <td>
-
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Java</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">C++</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">HTML</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">CSS</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Javascript</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Git</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Docker</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">LXD / LXC</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Ansible</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Open Computer Vision</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="col-sm-6 col-md-6 justify-content-around">
-        <table class="table table-hover">
-            <tbody>
-                <tr>
-                    <td scope="row">NGINX</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Flask</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Github</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">GitLab</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Elasticsearch</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Logstash</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Kibana</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">REST APIs</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">JSON</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">YAML</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+<div class="content pt-3">
+    <div class="jumbotron pl-5">
+        <h1 class="display-4 text-center" id="experience">Experience</h1>
+        <p class="lead text-center">Where my inspiration and hobbies are brought to life.</p>
         <hr class="my-4">
     </div>
-</div>
 
-<div class="row">
-    <div class="col-sm-12">
-        <h2><b>Tools</b></h2>
-    </div>
-    <div class="col-sm-12 col-md-12">
-        <table class="table table-hover">
-            <tbody>
-
-                <tr>
-                    <td scope="row">Proxmox</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Debian</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Ubuntu</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Manjaro</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Windows</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">VSCode</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">VMWare ESXI</td>
-                    <td style="min-width: 5em;">
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                        <img style="max-width: .5em;" src="{{ url_for('static', filename='images/svg/starsolid.svg')}}"/>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-
-<div class="jumbotron pl-5">
-    <h1 class="display-4 text-center" id="projects">Projects</h1>
-    <p class="lead text-center">Where my inspiration and hobbies are brought to life.</p>
-    <hr class="my-4">
-</div>
-<div class="row">
-    <div class="col-sm-12">
-        <h3>Vitality</h3>
-        <p>Find and schedule trainers near you.</p>
-    </div>
-    <div class="col-sm-12">
-        <h3>Imgur to Folder</h3>
-        <p>Bulk download imgur albums, tags, or your profile with a single command.</p>
-    </div>
-    <div class="col-sm-12">
-        <h3>Fruit Flies</h3>
-        <p>Controls Kasa light switches with a webapi.</p>
-    </div>
-    <div class="col-sm-12">
-        <h3>Flask-Kasa</h3>
-        <p>Controls Kasa light switches with a webapi.</p>
+    <div class="row">
+        <h2>Career</h2>
     </div>
 
-</div>
-<div class="row">
-    <div class="col-sm-12">
-        <h3>... and many more!</h3>
-        <p>Github</p>
+    <div class="row career">
+        <div class="col-12 col-md-6">
+            <h3>Cisco Systems Security Orchestration Internship</h3>
+            <p>Cisco Internship</p>
+            <p>May 2019 – Aug 2019</p>
+            <p>Raleigh, North Carolina, United States</p>
+        </div>
+        <div class="col-12 col-md-6">
+            <ul>
+                <li>Developed custom software in Java as a member of a larger team, to help multiple Cisco customers
+                    programmatically interface with Cisco Identity Services Engine (ISE) and Cisco Firepower Management
+                    Center (FMC) managing Cisco’s Next-Generation Firewalls and IPS.</li>
+                <li>Developed a WebEx Teams bot and a custom application in Python to increase the productivity of the
+                    team.</li>
+                <li>Created an automatic phishing remediation system using Python to help any user send emails to the
+                    application in order to flag and contain emails that may be a potential phishing attack.</li>
+                <li>Mentored other interns in various programming and technical tasks.</li>
+            </ul>
+        </div>
     </div>
-</div>
 
-<div class="jumbotron pl-5">
-    <h1 class="display-4 text-center" id="contact">Contact</h1>
-    <p class="lead text-center">Where my inspiration and hobbies are brought to life.</p>
-    <hr class="my-4">
-</div>
+    <div class="row career">
+        <div class="col-12 col-md-6">
+            <h3>Cisco Systems Advanced Services Internship</h3>
+            <p>Cisco Internship</p>
+            <p>May 2018 – Aug 2018</p>
+            <p>Raleigh, North Carolina, United States</p>
+        </div>
+        <div class="col-12 col-md-6">
+            <ul>
+                <li>Created a software solution to assist cyber security experts parse thousands of security event logs
+                    from firewalls, Cisco Identity Service Engine (ISE) and Splunk servers.</li>
+                <li>Assisted industry experts to implement, deploy, and troubleshoot Cisco Cisco Firepower Threat
+                    Defense (FTD), Cisco ASA, and Cisco ISE technologies on several Cisco customer engagements across
+                    the country.</li>
+                <li>Taught Python frameworks and technologies to other fellow interns, that allowed them to parse and
+                    analyze incoming network traffic, as well as providing analytics and insights to other engineers and
+                    users.</li>
+            </ul>
+        </div>
+    </div>
 
-<div class="row text-center">
-    <div class="col-sm-12 col-md-12">
-        <p>The best way to contact me is through email or linkedin!</p>
-        <a href="mailto:santos.jon.derek@gmail.com">
-            <img style="width: 1.5em; filter: invert(17%) sepia(0%) saturate(1641%) hue-rotate(158deg) brightness(96%) contrast(93%);"
-                src="{{ url_for('static', filename='images/svg/envelope.svg') }}" />
-            <span>santos.jon.derek@gmail.com</span>
-        </a>
+    <div class="row career">
+        <div class="col-12 col-md-6">
+            <h3>North Carolina NASA Space Grant Consortium</h3>
+            <p>Representative</p>
+            <p>Nov 2017 – May 2018</p>
+            <p>Raleigh, North Carolina, United States</p>
+        </div>
+        <div class="col-12 col-md-6">
+            <ul>
+                <li>Developed Arduino programs to maintain and control multiple sensors, relays, and data during a
+                    five-hour launch to the stratosphere.</li>
+                <li>All Arduino controlled subsystems are to withstand sub-zero temperatures of the stratosphere, while
+                    recording data from the attached sensors.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row career">
+        <div class="col-12 col-md-6">
+            <h3>Insect Tracking System and Algorithm</h3>
+            <p>Research</p>
+            <p>Aug 2014 – May 2018</p>
+            <p>Wake Technical Community College, North Carolina, United States</p>
+        </div>
+        <div class="col-12 col-md-6">
+            <!-- <p>Technologies Used:</p>
+            <ul>
+                <li>C++</li>
+                <li>Python</li>
+                <li>Open Computer Vision</li>
+                <li>SFML</li>
+            </ul>
+            <p>Research:</p> -->
+            <ul>
+                <li>Created an insect tracking algorithm and software written in C++ that is currently being submitted
+                    for a patent application with the USPTO.</li>
+                <li>Adopted advanced libraries such as Open Computer Vision (OpenCV), and Simple and Fast Multimedia
+                    Library (SFML).</li>
+                <li>Reduced errors commonly found within biology lab experiments when analyzing fruit flies undergoing
+                    reactions of ethanol.</li>
+                <li>Scheduled to succeed currently existing methods used in the biology labs.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row career">
+        <div class="col-12 col-md-6">
+            <h3>North Campus Engineering Club Website</h3>
+            <p>Aug 2014 – May 2018</p>
+            <p>Wake Technical Community College, North Carolina, United States</p>
+        </div>
+        <div class="col-12 col-md-6">
+
+            <!-- <p>Technologies Used:</p>
+            <ul>
+                <li>Nginx</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+            <p>Accomplishments:</p> -->
+            <ul>
+                <li>Led a team of software developers to improve efficiency and flow of information for the club.</li>
+                <li>Maintained announcements, important dates, and valuable information concerning ongoing projects
+                    throughout the club.</li>
+                <li>Developed an online store for the Engineering Club to sell merchandise to individuals around the
+                    club environment.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row career">
+        <div class="col-12 col-md-6">
+            <h3>Trebuchet Firing Mechanism Python</h3>
+            <p>Aug 2014 – May 2018</p>
+            <p>Wake Technical Community College, North Carolina, United States</p>
+        </div>
+        <div class="col-12 col-md-6">
+            <!-- <p>Technologies Used:</p>
+            <ul>
+                <li>Python</li>
+                <li>Raspberry Pi</li>
+            </ul>
+            <p>Accomplishments:</p> -->
+            <ul>
+                <li>Developed and deployed a firing mechanism within a trebuchet using Raspberry Pi and IoT devices.
+                </li>
+                <li>Increased safety of work environment when outfitting the trebuchet with the mechanism using both
+                    software and hardware techniques.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row career">
+        <div class="col-sm-12 col-md-6">
+            <h3>North Carolina State University</h3>
+            <p>Intern</p>
+            <p>May 2017 – Aug 2017</p>
+            <p>North Carolina State University, North Carolina, United States</p>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <!-- <p>Technologies Used:</p>
+            <ul>
+                <li>Python</li>
+                <li>Bluetooth Low Energy</li>
+            </ul>
+            <p>Accomplishments:</p> -->
+            <ul>
+                <li>Developed a software platform to enable the monitoring of dangerous Volatile Organic Compounds
+                    (V.O.C).</li>
+                <li>Created real-time multi-threaded application which gathered and processed data from multiple
+                    CMUT
+                    gas sensors.</li>
+                <li>Established live graphing over multiple devices using various file transfer protocols.</li>
+                <li>Managed and maintained multiple BLE (Bluetooth Low Energy) connections.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row career">
+        <div class="col-sm-12 col-md-6">
+            <h3>Cisco DevNet APIC-EM</h3>
+            <p>Aug 2016 – Feb 2017</p>
+            <p>Raleigh-Durham, North Carolina, United States</p>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <!-- <p>Accomplishments:</p> -->
+            <ul>
+                <li>Completed Cisco's DevNet APIC-EM Northbound REST API learning labs.</li>
+                <li>Gained experience with APIC-EM and its RESTful APIs to create custom applications that could
+                    interact with the controller or add dynamic software defined networking (SDN) functionality.</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <h2>Education</h2>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <h3>University of North Carolina - Charlotte</h3>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <p>Bachelor of Science - BS, Computer Science</p>
+            <p>2018 - 2020</p>
+        </div>
+        <div class="col-sm-12 col-md-6">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <h3>Wake Technical Community College</h3>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <p>Associate of Engineering, Computer Science</p>
+            <p>2014 - 2018</p>
+
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <p>
+                Inducted Member of the National Society of Leadership and Success
+            </p>
+            <p>
+                Relevant Courses and Technologies:
+            </p>
+            <ul>
+                <li>C++ Programming</li>
+                <li>Java Programming</li>
+                <li>Into to Progamming and Logic</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="jumbotron pl-5">
+        <h1 class="display-4 text-center" id="skills">Skills</h1>
+        <p class="lead text-center">Where my inspiration and hobbies are brought to life.</p>
+        <hr class="my-4">
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <h2><b>Technologies</b></h2>
+        </div>
+        <div class="col-sm-6 col-md-6 justify-content-around">
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <td scope="row">Python</td>
+                        <td>
+
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Java</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">C++</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">HTML</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">CSS</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Javascript</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Git</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Docker</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">LXD / LXC</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Ansible</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Open Computer Vision</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-6 col-md-6 justify-content-around">
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <td scope="row">NGINX</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Flask</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Github</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">GitLab</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Elasticsearch</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Logstash</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Kibana</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">REST APIs</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">JSON</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">YAML</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr class="my-4">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h2><b>Tools</b></h2>
+        </div>
+        <div class="col-sm-12 col-md-12">
+            <table class="table table-hover">
+                <tbody>
+
+                    <tr>
+                        <td scope="row">Proxmox</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Debian</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Ubuntu</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Manjaro</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Windows</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">VSCode</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">VMWare ESXI</td>
+                        <td style="min-width: 5em;">
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            <img style="max-width: .5em;"
+                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="jumbotron pl-5">
+        <h1 class="display-4 text-center" id="projects">Projects</h1>
+        <p class="lead text-center">Where my inspiration and hobbies are brought to life.</p>
+        <hr class="my-4">
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Vitality</h3>
+            <p>Find and schedule trainers near you.</p>
+        </div>
+        <div class="col-sm-12">
+            <h3>Imgur to Folder</h3>
+            <p>Bulk download imgur albums, tags, or your profile with a single command.</p>
+        </div>
+        <div class="col-sm-12">
+            <h3>Fruit Flies</h3>
+            <p>Controls Kasa light switches with a webapi.</p>
+        </div>
+        <div class="col-sm-12">
+            <h3>Flask-Kasa</h3>
+            <p>Controls Kasa light switches with a webapi.</p>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>... and many more!</h3>
+            <p>Github</p>
+        </div>
+    </div>
+
+    <div class="jumbotron pl-5">
+        <h1 class="display-4 text-center" id="contact">Contact</h1>
+        <p class="lead text-center">Where my inspiration and hobbies are brought to life.</p>
+        <hr class="my-4">
+    </div>
+
+    <div class="row text-center">
+        <div class="col-sm-12 col-md-12">
+            <p>The best way to contact me is through email or linkedin!</p>
+            <a href="mailto:santos.jon.derek@gmail.com">
+                <img style="width: 1.5em; filter: invert(17%) sepia(0%) saturate(1641%) hue-rotate(158deg) brightness(96%) contrast(93%);"
+                    src="{{ url_for('static', filename='images/svg/envelope.svg') }}" />
+                <span>santos.jon.derek@gmail.com</span>
+            </a>
+            <br />
+            <a href="https://www.linkedin.com/in/santosderek/">
+                <img style="width: 1.5em; filter: invert(17%) sepia(0%) saturate(1641%) hue-rotate(158deg) brightness(96%) contrast(93%);"
+                    src="{{ url_for('static', filename='images/svg/linkedin.svg') }}" />
+                <span>https://www.linkedin.com/in/santosderek/</span>
+            </a>
+        </div>
+    </div>
+    <div class="row" id="justsomespace">
         <br />
-        <a href="https://www.linkedin.com/in/santosderek/">
-            <img style="width: 1.5em; filter: invert(17%) sepia(0%) saturate(1641%) hue-rotate(158deg) brightness(96%) contrast(93%);"
-                src="{{ url_for('static', filename='images/svg/linkedin.svg') }}" />
-            <span>https://www.linkedin.com/in/santosderek/</span>
-        </a>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
     </div>
 </div>
-<div class="row" id="justsomespace">
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-</div>
+
 {% endblock %}

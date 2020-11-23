@@ -17,6 +17,7 @@
         crossorigin="anonymous"></script>
 
     <link type="text/css" rel="stylesheet" href="{{ url_for ('static', filename='css/base.css')}}">
+    <script src="{{ url_for('static', filename='js/base.js') }}"></script>
 </head>
 
 <body>
@@ -31,13 +32,7 @@
             <p>Loading...</p>
         </div>
     </main>
-
-    <script>
-        window.onload = function () {
-            $("#loading").hide();
-            $("#content").show();
-        }
-    </script>
+    
 </body>
 
 </html>
