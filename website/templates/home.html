@@ -4,7 +4,7 @@
     <div class="col text-center introjumbo">
         <h2>Derek Santos</h2>
         <h3 class="w-75">A software developer with a passion for automation and orchestration.</h3>
-        <p style="color: #b9b9b9;">Scroll below to see my work!</p>
+        <p style="color: #8d8d8d;">Scroll below to see my work!</p>
     </div>
 </div>
 
@@ -201,7 +201,7 @@
         <h2>Education</h2>
     </div>
 
-    <div class="row">
+    <div class="row education">
         <div class="col-sm-12 col-md-6">
             <h3>University of North Carolina - Charlotte</h3>
             <p>2018 - 2020</p>
@@ -211,7 +211,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row education">
         <div class="col-12">
             <h3>Wake Technical Community College</h3>
         </div>
@@ -245,337 +245,46 @@
         <div class="col-sm-12 col-md-12">
             <h2><b>Technologies</b></h2>
         </div>
-        <div class="col-sm-6 col-md-6 justify-content-around">
+        <div class="col-sm-6 col-md-6">
             <table class="table table-hover">
                 <tbody>
+                    {% for entry in technologies_left%}
                     <tr>
-                        <td scope="row">Python</td>
+                        <td scope="row">{{entry[0]}}</td>
                         <td>
-
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                            {% for _ in range(entry[1]) %}
+                            <i style="font-size: .5em;" class="fas fa-star"></i>
+                            {% endfor %}
+                            {% for _ in range(5 - entry[1]) %}
+                            <i style="font-size: .5em;" class="far fa-star"></i>
+                            {% endfor %}
                         </td>
                     </tr>
-                    <tr>
-                        <td scope="row">Java</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">C++</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">HTML</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">CSS</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">Javascript</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">Git</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">Docker</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">LXD / LXC</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">Ansible</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">Open Computer Vision</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
-        <div class="col-sm-6 col-md-6 justify-content-around">
+        <div class="col-sm-6 col-md-6">
             <table class="table table-hover">
                 <tbody>
+                    {% for entry in technologies_right%}
                     <tr>
-                        <td scope="row">NGINX</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        <td scope="row">{{entry[0]}}</td>
+                        <td>
+                            {% for _ in range(entry[1]) %}
+                            <i style="font-size: .5em;" class="fas fa-star"></i>
+                            {% endfor %}
+                            {% for _ in range(5 - entry[1]) %}
+                            <i style="font-size: .5em;" class="far fa-star"></i>
+                            {% endfor %}
                         </td>
                     </tr>
-                    <tr>
-                        <td scope="row">Flask</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">Github</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">GitLab</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">Elasticsearch</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">Logstash</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">Kibana</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">REST APIs</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">JSON</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">YAML</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
-            <hr class="my-4">
         </div>
     </div>
-
+    <hr class="my-4">
     <div class="row">
         <div class="col-sm-12">
             <h2><b>Tools</b></h2>
@@ -583,112 +292,16 @@
         <div class="col-sm-12 col-md-12">
             <table class="table table-hover">
                 <tbody>
-
+                    {% for entry in tools%}
                     <tr>
-                        <td scope="row">Proxmox</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
+                        <td scope="row">{{entry[0]}}</td>
+                        <td>
+                            {% for _ in range(entry[1]) %}
+                            <i style="font-size: .5em;" class="fas fa-star"></i>
+                            {% endfor %}
                         </td>
                     </tr>
-                    <tr>
-                        <td scope="row">Debian</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">Ubuntu</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">Manjaro</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">Windows</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">VSCode</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">VMWare ESXI</td>
-                        <td style="min-width: 5em;">
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                            <img style="max-width: .5em;"
-                                src="{{ url_for('static', filename='images/svg/starsolid.svg')}}" />
-                        </td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
