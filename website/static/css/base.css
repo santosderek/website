@@ -36,20 +36,7 @@ a:hover {
     color: #f1b24a;
 }
 
-h1 {
-    font-size: 5em;
-    padding: 5% 0%;
-}
 
-h2 {
-    font-size: 2em;
-    padding: 5% 0%;
-}
-
-h3 {
-    font-size: 1.5em;
-    padding: 5% 0%;
-}
 
 p, ul li {
     font-size: 1em;
@@ -90,11 +77,35 @@ p, ul li {
     color: white;
 }
 
-/* .darkbg {
-    background-color: #252525;
-    color: white;
-} */
+.jumbotron h1 {
+    font-size: 3em;
+    padding: 5% 0%;
+}
 
+.jumbotron h2 {
+    font-size: 2em;
+    padding: 5% 0%;
+}
+
+.jumbotron h3 {
+    font-size: 1.5em;
+    padding: 5% 0%;
+}
+
+.introjumbo {
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: white;
+    border-radius: 1em;
+    align-content: center;
+}
+
+.introjumbo h2 {
+    padding-top: 1%;
+    font-size: 2em;
+}
 .career {
     padding: 5% 0%;
 }
@@ -112,14 +123,8 @@ p, ul li {
     background-size: cover;
 }
 
-.introjumbo {
-    margin-left: 20%;
-    margin-right: 20%;
-    background-color: white;
-    border-radius: 1em;
-    align-content: center;
-}
+
 
 .content {
-    padding: 0px 20%;
+    padding: 0px 15%;
 }

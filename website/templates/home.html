@@ -2,8 +2,8 @@
 {% block content %}
 <div class="row mt-2 parallax" style="min-height: 95vh;">
     <div class="col text-center introjumbo">
-        <h3 class="w-50 ">My name is Derek Santos.<br />I am a software developer with a passion for automation and
-            orchestration.</h3>
+        <h2>Derek Santos</h2>
+        <h3 class="w-75">A software developer with a passion for automation and orchestration.</h3>
         <p style="color: #b9b9b9;">Scroll below to see my work!</p>
     </div>
 </div>
@@ -202,14 +202,12 @@
     </div>
 
     <div class="row">
-        <div class="col-12">
-            <h3>University of North Carolina - Charlotte</h3>
-        </div>
         <div class="col-sm-12 col-md-6">
-            <p>Bachelor of Science - BS, Computer Science</p>
+            <h3>University of North Carolina - Charlotte</h3>
             <p>2018 - 2020</p>
         </div>
         <div class="col-sm-12 col-md-6">
+            <p><b>Bachelor of Science - BS, Computer Science</b></p>
         </div>
     </div>
 
@@ -724,6 +722,22 @@
         <div class="col-sm-12">
             <h3>... and many more!</h3>
             <p>Github</p>
+        </div>
+    </div>
+
+    <div class="jumbotron pl-5">
+        <h1 class="display-4 text-center" id="contact">Resume</h1>
+        <p class="lead text-center">My stat sheet.</p>
+        <hr class="my-4">
+    </div>
+
+    <div class="row text-center">
+        <div class="col-sm-12 col-md-12">
+            <a href="mailto:santos.jon.derek@gmail.com">
+                <img style="width: 1.5em; filter: invert(17%) sepia(0%) saturate(1641%) hue-rotate(158deg) brightness(96%) contrast(93%);"
+                    src="{{ url_for('static', filename='images/svg/envelope.svg') }}" />
+                <span>Resume</span>
+            </a>
         </div>
     </div>
 
