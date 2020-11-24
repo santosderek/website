@@ -3,6 +3,7 @@ from flask import (
     render_template,
     redirect
 )
+import json
 import requests
 
 GITHUB_REPO_LIST_URL = 'https://api.github.com/users/santosderek/repos?page={number}'
@@ -13,6 +14,7 @@ class GithubRequestError(Exception):
 
 
 def get_github_repos():
+    """Requests from the GITHUB API my user data and returns as JSON(Dict)"""
     returned_value = requests.get(GITHUB_USER_URL)
 
     if returned_value.status_code != 200:
@@ -20,6 +22,11 @@ def get_github_repos():
 
     return returned_value.json()
 
+def get_career_json(): 
+    """ Get the career JSON file that holds all information of my career."""
+    with open('career.json') as current_file: 
+        data = json.loads(current_file.read())
+        return data
 
 def create_app():
     app = Flask(__name__)
@@ -77,18 +84,23 @@ def create_app():
         tools_left = tools[:len(tools) // 2]
         tools_right = tools[len(tools) // 2:]
 
+        # Get my github public info
         github_user_json = {}
         try:
             github_user_json = get_github_repos()
         except GithubRequestError as e:
             github_user_json = {}
 
+        # Get career info from JSON file
+        careers = get_career_json()
+
         return render_template('home.html',
                                technologies_left=technologies_left,
                                technologies_right=technologies_right,
                                tools_left=tools_left,
                                tools_right=tools_right,
-                               github_user_json=github_user_json)
+                               github_user_json=github_user_json,
+                               careers=careers)
 
     @app.route('/github', methods=["GET"])
     def github():

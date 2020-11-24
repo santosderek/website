@@ -19,157 +19,25 @@
         <h2>Career</h2>
     </div>
 
+    {% for career in careers %}
     <div class="row career">
         <div class="col-12 col-md-6">
-            <h3>Cisco Systems Security Orchestration Internship</h3>
-            <p>Cisco Internship</p>
-            <p>May 2019 – Aug 2019</p>
-            <p>Raleigh, North Carolina, United States</p>
+            <h3>{{career['title']}}</h3>
+            {% if 'type' in career %}
+            <p>{{career['type']}}</p>
+            {% endif %}
+            <p>{{career['date']}}</p>
+            <p>{{career['location']}}</p>
         </div>
         <div class="col-12 col-md-6">
             <ul>
-                <li>Developed custom software in Java as a member of a larger team, to help multiple Cisco customers
-                    programmatically interface with Cisco Identity Services Engine (ISE) and Cisco Firepower Management
-                    Center (FMC) managing Cisco’s Next-Generation Firewalls and IPS.</li>
-                <li>Developed a WebEx Teams bot and a custom application in Python to increase the productivity of the
-                    team.</li>
-                <li>Created an automatic phishing remediation system using Python to help any user send emails to the
-                    application in order to flag and contain emails that may be a potential phishing attack.</li>
-                <li>Mentored other interns in various programming and technical tasks.</li>
+                {% for description in descriptions%}
+                <li>{{description}}</li>
+                {% endfor %}
             </ul>
         </div>
     </div>
-
-    <div class="row career">
-        <div class="col-12 col-md-6">
-            <h3>Cisco Systems Advanced Services Internship</h3>
-            <p>Cisco Internship</p>
-            <p>May 2018 – Aug 2018</p>
-            <p>Raleigh, North Carolina, United States</p>
-        </div>
-        <div class="col-12 col-md-6">
-            <ul>
-                <li>Created a software solution to assist cyber security experts parse thousands of security event logs
-                    from firewalls, Cisco Identity Service Engine (ISE) and Splunk servers.</li>
-                <li>Assisted industry experts to implement, deploy, and troubleshoot Cisco Cisco Firepower Threat
-                    Defense (FTD), Cisco ASA, and Cisco ISE technologies on several Cisco customer engagements across
-                    the country.</li>
-                <li>Taught Python frameworks and technologies to other fellow interns, that allowed them to parse and
-                    analyze incoming network traffic, as well as providing analytics and insights to other engineers and
-                    users.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="row career">
-        <div class="col-12 col-md-6">
-            <h3>North Carolina NASA Space Grant Consortium</h3>
-            <p>Representative</p>
-            <p>Nov 2017 – May 2018</p>
-            <p>Raleigh, North Carolina, United States</p>
-        </div>
-        <div class="col-12 col-md-6">
-            <ul>
-                <li>Developed Arduino programs to maintain and control multiple sensors, relays, and data during a
-                    five-hour launch to the stratosphere.</li>
-                <li>All Arduino controlled subsystems are to withstand sub-zero temperatures of the stratosphere, while
-                    recording data from the attached sensors.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="row career">
-        <div class="col-12 col-md-6">
-            <h3>Insect Tracking System and Algorithm</h3>
-            <p>Research</p>
-            <p>Aug 2014 – May 2018</p>
-            <p>Wake Technical Community College, North Carolina, United States</p>
-        </div>
-        <div class="col-12 col-md-6">
-
-            <ul>
-                <li>Created an insect tracking algorithm and software written in C++ that is currently being submitted
-                    for a patent application with the USPTO.</li>
-                <li>Adopted advanced libraries such as Open Computer Vision (OpenCV), and Simple and Fast Multimedia
-                    Library (SFML).</li>
-                <li>Reduced errors commonly found within biology lab experiments when analyzing fruit flies undergoing
-                    reactions of ethanol.</li>
-                <li>Scheduled to succeed currently existing methods used in the biology labs.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="row career">
-        <div class="col-12 col-md-6">
-            <h3>North Campus Engineering Club Website</h3>
-            <p>Aug 2014 – May 2018</p>
-            <p>Wake Technical Community College, North Carolina, United States</p>
-        </div>
-        <div class="col-12 col-md-6">
-
-            <ul>
-                <li>Led a team of software developers to improve efficiency and flow of information for the club.</li>
-                <li>Maintained announcements, important dates, and valuable information concerning ongoing projects
-                    throughout the club.</li>
-                <li>Developed an online store for the Engineering Club to sell merchandise to individuals around the
-                    club environment.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="row career">
-        <div class="col-12 col-md-6">
-            <h3>Trebuchet Firing Mechanism Python</h3>
-            <p>Aug 2014 – May 2018</p>
-            <p>Wake Technical Community College, North Carolina, United States</p>
-        </div>
-        <div class="col-12 col-md-6">
-
-            <ul>
-                <li>Developed and deployed a firing mechanism within a trebuchet using Raspberry Pi and IoT devices.
-                </li>
-                <li>Increased safety of work environment when outfitting the trebuchet with the mechanism using both
-                    software and hardware techniques.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="row career">
-        <div class="col-sm-12 col-md-6">
-            <h3>North Carolina State University</h3>
-            <p>Intern</p>
-            <p>May 2017 – Aug 2017</p>
-            <p>North Carolina State University, North Carolina, United States</p>
-        </div>
-        <div class="col-sm-12 col-md-6">
-            <ul>
-                <li>Developed a software platform to enable the monitoring of dangerous Volatile Organic Compounds
-                    (V.O.C).</li>
-                <li>Created real-time multi-threaded application which gathered and processed data from multiple
-                    CMUT
-                    gas sensors.</li>
-                <li>Established live graphing over multiple devices using various file transfer protocols.</li>
-                <li>Managed and maintained multiple BLE (Bluetooth Low Energy) connections.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="row career">
-        <div class="col-sm-12 col-md-6">
-            <h3>Cisco DevNet APIC-EM</h3>
-            <p>Aug 2016 – Feb 2017</p>
-            <p>Raleigh-Durham, North Carolina, United States</p>
-        </div>
-        <div class="col-sm-12 col-md-6">
-            <!-- <p>Accomplishments:</p> -->
-            <ul>
-                <li>Completed Cisco's DevNet APIC-EM Northbound REST API learning labs.</li>
-                <li>Gained experience with APIC-EM and its RESTful APIs to create custom applications that could
-                    interact with the controller or add dynamic software defined networking (SDN) functionality.</li>
-            </ul>
-        </div>
-    </div>
-
+    {% endfor %}
 
     <div class="row">
         <h2>Education</h2>
@@ -276,7 +144,7 @@
         <div class="col-sm-12">
             <h2><b>Tools</b></h2>
         </div>
-        <div class="col-sm-12 col-lg-6">
+        <div class="col-sm-6">
             <table class="table table-hover">
                 <tbody>
                     {% for entry in tools_left%}
@@ -285,7 +153,6 @@
                             <span>
                                 {{entry[0]}}
                             </span>
-
                         </td>
                         <td class="skill_stars">
                             <span>
@@ -300,10 +167,9 @@
                     </tr>
                     {% endfor %}
                 </tbody>
-
             </table>
         </div>
-        <div class="col-sm-12 col-lg-6">
+        <div class="col-sm-6">
             <table class="table table-hover">
                 <tbody>
                     {% for entry in tools_right%}
@@ -326,7 +192,6 @@
                     </tr>
                     {% endfor %}
                 </tbody>
-
             </table>
         </div>
     </div>
