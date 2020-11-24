@@ -3,6 +3,22 @@ from flask import (
     render_template,
     redirect
 )
+import requests
+
+GITHUB_REPO_LIST_URL = 'https://api.github.com/users/santosderek/repos?page={number}'
+GITHUB_USER_URL = 'https://api.github.com/users/santosderek'
+
+class GithubRequestError(Exception):
+    pass
+
+
+def get_github_repos():
+    returned_value = requests.get(GITHUB_USER_URL)
+
+    if returned_value.status_code != 200:
+        raise GithubRequestError("Error Code != 200")
+
+    return returned_value.json()
 
 
 def create_app():
@@ -24,7 +40,7 @@ def create_app():
             ('Docker', 5),
             ('LXC / LXD', 5),
             ('Ansible', 4),
-            ('Open Computer Vision', 5),
+            ('Open Computer Vision', 4),
             ('NGINX', 4),
             ('Flask', 5),
             ('Github', 5),
@@ -35,7 +51,10 @@ def create_app():
             ('REST APIs', 5),
             ('JSON', 5),
             ('YAML', 5),
-            ('Kubernetes', 4)
+            ('Kubernetes', 4),
+            ('Object Orientated Programming', 4),
+            ('UML', 4),
+            ('MVC Pattern', 4),
         ]
         tools = [
             ('Proxmox', 5),
@@ -45,20 +64,31 @@ def create_app():
             ('Manjaro', 5),
             ('Windows', 5),
             ('VSCode', 5),
-            ('VMWare', 5),
-            ('ESXI', 5),
+            ('VMWare ESXI', 4)
         ]
 
-        technologies.sort(key=lambda x: x[1], reverse = True)
-        tools.sort(key=lambda x: x[1], reverse = True)
-        
-        technologies_left=technologies[:len(technologies) // 2]
-        technologies_right=technologies[len(technologies) // 2:]
+        # Sorting lists by number of stars decending
+        technologies.sort(key=lambda x: x[1], reverse=True)
+        tools.sort(key=lambda x: x[1], reverse=True)
+
+        # Splitting to two columns
+        technologies_left = technologies[:len(technologies) // 2]
+        technologies_right = technologies[len(technologies) // 2:]
+        tools_left = tools[:len(tools) // 2]
+        tools_right = tools[len(tools) // 2:]
+
+        github_user_json = {}
+        try:
+            github_user_json = get_github_repos()
+        except GithubRequestError as e:
+            github_user_json = {}
 
         return render_template('home.html',
                                technologies_left=technologies_left,
                                technologies_right=technologies_right,
-                               tools=tools)
+                               tools_left=tools_left,
+                               tools_right=tools_right,
+                               github_user_json=github_user_json)
 
     @app.route('/github', methods=["GET"])
     def github():

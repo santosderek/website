@@ -122,6 +122,14 @@ p, ul li {
     /* same as padding-left set on li */
 }
 
+.skill_title {
+    min-width: 5em;
+}
+
+.skill_stars {
+    min-width: 5em;
+}
+
 .parallax {
     background-image: url("/static/images/pexels-computer.jpg");
     /* height: 100%; */

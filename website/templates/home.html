@@ -86,14 +86,7 @@
             <p>Wake Technical Community College, North Carolina, United States</p>
         </div>
         <div class="col-12 col-md-6">
-            <!-- <p>Technologies Used:</p>
-            <ul>
-                <li>C++</li>
-                <li>Python</li>
-                <li>Open Computer Vision</li>
-                <li>SFML</li>
-            </ul>
-            <p>Research:</p> -->
+
             <ul>
                 <li>Created an insect tracking algorithm and software written in C++ that is currently being submitted
                     for a patent application with the USPTO.</li>
@@ -114,14 +107,6 @@
         </div>
         <div class="col-12 col-md-6">
 
-            <!-- <p>Technologies Used:</p>
-            <ul>
-                <li>Nginx</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-            </ul>
-            <p>Accomplishments:</p> -->
             <ul>
                 <li>Led a team of software developers to improve efficiency and flow of information for the club.</li>
                 <li>Maintained announcements, important dates, and valuable information concerning ongoing projects
@@ -139,12 +124,7 @@
             <p>Wake Technical Community College, North Carolina, United States</p>
         </div>
         <div class="col-12 col-md-6">
-            <!-- <p>Technologies Used:</p>
-            <ul>
-                <li>Python</li>
-                <li>Raspberry Pi</li>
-            </ul>
-            <p>Accomplishments:</p> -->
+
             <ul>
                 <li>Developed and deployed a firing mechanism within a trebuchet using Raspberry Pi and IoT devices.
                 </li>
@@ -162,12 +142,6 @@
             <p>North Carolina State University, North Carolina, United States</p>
         </div>
         <div class="col-sm-12 col-md-6">
-            <!-- <p>Technologies Used:</p>
-            <ul>
-                <li>Python</li>
-                <li>Bluetooth Low Energy</li>
-            </ul>
-            <p>Accomplishments:</p> -->
             <ul>
                 <li>Developed a software platform to enable the monitoring of dangerous Volatile Organic Compounds
                     (V.O.C).</li>
@@ -245,38 +219,51 @@
         <div class="col-sm-12 col-md-12">
             <h2><b>Technologies</b></h2>
         </div>
-        <div class="col-sm-6 col-md-6">
+        <div class="col-sm-6 col-lg-6">
             <table class="table table-hover">
                 <tbody>
                     {% for entry in technologies_left%}
                     <tr>
-                        <td scope="row">{{entry[0]}}</td>
-                        <td>
-                            {% for _ in range(entry[1]) %}
-                            <i style="font-size: .5em;" class="fas fa-star"></i>
-                            {% endfor %}
-                            {% for _ in range(5 - entry[1]) %}
-                            <i style="font-size: .5em;" class="far fa-star"></i>
-                            {% endfor %}
+                        <td class="skill_title" scope="row">
+                            <span>
+                                {{entry[0]}}
+                            </span>
+                        </td>
+                        <td class="skill_stars">
+                            <span>
+                                {% for _ in range(entry[1]) %}
+                                <i style="font-size: .5em;" class="fas fa-star"></i>
+                                {% endfor %}
+                                {% for _ in range(5 - entry[1]) %}
+                                <i style="font-size: .5em;" class="far fa-star"></i>
+                                {% endfor %}
+                            </span>
                         </td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </div>
-        <div class="col-sm-6 col-md-6">
+        <div class="col-sm-6 col-lg-6">
             <table class="table table-hover">
                 <tbody>
                     {% for entry in technologies_right%}
                     <tr>
-                        <td scope="row">{{entry[0]}}</td>
-                        <td>
-                            {% for _ in range(entry[1]) %}
-                            <i style="font-size: .5em;" class="fas fa-star"></i>
-                            {% endfor %}
-                            {% for _ in range(5 - entry[1]) %}
-                            <i style="font-size: .5em;" class="far fa-star"></i>
-                            {% endfor %}
+                        <td class="skill_title" scope="row">
+                            <span>
+                                {{entry[0]}}
+                            </span>
+
+                        </td>
+                        <td class="skill_stars">
+                            <span>
+                                {% for _ in range(entry[1]) %}
+                                <i style="font-size: .5em;" class="fas fa-star"></i>
+                                {% endfor %}
+                                {% for _ in range(5 - entry[1]) %}
+                                <i style="font-size: .5em;" class="far fa-star"></i>
+                                {% endfor %}
+                            </span>
                         </td>
                     </tr>
                     {% endfor %}
@@ -289,20 +276,57 @@
         <div class="col-sm-12">
             <h2><b>Tools</b></h2>
         </div>
-        <div class="col-sm-12 col-md-12">
+        <div class="col-sm-12 col-lg-6">
             <table class="table table-hover">
                 <tbody>
-                    {% for entry in tools%}
+                    {% for entry in tools_left%}
                     <tr>
-                        <td scope="row">{{entry[0]}}</td>
-                        <td>
-                            {% for _ in range(entry[1]) %}
-                            <i style="font-size: .5em;" class="fas fa-star"></i>
-                            {% endfor %}
+                        <td class="skill_title" scope="row">
+                            <span>
+                                {{entry[0]}}
+                            </span>
+
+                        </td>
+                        <td class="skill_stars">
+                            <span>
+                                {% for _ in range(entry[1]) %}
+                                <i style="font-size: .5em;" class="fas fa-star"></i>
+                                {% endfor %}
+                                {% for _ in range(5 - entry[1]) %}
+                                <i style="font-size: .5em;" class="far fa-star"></i>
+                                {% endfor %}
+                            </span>
                         </td>
                     </tr>
                     {% endfor %}
                 </tbody>
+
+            </table>
+        </div>
+        <div class="col-sm-12 col-lg-6">
+            <table class="table table-hover">
+                <tbody>
+                    {% for entry in tools_right%}
+                    <tr>
+                        <td class="skill_title" scope="row">
+                            <span>
+                                {{entry[0]}}
+                            </span>
+                        </td>
+                        <td class="skill_stars">
+                            <span>
+                                {% for _ in range(entry[1]) %}
+                                <i style="font-size: .5em;" class="fas fa-star"></i>
+                                {% endfor %}
+                                {% for _ in range(5 - entry[1]) %}
+                                <i style="font-size: .5em;" class="far fa-star"></i>
+                                {% endfor %}
+                            </span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
             </table>
         </div>
     </div>
@@ -332,9 +356,16 @@
 
     </div>
     <div class="row">
-        <div class="col-sm-12">
-            <h3>... and many more!</h3>
-            <p>Github</p>
+        <div class="col-sm-12 text-center mt-3 mb-5">
+            {% if github_user_json|length == 0 %}
+            <a style="padding: 1em 2em; border: 2px solid black; border-radius: .5em;" href="{{ url_for('github')}}">
+                ...and many more!
+            </a>
+            {% else %}
+            <a style="padding: 1em 2em; border: 2px solid black; border-radius: .5em;" href="{{ url_for('github')}}">
+                ...and {{ github_user_json['public_repos'] }} more on github!
+            </a>
+            {% endif %}
         </div>
     </div>
 
