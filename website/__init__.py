@@ -40,42 +40,14 @@ def create_app():
         """The index / home route of the website"""
 
         # Technology, Stars out of 5
-        technologies = [
-            ('Python', 5),
-            ('Java', 5),
-            ('C++', 5),
-            ('CSS', 5),
-            ('Javascript', 5),
-            ('Git', 5),
-            ('Docker', 5),
-            ('LXC / LXD', 5),
-            ('Ansible', 4),
-            ('Open Computer Vision', 4),
-            ('NGINX', 4),
-            ('Flask', 5),
-            ('Github', 5),
-            ('Gitlab', 5),
-            ('Elasticsearch', 3),
-            ('Kibana', 3),
-            ('Logstash', 3),
-            ('REST APIs', 5),
-            ('JSON', 5),
-            ('YAML', 5),
-            ('Kubernetes', 4),
-            ('Object Orientated Programming', 4),
-            ('UML', 4),
-            ('MVC Pattern', 4),
-        ]
-        tools = [
-            ('Proxmox', 5),
-            ('Debian', 5),
-            ('Ubuntu', 5),
-            ('Visual Studio 2019', 4),
-            ('Manjaro', 5),
-            ('Windows', 5),
-            ('VSCode', 5),
-            ('VMWare ESXI', 4)
-        ]
+        skills = get_resource_json('skills.json')
+        technologies = skills['technologies']
+        tools = skills['tools']
+
+        # Get career info from JSON file
+        careers = get_resource_json('career.json')
+        educations = get_resource_json('education.json')
+        repos = get_resource_json('repos.json')
 
         # Sorting lists by number of stars decending
         technologies.sort(key=lambda x: x[1], reverse=True)
@@ -93,11 +65,6 @@ def create_app():
             github_user_json = get_github_user()
         except GithubRequestError as e:
             github_user_json = {}
-
-        # Get career info from JSON file
-        careers = get_resource_json('career.json')
-        educations = get_resource_json('education.json')
-        repos = get_resource_json('repos.json')
 
         return render_template('home.html',
                                technologies_left=technologies_left,
