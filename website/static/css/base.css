@@ -146,7 +146,7 @@ p, ul li {
 }
 
 .content {
-    padding: 0px 11%;
+    padding: 0px 15%;
 }
 
 #pageLocation {
@@ -154,6 +154,7 @@ p, ul li {
     top: 5em;
     left: 2em; 
     background-color: #292929;
+    z-index: 1;
 }
 
 .list-group-item.active {

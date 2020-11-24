@@ -4,14 +4,14 @@ window.onload = function () {
     $('body').scrollspy({ target: '#pageLocation' })
 
     // Hide fixed nav if above Experience jumbotron
-    $("#pageLocation").hide(); //hide your div initially
+    $("#pageLocation").hide(); 
     var topOfOthDiv = $("#experience").offset().top;
     $(window).scroll(function() {
-        if($(window).scrollTop() > topOfOthDiv) { //scrolled past the other div?
-            $("#pageLocation").show(); //reached the desired point -- show div
+        if($(window).scrollTop() > topOfOthDiv && $(document).width() > 1000) {
+            $("#pageLocation").show(); 
         }
         else{
-            $("#pageLocation").hide(); //else above the desired point -- hide div
+            $("#pageLocation").hide(); 
         }
     });
 }

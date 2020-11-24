@@ -26,7 +26,7 @@
     </header>
     <main>
         <div style="display: none;" id="content">
-            <div id="pageLocation" class="list-group">
+            <div style="display: none;" id="pageLocation" class="list-group">
                 <a class="list-group-item list-group-item-action" href="#experience">Experience</a>
                 <a class="list-group-item list-group-item-action" href="#skills">Skills</a>
                 <a class="list-group-item list-group-item-action" href="#projects">Projects</a>
@@ -37,7 +37,7 @@
                 {% block content %}{% endblock %}
             </div>
         </div>
-        <div id="loading">
+        <div id="loading" class="text-center">
             <p>Loading...</p>
         </div>
     </main>
