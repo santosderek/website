@@ -15,16 +15,32 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/f08705750d.js" crossorigin="anonymous"></script>
     <link type="text/css" rel="stylesheet" href="{{ url_for ('static', filename='css/base.css')}}">
+    <script src="{{ url_for('static', filename='js/base.js') }}"></script>
 </head>
 
-<body>
+<body id="my-scrollbar">
     <header>
         {% include 'navbar.html' %}
     </header>
     <main>
-        {% block content %}{% endblock %}
+        <div style="display: none;" id="content">
+            <div style="display: none;" id="pageLocation" class="list-group">
+                <a class="list-group-item list-group-item-action" href="#experience">Experience</a>
+                <a class="list-group-item list-group-item-action" href="#skills">Skills</a>
+                <a class="list-group-item list-group-item-action" href="#projects">Projects</a>
+                <a class="list-group-item list-group-item-action" href="#contact">Contact</a>
+            </div>
+            <div data-spy="scroll" data-target="#pageLocation" data-offset="0" class="scrollspy-example">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+        <div id="loading" class="text-center">
+            <p>Loading...</p>
+        </div>
     </main>
 </body>
+
 
 </html>
