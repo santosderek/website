@@ -113,13 +113,19 @@ p, ul li {
 
 .career li:before, .education li:before {
     content: "\f105";
-    /* FontAwesome Unicode */
     font-family: FontAwesome;
     display: inline-block;
     margin-left: -1.3em;
-    /* same as padding-left set on li */
     width: 1.3em;
-    /* same as padding-left set on li */
+}
+
+.career_header {}
+
+.career_description {
+    background-color: #292929;
+    border-radius: .5em;
+    color: white;
+    padding: .5em 1.5em;
 }
 
 .skill_title {

@@ -21,7 +21,7 @@
 
     {% for career in careers %}
     <div class="row career">
-        <div class="col-12 col-md-6">
+        <div class="col-md-12 col-lg-6 career_header">
             <h3>{{career['title']}}</h3>
             {% if "type" in career %}
             <p>{{career['type']}}</p>
@@ -29,7 +29,7 @@
             <p>{{career['date']}}</p>
             <p>{{career['location']}}</p>
         </div>
-        <div class="col-12 col-md-6">
+        <div class="col-md-12 col-lg-6 career_description">
             <ul>
                 {% for description in career['descriptions'] %}
                 <li>{{ description }}</li>
