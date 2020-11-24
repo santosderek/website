@@ -16,12 +16,12 @@
     </div>
 
     <div class="row">
-        <h2>Career</h2>
+        <h1>Career</h1>
     </div>
 
     {% for career in careers %}
     <div class="row career">
-        <div class="col-md-12 col-lg-6 career_header">
+        <div class="col-md-12 col-lg-4 career_header">
             <h3>{{career['title']}}</h3>
             {% if "type" in career %}
             <p>{{career['type']}}</p>
@@ -29,7 +29,7 @@
             <p>{{career['date']}}</p>
             <p>{{career['location']}}</p>
         </div>
-        <div class="col-md-12 col-lg-6 career_description">
+        <div class="col-md-12 col-lg-8 career_description">
             <ul>
                 {% for description in career['descriptions'] %}
                 <li>{{ description }}</li>
@@ -40,7 +40,7 @@
     {% endfor %}
 
     <div class="row">
-        <h2>Education</h2>
+        <h1>Education</h1>
     </div>
 
     <div class="row education">
@@ -62,7 +62,7 @@
 
         </div>
         <div class="col-sm-12 col-md-6">
-            <p>Associate of Engineering, Computer Science</p>
+            <p><b>Associate of Engineering, Computer Science</b></p>
             <p>Inducted Member of the National Society of Leadership and Success</p>
             <p>Relevant Courses and Technologies:</p>
             <ul>
@@ -227,22 +227,6 @@
                 ...and {{ github_user_json['public_repos'] }} more on github!
             </a>
             {% endif %}
-        </div>
-    </div>
-
-    <div class="jumbotron pl-5">
-        <h1 class="display-4 text-center" id="resume">Resume</h1>
-        <p class="lead text-center">My stat sheet.</p>
-        <hr class="my-4">
-    </div>
-
-    <div class="row text-center">
-        <div class="col-sm-12 col-md-12">
-            <a href="mailto:santos.jon.derek@gmail.com">
-                <img style="width: 1.5em; filter: invert(17%) sepia(0%) saturate(1641%) hue-rotate(158deg) brightness(96%) contrast(93%);"
-                    src="{{ url_for('static', filename='images/svg/envelope.svg') }}" />
-                <span>Resume</span>
-            </a>
         </div>
     </div>
 
