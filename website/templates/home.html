@@ -69,11 +69,9 @@
     </div>
     {% endfor %}
 
-
     <div class="jumbotron pl-5">
         <h1 class="display-4 text-center" id="skills">Skills</h1>
         <p class="lead text-center">Where my inspiration and hobbies are brought to life.</p>
-
     </div>
 
     <div class="row">
@@ -195,22 +193,17 @@
 
     </div>
     <div class="row">
-        <div class="col-sm-12">
-            <h3>Vitality</h3>
-            <p>Find and schedule trainers near you.</p>
-        </div>
-        <div class="col-sm-12">
-            <h3>Imgur to Folder</h3>
-            <p>Bulk download imgur albums, tags, or your profile with a single command.</p>
-        </div>
-        <div class="col-sm-12">
-            <h3>Fruit Flies</h3>
-            <p>Controls Kasa light switches with a webapi.</p>
-        </div>
-        <div class="col-sm-12">
-            <h3>Flask-Kasa</h3>
-            <p>Controls Kasa light switches with a webapi.</p>
-        </div>
+        {% for repo in repos %}
+        <a href="{{repo["url"]}}">
+        <div class="card mb-3" style="max-width: 18rem;">
+            <div class="card-header">{{repo['title']}}</div>
+            <div class="card-body">
+              <h5 class="card-title">{{repo['subtitle']}}</h5>
+              <p class="card-text">{{repo['description']}}</p>
+            </div>
+          </div>
+        </a>
+        {% endfor %}
 
         <div class="col-sm-12 text-center mt-4 mb-5">
             <a class="button_link" href="{{ url_for('github')}}">

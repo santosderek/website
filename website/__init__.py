@@ -14,7 +14,7 @@ class GithubRequestError(Exception):
     pass
 
 
-def get_github_repos():
+def get_github_user():
     """Requests from the GITHUB API my user data and returns as JSON(Dict)"""
     returned_value = requests.get(GITHUB_USER_URL)
 
@@ -24,16 +24,9 @@ def get_github_repos():
     return returned_value.json()
 
 
-def get_career_json():
-    """ Get the career JSON file that holds all information of my career."""
-    with open('website/resources/career.json', 'r') as current_file:
-        data = json.loads(current_file.read())
-        return data
-
-
-def get_education_json():
-    """ Get the career JSON file that holds all information of my career."""
-    with open('website/resources/education.json', 'r') as current_file:
+def get_resource_json(filename: str):
+    "Return the contents of a resource JSON file."
+    with open(f'website/resources/{filename}', 'r') as current_file:
         data = json.loads(current_file.read())
         return data
 
@@ -97,13 +90,14 @@ def create_app():
         # Get my github public info
         github_user_json = {}
         try:
-            github_user_json = get_github_repos()
+            github_user_json = get_github_user()
         except GithubRequestError as e:
             github_user_json = {}
 
         # Get career info from JSON file
-        careers = get_career_json()
-        educations = get_education_json()
+        careers = get_resource_json('career.json')
+        educations = get_resource_json('education.json')
+        repos = get_resource_json('repos.json')
 
         return render_template('home.html',
                                technologies_left=technologies_left,
@@ -112,7 +106,8 @@ def create_app():
                                tools_right=tools_right,
                                github_user_json=github_user_json,
                                careers=careers,
-                               educations=educations)
+                               educations=educations,
+                               repos=repos)
 
     @app.route('/github', methods=["GET"])
     def github():

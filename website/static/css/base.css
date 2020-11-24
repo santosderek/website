@@ -108,6 +108,17 @@ hr {
     color: #008F95;
 }
 
+.card {
+    background-color: rgba(0,0,0,0);
+    border: 1px dotted #008F95;
+    min-height: 10em;
+}
+
+.card-header {
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: 1px dotted #008F95;
+}
+
 .career, .education {
     padding: 2% 0%;
 }
