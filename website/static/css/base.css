@@ -19,10 +19,6 @@ body {
     font-size: x-large;
 }
 
-header {}
-
-main {}
-
 a {
     text-decoration: none;
     color: black;
@@ -68,7 +64,7 @@ p, ul li {
     color: white;
 }
 
-.jumbotron h1 {
+.jumbotron h1, .jumbotron h4 {
     font-size: 3em;
     padding: 5% 0%;
 }
@@ -150,5 +146,17 @@ p, ul li {
 }
 
 .content {
-    padding: 0px 5%;
+    padding: 0px 11%;
+}
+
+#pageLocation {
+    position: fixed;
+    top: 5em;
+    left: 2em; 
+    background-color: #292929;
+}
+
+.list-group-item.active {
+    background-color: #292929;
+    border-color: #292929;
 }
