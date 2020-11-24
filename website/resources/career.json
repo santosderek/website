@@ -2,10 +2,10 @@
     {
         "title": "Cisco Systems - Security Orchestration Internship",
         "type": "Cisco Internship",
-        "date": "May 2019 – Aug 2019",
+        "date": "May 2019 - Aug 2019",
         "location": "Raleigh, North Carolina, United States",
         "descriptions": [
-            "Developed custom software in Java as a member of a larger team, to help multiple Cisco customers programmatically interface with Cisco Identity Services Engine (ISE) and Cisco Firepower Management Center (FMC) managing Cisco’s Next-Generation Firewalls and IPS.",
+            "Developed custom software in Java as a member of a larger team, to help multiple Cisco customers programmatically interface with Cisco Identity Services Engine (ISE) and Cisco Firepower Management Center (FMC) managing Cisco's Next-Generation Firewalls and IPS.",
             "Developed a WebEx Teams bot and a custom application in Python to increase the productivity of the team.",
             "Created an automatic phishing remediation system using Python to help any user send emails to the application in order to flag and contain emails that may be a potential phishing attack.",
             "Mentored other interns in various programming and technical tasks."
@@ -14,7 +14,7 @@
     {
         "title": "Cisco Systems - Advanced Services Internship",
         "type": "Cisco Internship",
-        "date": "May 2018 – Aug 2018",
+        "date": "May 2018 - Aug 2018",
         "location": "Raleigh, North Carolina, United States",
         "descriptions": [
             "Created a software solution to assist cyber security experts parse thousands of security event logs from firewalls, Cisco Identity Service Engine (ISE) and Splunk servers.",
@@ -25,7 +25,7 @@
     {
         "title": "North Carolina NASA Space Grant Consortium",
         "type": "Representative",
-        "date": "Nov 2017 – May 2018",
+        "date": "Nov 2017 - May 2018",
         "location": "Raleigh, North Carolina, United States",
         "descriptions": [
             "Developed Arduino programs to maintain and control multiple sensors, relays, and data during a five-hour launch to the stratosphere.",
@@ -35,7 +35,7 @@
     {
         "title": "Insect Tracking System and Algorithm",
         "type": "Research",
-        "date": "Aug 2014 – May 2018",
+        "date": "Aug 2014 - May 2018",
         "location": "Wake Technical Community College, North Carolina, United States",
         "descriptions": [
             "Created an insect tracking algorithm and software written in C++ that is currently being submitted for a patent application with the USPTO",
@@ -47,7 +47,7 @@
     {
         "title": "North Campus Engineering Club Website",
         "type": "",
-        "date": "Aug 2014 – May 2018",
+        "date": "Aug 2014 - May 2018",
         "location": "Wake Technical Community College, North Carolina, United States",
         "descriptions": [
             "Led a team of software developers to improve efficiency and flow of information for the club.",
@@ -58,29 +58,29 @@
     {
         "title": "Trebuchet Firing Mechanism Python",
         "type": "",
-        "date": "Aug 2014 – May 2018",
+        "date": "Aug 2014 - May 2018",
         "location": "Wake Technical Community College, North Carolina, United States",
         "descriptions": [
             "Developed and deployed a firing mechanism within a trebuchet using Raspberry Pi and IoT devices.",
-            "Increased safety of work environment when outfitting the trebuchet with the mechanism using both software and hardware techniques.",
+            "Increased safety of work environment when outfitting the trebuchet with the mechanism using both software and hardware techniques."
         ]
     },
     {
         "title": "North Carolina State University",
         "type": "Intern",
-        "date": "May 2017 – Aug 2017",
+        "date": "May 2017 - Aug 2017",
         "location": "North Carolina State University, North Carolina, United States",
         "descriptions": [
             "Developed a software platform to enable the monitoring of dangerous Volatile Organic Compounds (V.O.C).",
             "Created real-time multi-threaded application which gathered and processed data from multiple CMUT gas sensors.",
             "Established live graphing over multiple devices using various file transfer protocols.",
-            "Managed and maintained multiple BLE (Bluetooth Low Energy) connections.",
+            "Managed and maintained multiple BLE (Bluetooth Low Energy) connections."
         ]
     },
     {
         "title": "Cisco DevNet APIC-EM",
         "type": "",
-        "date": "Aug 2016 – Feb 2017",
+        "date": "Aug 2016 - Feb 2017",
         "location": "Raleigh-Durham, North Carolina, United States",
         "descriptions": [
             "Completed Cisco's DevNet APIC-EM Northbound REST API learning labs.",

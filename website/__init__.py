@@ -24,7 +24,7 @@ def get_github_repos():
 
 def get_career_json(): 
     """ Get the career JSON file that holds all information of my career."""
-    with open('career.json') as current_file: 
+    with open('website/resources/career.json', 'r') as current_file: 
         data = json.loads(current_file.read())
         return data
 
