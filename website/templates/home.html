@@ -12,11 +12,12 @@
     <div class="jumbotron pl-5">
         <h1 class="display-4 text-center" id="experience">Experience</h1>
         <p class="lead text-center">Where my inspiration and hobbies are brought to life.</p>
-        <hr class="my-4">
     </div>
 
     <div class="row">
-        <h1>Career</h1>
+        <div class="col">
+            <h2>Career</h2>
+        </div>
     </div>
 
     {% for career in careers %}
@@ -39,8 +40,11 @@
     </div>
     {% endfor %}
 
+    <hr />
     <div class="row">
-        <h1>Education</h1>
+        <div class="col">
+            <h2>Education</h2>
+        </div>
     </div>
 
     <div class="row education">
@@ -76,7 +80,7 @@
     <div class="jumbotron pl-5">
         <h1 class="display-4 text-center" id="skills">Skills</h1>
         <p class="lead text-center">Where my inspiration and hobbies are brought to life.</p>
-        <hr class="my-4">
+
     </div>
 
     <div class="row">
@@ -135,7 +139,7 @@
             </table>
         </div>
     </div>
-    <hr class="my-4">
+    <hr />
     <div class="row">
         <div class="col-sm-12">
             <h2><b>Tools</b></h2>
@@ -195,7 +199,7 @@
     <div class="jumbotron pl-5">
         <h1 class="display-4 text-center" id="projects">Projects</h1>
         <p class="lead text-center">Where my inspiration and hobbies are brought to life.</p>
-        <hr class="my-4">
+
     </div>
     <div class="row">
         <div class="col-sm-12">
@@ -219,7 +223,7 @@
     <div class="row">
         <div class="col-sm-12 text-center mt-3 mb-5">
             {% if github_user_json|length == 0 %}
-            <a style="padding: 1em 2em; border: 2px solid black; border-radius: .5em;" href="{{ url_for('github')}}">
+            <a class="button_link" href="{{ url_for('github')}}">
                 ...and many more!
             </a>
             {% else %}
@@ -233,7 +237,7 @@
     <div class="jumbotron pl-5">
         <h1 class="display-4 text-center" id="contact">Contact</h1>
         <p class="lead text-center">Where my inspiration and hobbies are brought to life.</p>
-        <hr class="my-4">
+
     </div>
 
     <div class="row text-center">

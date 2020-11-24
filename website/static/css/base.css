@@ -12,25 +12,40 @@ html {
 }
 
 body {
-    /* background-color: #292929; */
+    /* background-color: #565656; */
     /* background-color: #1b1b1d; */
-    background-color: white;
-    color: black;
+    background-color: #222222;
+    color: white;
     font-size: x-large;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #E24E42;
 }
 
 a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 a:hover {
     text-decoration: none;
-    color: #f1b24a;
+    color: #E24E42;
+    border-color: #E24E42;
 }
 
 p, ul li {
     font-size: 1em;
+}
+
+hr {
+    border-color: white;
+}
+
+.button_link {
+    padding: 1em 2em;
+    border: 2px solid white;
+    border-radius: .5em;
 }
 
 .table td, .table th {
@@ -38,9 +53,9 @@ p, ul li {
 }
 
 .navbar-toggler, .navbar-toggler-icon {
-    background-color: #292929;
+    background-color: #008F95;
     border: none;
-    color: black;
+    color: white;
 }
 
 .navbar-toggler-icon {
@@ -48,35 +63,39 @@ p, ul li {
 }
 
 .navbar-toggler-icon:hover {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(241, 178, 74, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(226, 78, 66, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 .navbar-brand, .nav-link {
-    color: black;
+    color: white;
 }
 
 .navbar-brand:hover, .nav-link:hover {
-    color: #f1b24a;
+    color: #E24E42;
 }
 
 .jumbotron {
-    background-color: black;
+    border: 1px dotted #008F95;
+    background-color: rgba(0, 0, 0, 0);
     color: white;
 }
 
 .jumbotron h1, .jumbotron h4 {
     font-size: 3em;
     padding: 5% 0%;
+    color: white;
 }
 
 .jumbotron h2 {
     font-size: 2em;
     padding: 5% 0%;
+    color: white;
 }
 
 .jumbotron h3 {
     font-size: 1.5em;
     padding: 5% 0%;
+    color: white;
 }
 
 .introjumbo {
@@ -92,6 +111,7 @@ p, ul li {
 .introjumbo h2 {
     padding-top: 1%;
     font-size: 2em;
+    color: white;
 }
 
 .career, .education {
@@ -115,26 +135,23 @@ p, ul li {
     width: 1.3em;
 }
 
-.career_header {}
-
 .career_description {
-    background-color: #292929;
     border-radius: .5em;
-    color: white;
-    padding: .5em 1.5em;
+    padding: .5em 5em;
 }
 
 .skill_title {
     min-width: 5em;
+    color: white;
 }
 
 .skill_stars {
     min-width: 5em;
+    color: #E24E42;
 }
 
 .parallax {
     background-image: url("/static/images/pexels-computer.jpg");
-    /* height: 100%; */
     width: 100%;
     height: 95vh;
     padding: 0px;
@@ -152,12 +169,12 @@ p, ul li {
 #pageLocation {
     position: fixed;
     top: 5em;
-    left: 2em; 
-    background-color: #292929;
+    left: 2em;
+    background-color: #E24E42;
     z-index: 1;
 }
 
 .list-group-item.active {
-    background-color: #292929;
-    border-color: #292929;
+    background-color: #E24E42;
+    border-color: #E24E42;
 }
