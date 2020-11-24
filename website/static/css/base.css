@@ -52,10 +52,15 @@ hr {
     border: none;
 }
 
+.navbar {
+    background-color: white;
+    color: black;
+}
+
 .navbar-toggler, .navbar-toggler-icon {
     background-color: #008F95;
     border: none;
-    color: white;
+    color: black;
 }
 
 .navbar-toggler-icon {
@@ -66,36 +71,12 @@ hr {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(226, 78, 66, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
-.navbar-brand, .nav-link {
-    color: white;
+.navbar-brand, .nav-link, .nav-item a{
+    color: black;
 }
 
 .navbar-brand:hover, .nav-link:hover {
     color: #E24E42;
-}
-
-.jumbotron {
-    border: 1px dotted #008F95;
-    background-color: rgba(0, 0, 0, 0);
-    color: white;
-}
-
-.jumbotron h1, .jumbotron h4 {
-    font-size: 3em;
-    padding: 5% 0%;
-    color: white;
-}
-
-.jumbotron h2 {
-    font-size: 2em;
-    padding: 5% 0%;
-    color: white;
-}
-
-.jumbotron h3 {
-    font-size: 1.5em;
-    padding: 5% 0%;
-    color: white;
 }
 
 .introjumbo {
@@ -111,7 +92,20 @@ hr {
 .introjumbo h2 {
     padding-top: 1%;
     font-size: 2em;
+    color: black; 
+}
+
+.jumbotron {
+    border: 1px dotted #008F95;
+    background-color: rgba(0, 0, 0, 0);
     color: white;
+    margin-top: 8em;
+}
+
+.jumbotron h1, .jumbotron h4 {
+    font-size: 3em;
+    padding: 5% 0%;
+    color: #008F95;
 }
 
 .career, .education {

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="row mt-2 parallax" style="min-height: 95vh;">
+<div class="row parallax" style="min-height: 95vh;">
     <div class="col text-center introjumbo">
         <h2>Derek Santos</h2>
         <h3 class="w-75">A software developer with a passion for automation and orchestration.</h3>
@@ -222,15 +222,13 @@
     </div>
     <div class="row">
         <div class="col-sm-12 text-center mt-3 mb-5">
-            {% if github_user_json|length == 0 %}
             <a class="button_link" href="{{ url_for('github')}}">
+                {% if github_user_json|length == 0 %}
                 ...and many more!
-            </a>
-            {% else %}
-            <a style="padding: 1em 2em; border: 2px solid black; border-radius: .5em;" href="{{ url_for('github')}}">
+                {% else %}
                 ...and {{ github_user_json['public_repos'] }} more on github!
+                {% endif %}
             </a>
-            {% endif %}
         </div>
     </div>
 
@@ -257,6 +255,13 @@
         </div>
     </div>
     <div class="row" id="justsomespace">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <br />
         <br />
         <br />
