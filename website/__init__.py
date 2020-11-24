@@ -9,6 +9,7 @@ import requests
 GITHUB_REPO_LIST_URL = 'https://api.github.com/users/santosderek/repos?page={number}'
 GITHUB_USER_URL = 'https://api.github.com/users/santosderek'
 
+
 class GithubRequestError(Exception):
     pass
 
@@ -22,11 +23,20 @@ def get_github_repos():
 
     return returned_value.json()
 
-def get_career_json(): 
+
+def get_career_json():
     """ Get the career JSON file that holds all information of my career."""
-    with open('website/resources/career.json', 'r') as current_file: 
+    with open('website/resources/career.json', 'r') as current_file:
         data = json.loads(current_file.read())
         return data
+
+
+def get_education_json():
+    """ Get the career JSON file that holds all information of my career."""
+    with open('website/resources/education.json', 'r') as current_file:
+        data = json.loads(current_file.read())
+        return data
+
 
 def create_app():
     app = Flask(__name__)
@@ -93,6 +103,7 @@ def create_app():
 
         # Get career info from JSON file
         careers = get_career_json()
+        educations = get_education_json()
 
         return render_template('home.html',
                                technologies_left=technologies_left,
@@ -100,7 +111,8 @@ def create_app():
                                tools_left=tools_left,
                                tools_right=tools_right,
                                github_user_json=github_user_json,
-                               careers=careers)
+                               careers=careers,
+                               educations=educations)
 
     @app.route('/github', methods=["GET"])
     def github():

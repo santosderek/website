@@ -47,35 +47,28 @@
         </div>
     </div>
 
+    {% for education in educations %}
     <div class="row education">
-        <div class="col-sm-12 col-md-6">
-            <h3>University of North Carolina - Charlotte</h3>
-            <p>2018 - 2020</p>
+        <div class="col-sm-12 col-lg-4">
+            <h3>{{education['title']}}</h3>
+            <p>{{education['date']}}</p>
         </div>
-        <div class="col-sm-12 col-md-6">
-            <p><b>Bachelor of Science - BS, Computer Science</b></p>
-        </div>
-    </div>
-
-    <div class="row education">
-        <div class="col-12">
-            <h3>Wake Technical Community College</h3>
-        </div>
-        <div class="col-sm-12 col-md-6">
-            <p>2014 - 2018</p>
-
-        </div>
-        <div class="col-sm-12 col-md-6">
-            <p><b>Associate of Engineering, Computer Science</b></p>
-            <p>Inducted Member of the National Society of Leadership and Success</p>
-            <p>Relevant Courses and Technologies:</p>
+        <div class="col-sm-12 col-lg-8 education_description">
+            <p><b>{{education['degree']}}</b></p>
+            <p><em>Relevant Courses:</em></p>
             <ul>
-                <li>C++ Programming</li>
-                <li>Java Programming</li>
-                <li>Into to Progamming and Logic</li>
+                {% for course in education['relevantCourses'] %}
+                <li>{{course}}</li>
+                {% endfor %}
             </ul>
+
+            {% for addition in education['additional'] %}
+            <p>{{addition}}</p>
+            {% endfor %}
         </div>
     </div>
+    {% endfor %}
+
 
     <div class="jumbotron pl-5">
         <h1 class="display-4 text-center" id="skills">Skills</h1>

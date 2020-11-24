@@ -129,7 +129,7 @@ hr {
     width: 1.3em;
 }
 
-.career_description {
+.career_description, .education_description {
     border-radius: .5em;
     padding: .5em 5em;
 }

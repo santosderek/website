@@ -1,0 +1,41 @@
+[
+    {
+        "title": "University of North Carolina - Charlotte",
+        "date": "2018 - 2021",
+        "degree": "Bachelor of Science - BS, Computer Science",
+        "relevantCourses": [
+            "Introduction to Computer Science I",
+            "Introduction to Computer Science I",
+            "Introduction to Computer Science II",
+            "Programming Lab II",
+            "Logic and Algorithms",
+            "Data Structures and Algorithms",
+            "Introduction Operating Systems & Networking",
+            "Software Engineering",
+            "Introduction to Computer Architecture",
+            "Computers & Their Impact on Society",
+            "Software Development Projects",
+            "Human-Centered Design",
+            "Web App Design and Development",
+            "Introduction to Info Security & Privacy",
+            "Software Requirements & Project Management",
+            "Software Architecture & Design",
+            "Network Based Application Development",
+            "Secure Programming Penetration Testing"
+        ],
+        "additional": []
+    },
+    {
+        "title": "Wake Technical Community College",
+        "date": "2014 - 2018",
+        "degree": "Associate of Engineering, Computer Science",
+        "relevantCourses": [
+            "C++ Programming",
+            "Java Programming",
+            "Into to Progamming and Logic"
+        ],
+        "additional": [
+            "Inducted Member of the National Society of Leadership and Success"
+        ]
+    }
+]
