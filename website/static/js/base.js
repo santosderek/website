@@ -7,7 +7,7 @@ window.onload = function () {
     $("#pageLocation").hide(); 
     var topOfOthDiv = $("#experience").offset().top;
     $(window).scroll(function() {
-        if($(window).scrollTop() > topOfOthDiv && $(document).width() > 1000) {
+        if($(window).scrollTop() > topOfOthDiv && $(document).width() > 1400) {
             $("#pageLocation").show(); 
         }
         else{
