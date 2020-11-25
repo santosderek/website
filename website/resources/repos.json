@@ -1,33 +1,32 @@
 [
     {
-        "title" : "Vitality",
-        "subtitle" : "A workout companion app focused on managing user fitness and trainer information.",
-        "description" : "",
-        "url" : "https://github.com/santosderek/Vitality"
+        "title": "Vitality",
+        "subtitle": "A workout companion app focused on managing user fitness and trainer information.",
+        "description": "",
+        "url": "https://github.com/santosderek/Vitality"
     },
     {
-        "title" : "Imgur to Folder",
-        "subtitle" : "Download Imgur albums and images to desired folder.",
-        "description" : "",
-        "url" : "https://github.com/santosderek/Imgur-To-Folder"
+        "title": "Imgur to Folder",
+        "subtitle": "Download Imgur albums and images to desired folder.",
+        "description": "",
+        "url": "https://github.com/santosderek/Imgur-To-Folder"
     },
     {
-        "title" : "Fruit Fly Tracking",
-        "subtitle" : "An image processing program to time keep the effects of different gasses on fruit flies.",
-        "description" : "",
-        "url" : "https://github.com/santosderek/Fruit-Flies-Tracking"
+        "title": "Fruit Fly Tracking",
+        "subtitle": "An image processing program to time keep the effects of different gasses on fruit flies.",
+        "description": "",
+        "url": "https://github.com/santosderek/Fruit-Flies-Tracking"
     },
     {
-        "title" : "Flask-Kasa",
-        "subtitle" : "Control Kasa lights with webooks to dim or turn off lights within a room while watching movies through plex.",
-        "description" : "",
-        "url" : "https://github.com/santosderek/Flask-Kasa"
+        "title": "Flask-Kasa",
+        "subtitle": "Control Kasa lights with webooks to dim or turn off lights within a room while watching movies through plex.",
+        "description": "",
+        "url": "https://github.com/santosderek/Flask-Kasa"
     },
     {
-        "title" : "santosderek.com",
-        "subtitle" : "This website is completely made by me. It was made with Python, Flask, Nginx, and Docker.",
-        "description" : "",
-        "url" : "https://santosderek.com"
+        "title": "santosderek.com",
+        "subtitle": "This website is completely made by me. It was made with Python, Flask, Nginx, and Docker.",
+        "description": "",
+        "url": "https://santosderek.com"
     }
-    
 ]
