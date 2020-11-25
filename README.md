@@ -1,3 +1,5 @@
+![](website/static/images/santosderek.png)
+
 # My personal website.
 
 https://santosderek.com
