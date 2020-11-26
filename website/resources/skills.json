@@ -49,14 +49,6 @@
             5
         ],
         [
-            "Github",
-            5
-        ],
-        [
-            "Gitlab",
-            5
-        ],
-        [
             "Elasticsearch",
             3
         ],
@@ -99,6 +91,10 @@
         [
             "Continuous integration",
             4
+        ],
+        [
+            "JQuery",
+            4
         ]
     ],
     "tools": [
@@ -133,6 +129,14 @@
         [
             "VMWare ESXI",
             4
+        ],
+        [
+            "Github",
+            5
+        ],
+        [
+            "Gitlab",
+            5
         ],
         [
             "Github Actions",
