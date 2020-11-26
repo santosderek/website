@@ -1,7 +1,10 @@
 import pytest
 from flask import request, url_for
-from website import create_app
-from website import get_resource_json
+from website import (
+    create_app,
+    get_resource_json,
+    get_github_user
+)
 
 
 @pytest.fixture
@@ -73,3 +76,10 @@ def test_get_resource_json():
 
     returned_value = get_resource_json('skills.json')
     assert len(returned_value) > 0
+
+
+def test_get_github_user():
+    """Tests whether my github user data can be retrieved"""
+
+    returned_value = get_github_user()
+    assert returned_value['login'] == 'santosderek'
