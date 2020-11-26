@@ -95,6 +95,10 @@
         [
             "MVC Pattern",
             4
+        ],
+        [
+            "Continuous integration",
+            4
         ]
     ],
     "tools": [
@@ -128,6 +132,10 @@
         ],
         [
             "VMWare ESXI",
+            4
+        ],
+        [
+            "Github Actions",
             4
         ]
     ]
