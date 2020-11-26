@@ -63,7 +63,7 @@ def create_app():
         github_user_json = {}
         try:
             github_user_json = get_github_user()
-        except GithubRequestError as e:
+        except GithubRequestError:
             github_user_json = {}
 
         return render_template('home.html',
