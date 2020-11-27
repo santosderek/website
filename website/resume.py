@@ -14,14 +14,48 @@ def generate_document(location = DOWNLOAD_LOCATION):
 
     subtitle = document.add_heading(
         'santosderek.com | Raleigh NC, 27603 | santos.jon.derek@gmail.com')
-
+    
+    # Technical Skills Section
     document.add_heading('Technical Skills', level=1)
-
     technologies = document.add_paragraph('')
     technologies.add_run('Technologies').bold = True
+    skills_json = get_resource_json('skills.json')
+    technology_list = skills_json['technologies']
+    technology_list.sort(key=lambda x: x[1], reverse=True)
+    for pos, item in enumerate(technology_list):
+        if pos == 0: 
+            technologies.add_run(': ').bold = True
+        else: 
+            technologies.add_run(', ')
+        technologies.add_run('{}'.format(item[0]))
+    tools = document.add_paragraph('')
+    tools.add_run('Tools').bold = True
+    tools_list = skills_json['tools']
+    tools_list.sort(key=lambda x: x[1], reverse=True)
+    for pos, item in enumerate(tools_list):
+        if pos == 0: 
+            tools.add_run(': ').bold = True
+        else: 
+            tools.add_run(', ')
+        tools.add_run('{}'.format(item[0]))
+    
+    # Projects Section
+    document.add_heading('Projects', level=1)
+    projects = get_resource_json("career.json")
 
-    for item in get_resource_json('skills.json'):
-        technologies.add_run('{}, '.format(item))
+    for project in projects: 
+        project_paragraph = document.add_paragraph('')
+        project_paragraph.add_run('{}'.format(project['title'])).bold = True
+        for pos, tech in enumerate(project['technologies']):
+            if pos == 0: 
+                project_paragraph.add_run(',')
+            project_paragraph.add_run(' {}'.format(tech))
+
+        project_paragraph.add_run(' {}\n'.format(project['date'])).italic = True
+    
+        # Project bullet points - Has to be on its own paragraph
+        for bullet in project['descriptions']: 
+            document.add_paragraph(bullet, style='List Continue')
 
     document.save(DOWNLOAD_LOCATION)
 
