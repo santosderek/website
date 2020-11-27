@@ -1,7 +1,10 @@
 """Generating a DOCX and converting it to .pdf through python"""
 from docx import Document
-from os.path import join
-DOWNLOAD_LOCATION = r'C:\Users\derek\Desktop\Derek Santos - Resume.docx'
+from os.path import expanduser, join
+
+from .website import get_resource_json
+
+DOWNLOAD_LOCATION = join(expanduser('~'), 'Derek Santos - Resume.docx')
 
 
 def generate_document():
@@ -14,6 +17,12 @@ def generate_document():
         'santosderek.com | Raleigh NC, 27603 | santos.jon.derek@gmail.com')
 
     document.add_heading('Technical Skills', level=1)
+
+    technologies = document.add_paragraph('')
+    technologies.add_run('Technologies').bold = True
+
+    for item in get_resource_json():
+        technologies.add_run('{}, '.format(item))
 
     document.save(DOWNLOAD_LOCATION)
 
