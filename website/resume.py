@@ -57,6 +57,18 @@ def generate_document(location = DOWNLOAD_LOCATION):
         for bullet in project['descriptions']: 
             document.add_paragraph(bullet, style='List Continue')
 
+
+    # Leadership
+
+    document.add_heading('Leadership' level=1)
+    leadership_paragraph = document.add_paragraph('')
+    for item in get_resource_json('leadership.json'):
+        leadership_paragraph.add_run(item['title']).bold=True
+        leadership_paragraph.add_run(item['date'])
+        document.add_paragraph(item['location'])
+        for line in item['description']:
+            leadership_paragraph.add_run(line, style='List Continue')
+
     document.save(DOWNLOAD_LOCATION)
 
 
