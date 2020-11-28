@@ -39,23 +39,23 @@ def generate_document(location=DOWNLOAD_LOCATION):
             tools.add_run(', ')
         tools.add_run('{}'.format(item[0]))
 
-    # Projects Section
-    document.add_heading('Projects', level=1)
-    projects = get_resource_json("career.json")
+    # Experiences Section
+    document.add_heading('Experience', level=1)
+    experiences = get_resource_json("career.json")
 
-    for project in projects:
-        project_paragraph = document.add_paragraph('')
-        project_paragraph.add_run('{}'.format(project['title'])).bold = True
-        for pos, tech in enumerate(project['technologies']):
+    for experience in experiences:
+        experience_paragraph = document.add_paragraph('')
+        experience_paragraph.add_run('{}'.format(experience['title'])).bold = True
+        for pos, tech in enumerate(experience['technologies']):
             if pos == 0:
-                project_paragraph.add_run(',')
-            project_paragraph.add_run(' {}'.format(tech))
+                experience_paragraph.add_run(',')
+            experience_paragraph.add_run(' {}'.format(tech))
 
-        project_paragraph.add_run(
-            ' {}\n'.format(project['date'])).italic = True
+        experience_paragraph.add_run(
+            ' {}\n'.format(experience['date'])).italic = True
 
-        # Project bullet points - Has to be on its own paragraph
-        for bullet in project['descriptions']:
+        # experience bullet points - Has to be on its own paragraph
+        for bullet in experience['descriptions']:
             document.add_paragraph(bullet, style='List Continue')
 
     # Leadership
