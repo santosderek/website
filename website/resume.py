@@ -13,7 +13,7 @@ def generate_document(location=DOWNLOAD_LOCATION):
     document.add_heading('Derek Santos', 0)
 
     subtitle = document.add_heading(
-        'santosderek.com | Raleigh NC, 27603 | santos.jon.derek@gmail.com')
+        'santosderek.com | Raleigh, NC | santos.jon.derek@gmail.com')
 
     # Technical Skills Section
     document.add_heading('Technical Skills', level=1)
