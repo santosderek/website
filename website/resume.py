@@ -6,7 +6,7 @@ from . import get_resource_json
 DOWNLOAD_LOCATION = join(expanduser('~'), 'Derek Santos - Resume.docx')
 
 
-def generate_document(location = DOWNLOAD_LOCATION):
+def generate_document(location=DOWNLOAD_LOCATION):
 
     document = Document()
 
@@ -14,7 +14,7 @@ def generate_document(location = DOWNLOAD_LOCATION):
 
     subtitle = document.add_heading(
         'santosderek.com | Raleigh NC, 27603 | santos.jon.derek@gmail.com')
-    
+
     # Technical Skills Section
     document.add_heading('Technical Skills', level=1)
     technologies = document.add_paragraph('')
@@ -23,9 +23,9 @@ def generate_document(location = DOWNLOAD_LOCATION):
     technology_list = skills_json['technologies']
     technology_list.sort(key=lambda x: x[1], reverse=True)
     for pos, item in enumerate(technology_list):
-        if pos == 0: 
+        if pos == 0:
             technologies.add_run(': ').bold = True
-        else: 
+        else:
             technologies.add_run(', ')
         technologies.add_run('{}'.format(item[0]))
     tools = document.add_paragraph('')
@@ -33,41 +33,49 @@ def generate_document(location = DOWNLOAD_LOCATION):
     tools_list = skills_json['tools']
     tools_list.sort(key=lambda x: x[1], reverse=True)
     for pos, item in enumerate(tools_list):
-        if pos == 0: 
+        if pos == 0:
             tools.add_run(': ').bold = True
-        else: 
+        else:
             tools.add_run(', ')
         tools.add_run('{}'.format(item[0]))
-    
+
     # Projects Section
     document.add_heading('Projects', level=1)
     projects = get_resource_json("career.json")
 
-    for project in projects: 
+    for project in projects:
         project_paragraph = document.add_paragraph('')
         project_paragraph.add_run('{}'.format(project['title'])).bold = True
         for pos, tech in enumerate(project['technologies']):
-            if pos == 0: 
+            if pos == 0:
                 project_paragraph.add_run(',')
             project_paragraph.add_run(' {}'.format(tech))
 
-        project_paragraph.add_run(' {}\n'.format(project['date'])).italic = True
-    
-        # Project bullet points - Has to be on its own paragraph
-        for bullet in project['descriptions']: 
-            document.add_paragraph(bullet, style='List Continue')
+        project_paragraph.add_run(
+            ' {}\n'.format(project['date'])).italic = True
 
+        # Project bullet points - Has to be on its own paragraph
+        for bullet in project['descriptions']:
+            document.add_paragraph(bullet, style='List Continue')
 
     # Leadership
 
-    document.add_heading('Leadership' level=1)
-    leadership_paragraph = document.add_paragraph('')
+    document.add_heading('Leadership', level=1)
     for item in get_resource_json('leadership.json'):
-        leadership_paragraph.add_run(item['title']).bold=True
-        leadership_paragraph.add_run(item['date'])
+        leadership_paragraph = document.add_paragraph('')
+        leadership_paragraph.add_run(item['title']).bold = True
+        leadership_paragraph.add_run(' ' + item['date']).italic = True
         document.add_paragraph(item['location'])
         for line in item['description']:
-            leadership_paragraph.add_run(line, style='List Continue')
+            document.add_paragraph(line, style='List Continue')
+
+    # Education
+    document.add_heading('Education', level=1)
+    for item in get_resource_json('education.json'):
+        title_line = document.add_paragraph('')
+        title_line.add_run(item['title']).bold = True
+        title_line.add_run(' ' + item['date']).italic = True
+        document.add_paragraph(item['degree'])
 
     document.save(DOWNLOAD_LOCATION)
 
