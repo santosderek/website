@@ -10,8 +10,8 @@ from os.path import expanduser, join
 from . import get_resource_json
 
 DOWNLOAD_LOCATION = join(expanduser('~'), 'Derek Santos - Resume.docx')
-DEFAULT_SPACING = Cm(0.01)
-DEFAULT_FONT_NAME = "Crimson Text"
+DEFAULT_SPACING = Cm(0.03)
+DEFAULT_FONT_NAME = "Calibri Light"
 DEFAULT_FONT_SIZE_TITLE = Pt(20)
 DEFAULT_FONT_SIZE_SUBTITLE = Pt(10)
 DEFAULT_FONT_SIZE_HEADING = Pt(12)
@@ -67,12 +67,12 @@ def generate_document(location=DOWNLOAD_LOCATION):
     formatting.space_after = DEFAULT_SPACING
 
     # Style -> Subtitle
-    style = document.styles.add_style(
-        'ResumeSubtitle', WD_STYLE_TYPE.PARAGRAPH)
+    style = document.styles.add_style('ResumeSubtitle',
+                                      WD_STYLE_TYPE.PARAGRAPH)
     font = style.font
     font.name = DEFAULT_FONT_NAME
     font.size = DEFAULT_FONT_SIZE_SUBTITLE
-    font.color.rgb = RGBColor(0, 0, 0)
+    font.color.rgb = RGBColor(128, 128, 128)
     formatting = style.paragraph_format
     formatting.alignment = WD_ALIGN_PARAGRAPH.CENTER
     formatting.space_before = DEFAULT_SPACING
@@ -138,7 +138,7 @@ def generate_document(location=DOWNLOAD_LOCATION):
             technologies.add_run(', ')
         technologies.add_run('{}'.format(item[0]))
     # Tools
-    document.add_paragraph('').add_run('Tools:').bold = True
+    document.add_paragraph('').add_run('Tools').bold = True
     tools = document.add_paragraph('')
     tools_list = skills_json['tools']
     tools_list.sort(key=lambda x: x[1], reverse=True)
