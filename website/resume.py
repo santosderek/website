@@ -5,7 +5,6 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.oxml.shared import OxmlElement
 from docx.oxml.ns import qn
 from docx.shared import Pt, RGBColor, Cm, Inches
-
 from os.path import expanduser, join
 from . import get_resource_json
 
@@ -15,8 +14,8 @@ DEFAULT_FONT_NAME = "Calibri Light"
 DEFAULT_FONT_COLOR = RGBColor(0, 0, 0)
 DEFAULT_FONT_SIZE_TITLE = Pt(18)
 DEFAULT_FONT_SIZE_SUBTITLE = Pt(8)
-DEFAULT_FONT_SIZE_HEADING = Pt(10)
-DEFAULT_FONT_SIZE_TEXT = Pt(8)
+DEFAULT_FONT_SIZE_HEADING = Pt(9)
+DEFAULT_FONT_SIZE_TEXT = Pt(7)
 DEFAULT_TOP_MARGIN_LENGTH = Cm(1)
 DEFAULT_BOTTOM_MARGIN_LENGTH = Cm(1)
 DEFAULT_LEFT_MARGIN_LENGTH = Inches(.75)
@@ -142,15 +141,17 @@ def experience(document):
     experiences = get_resource_json("career.json")
     for experience in experiences:
         experience_paragraph = document.add_paragraph('')
+        experience_paragraph.add_run(' {}  '.format(experience['date']),
+                                     'Emphasis').bold = True
         experience_paragraph.add_run(
-            '{}'.format(experience['title'])).bold = True
+            '{}  '.format(experience['title'])).bold = True
+
         for pos, tech in enumerate(experience['technologies']):
             if pos != 0:
                 experience_paragraph.add_run(',', 'Emphasis')
             subtext = experience_paragraph.add_run(' {}'.format(tech),
                                                    'Emphasis')
-        experience_paragraph.add_run(' {}'.format(experience['date']),
-                                     'Emphasis').bold = True
+
         # experience bullet points - Has to be on its own paragraph
         for bullet in experience['descriptions']:
             document.add_paragraph(bullet, style='List Bullet')
@@ -163,11 +164,12 @@ def leadership(document):
     insertHR(head)
     for item in get_resource_json('leadership.json'):
         leadership_paragraph = document.add_paragraph('')
-        leadership_paragraph.add_run(item['title']).bold = True
-        leadership_paragraph.add_run(' ' + item['location'],
-                                     'Emphasis')
-        date = leadership_paragraph.add_run(' ' + item['date'],
+        date = leadership_paragraph.add_run('{}  '.format(item['date']),
                                             'Emphasis')
+        leadership_paragraph.add_run(item['title']).bold = True
+        leadership_paragraph.add_run(' {} '.format(item['location']),
+                                     'Emphasis')
+
         date.italic = True
         date.bold = True
         for line in item['description']:
@@ -180,10 +182,12 @@ def education(document):
                                   style='ResumeHeader')
     insertHR(head)
     for item in get_resource_json('education.json'):
+        
         title_line = document.add_paragraph('')
-        title_line.add_run(item['title']).bold = True
-        date = title_line.add_run(' ' + item['date'],
+        date = title_line.add_run('{}  '.format(item['date']),
                                   'Emphasis')
+        title_line.add_run(item['title']).bold = True
+        
         date.italic = True
         date.bold = True
         document.add_paragraph(item['degree'])
