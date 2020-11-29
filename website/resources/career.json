@@ -1,5 +1,24 @@
 [
     {
+        "title": "Vitality - Senior Project",
+        "type": "Internship",
+        "date": "Aug 2020 - Dec 2020",
+        "location": "Raleigh, North Carolina, United States",
+        "descriptions": [
+            "Managed and guided a team of six developers to create a trainer scheduling and physical workout management web application.",
+            "Embraced continuous integration with Github actions and unit testing while working with my team of developers.",
+            "Deployed using Docker with a microservice approach allowing the application to be scaled with demand.",
+            "The project was completed within three sprints of two-week intervals from design to proof of concept in six weeks."
+        ],
+        "technologies": [
+            "Python",
+            "Github Actions",
+            "Flask",
+            "Docker",
+            "Nginx"
+        ]
+    },
+    {
         "title": "Cisco Systems - Security Orchestration",
         "type": "Internship",
         "date": "May 2019 - Aug 2019",
@@ -68,7 +87,7 @@
         "date": "Aug 2014 - May 2018",
         "location": "Wake Technical Community College, North Carolina, United States",
         "descriptions": [
-            "Created an insect tracking algorithm and software written in C++ that is currently being submitted for a patent application with the USPTO",
+            "Created an insect tracking algorithm and software written in C++ that is currently being submitted for a patent application with the USPTO.",
             "Adopted advanced libraries such as Open Computer Vision (OpenCV), and Simple and Fast Multimedia Library (SFML).",
             "Reduced errors commonly found within biology lab experiments when analyzing fruit flies undergoing reactions of ethanol.",
             "Scheduled to succeed currently existing methods used in the biology labs."

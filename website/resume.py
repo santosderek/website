@@ -12,10 +12,11 @@ from . import get_resource_json
 DOWNLOAD_LOCATION = join(expanduser('~'), 'Derek Santos - Resume.docx')
 DEFAULT_SPACING = Cm(0.03)
 DEFAULT_FONT_NAME = "Calibri Light"
-DEFAULT_FONT_SIZE_TITLE = Pt(20)
-DEFAULT_FONT_SIZE_SUBTITLE = Pt(10)
-DEFAULT_FONT_SIZE_HEADING = Pt(12)
-DEFAULT_FONT_SIZE_TEXT = Pt(9)
+DEFAULT_FONT_COLOR = RGBColor(0, 0, 0)
+DEFAULT_FONT_SIZE_TITLE = Pt(18)
+DEFAULT_FONT_SIZE_SUBTITLE = Pt(8)
+DEFAULT_FONT_SIZE_HEADING = Pt(10)
+DEFAULT_FONT_SIZE_TEXT = Pt(8)
 DEFAULT_TOP_MARGIN_LENGTH = Cm(1)
 DEFAULT_BOTTOM_MARGIN_LENGTH = Cm(1)
 DEFAULT_LEFT_MARGIN_LENGTH = Inches(.75)
@@ -43,24 +44,13 @@ def insertHR(paragraph):
     pBdr.append(bottom)
 
 
-def generate_document(location=DOWNLOAD_LOCATION):
-    """Generate a word document based off the resource documents JSON"""
-    # Document Wide Formatting
-    document = Document()
-
-    sections = document.sections
-    for section in sections:
-        section.top_margin = DEFAULT_TOP_MARGIN_LENGTH
-        section.bottom_margin = DEFAULT_BOTTOM_MARGIN_LENGTH
-        section.left_margin = DEFAULT_LEFT_MARGIN_LENGTH
-        section.right_margin = DEFAULT_RIGHT_MARGIN_LENGTH
-
+def style_document(document):
     # Style -> Title
     style = document.styles.add_style('ResumeTitle', WD_STYLE_TYPE.PARAGRAPH)
     font = style.font
     font.name = DEFAULT_FONT_NAME
     font.size = DEFAULT_FONT_SIZE_TITLE
-    font.color.rgb = RGBColor(0, 0, 0)
+    font.color.rgb = DEFAULT_FONT_COLOR
     formatting = style.paragraph_format
     formatting.alignment = WD_ALIGN_PARAGRAPH.CENTER
     formatting.space_before = DEFAULT_SPACING
@@ -83,7 +73,7 @@ def generate_document(location=DOWNLOAD_LOCATION):
     font = style.font
     font.name = DEFAULT_FONT_NAME
     font.size = DEFAULT_FONT_SIZE_TEXT
-    font.color.rgb = RGBColor(0, 0, 0)
+    font.color.rgb = DEFAULT_FONT_COLOR
     formatting = style.paragraph_format
     formatting.space_before = DEFAULT_SPACING
     formatting.space_after = DEFAULT_SPACING
@@ -95,7 +85,7 @@ def generate_document(location=DOWNLOAD_LOCATION):
     font.name = DEFAULT_FONT_NAME
     font.size = DEFAULT_FONT_SIZE_HEADING
     font.bold = True
-    font.color.rgb = RGBColor(0, 0, 0)
+    font.color.rgb = DEFAULT_FONT_COLOR
     formatting = style.paragraph_format
     formatting.space_before = DEFAULT_SPACING
     formatting.space_after = DEFAULT_SPACING
@@ -105,7 +95,7 @@ def generate_document(location=DOWNLOAD_LOCATION):
     font = style.font
     font.name = DEFAULT_FONT_NAME
     font.size = DEFAULT_FONT_SIZE_TEXT
-    font.color.rgb = RGBColor(0, 0, 0)
+    font.color.rgb = DEFAULT_FONT_COLOR
     formatting = style.paragraph_format
     formatting.space_before = DEFAULT_SPACING
     formatting.space_after = DEFAULT_SPACING
@@ -118,12 +108,8 @@ def generate_document(location=DOWNLOAD_LOCATION):
     font.size = DEFAULT_FONT_SIZE_TEXT
     font.color.rgb = RGBColor(84, 84, 84)
 
-    # Title and sub-heading
-    document.add_paragraph('Derek Santos', style='ResumeTitle')
-    subtitle = document.add_paragraph('santosderek.com | Raleigh, NC | santos.jon.derek@gmail.com',
-                                      style='ResumeSubtitle')
 
-    # Technical Skills Section
+def technical_skills(document):
     head = document.add_paragraph('Technical Skills',
                                   style='ResumeHeader')
     insertHR(head)
@@ -137,6 +123,7 @@ def generate_document(location=DOWNLOAD_LOCATION):
         if pos != 0:
             technologies.add_run(', ')
         technologies.add_run('{}'.format(item[0]))
+
     # Tools
     document.add_paragraph('').add_run('Tools').bold = True
     tools = document.add_paragraph('')
@@ -147,7 +134,8 @@ def generate_document(location=DOWNLOAD_LOCATION):
             tools.add_run(', ')
         tools.add_run('{}'.format(item[0]))
 
-    # Experiences Section
+
+def experience(document):
     head = document.add_paragraph('Experience',
                                   style='ResumeHeader')
     insertHR(head)
@@ -167,6 +155,8 @@ def generate_document(location=DOWNLOAD_LOCATION):
         for bullet in experience['descriptions']:
             document.add_paragraph(bullet, style='List Bullet')
 
+
+def leadership(document):
     # Leadership
     head = document.add_paragraph('Leadership',
                                   style='ResumeHeader')
@@ -183,6 +173,8 @@ def generate_document(location=DOWNLOAD_LOCATION):
         for line in item['description']:
             document.add_paragraph(line, style='List Bullet')
 
+
+def education(document):
     # Education
     head = document.add_paragraph('Education',
                                   style='ResumeHeader')
@@ -195,6 +187,31 @@ def generate_document(location=DOWNLOAD_LOCATION):
         date.italic = True
         date.bold = True
         document.add_paragraph(item['degree'])
+
+
+def generate_document(location=DOWNLOAD_LOCATION):
+    """Generate a word document based off the resource documents JSON"""
+    # Document Wide Formatting
+    document = Document()
+
+    sections = document.sections
+    for section in sections:
+        section.top_margin = DEFAULT_TOP_MARGIN_LENGTH
+        section.bottom_margin = DEFAULT_BOTTOM_MARGIN_LENGTH
+        section.left_margin = DEFAULT_LEFT_MARGIN_LENGTH
+        section.right_margin = DEFAULT_RIGHT_MARGIN_LENGTH
+
+    style_document(document)
+
+    # Title and sub-heading
+    document.add_paragraph('Derek Santos', style='ResumeTitle')
+    subtitle = document.add_paragraph('santosderek.com | Raleigh, NC | santos.jon.derek@gmail.com',
+                                      style='ResumeSubtitle')
+
+    technical_skills(document)
+    experience(document)
+    leadership(document)
+    education(document)
 
     document.save(DOWNLOAD_LOCATION)
 
