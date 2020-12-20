@@ -1,5 +1,24 @@
 [
     {
+        "title": "Vitality - Senior Project",
+        "type": "Internship",
+        "date": "Aug 2020 - Dec 2020",
+        "location": "Raleigh, North Carolina, United States",
+        "descriptions": [
+            "Managed and guided a team of six developers to create a trainer scheduling and physical workout management web application.",
+            "Embraced continuous integration with Github actions and unit testing while working with my team of developers.",
+            "Deployed using Docker with a microservice approach allowing the application to be scaled with demand.",
+            "The project was completed within three sprints of two-week intervals from design to proof of concept in six weeks."
+        ],
+        "technologies": [
+            "Python",
+            "Github Actions",
+            "Flask",
+            "Docker",
+            "Nginx"
+        ]
+    },
+    {
         "title": "Cisco Systems - Security Orchestration",
         "type": "Internship",
         "date": "May 2019 - Aug 2019",
@@ -9,6 +28,13 @@
             "Developed a WebEx Teams bot and a custom application in Python to increase the productivity of the team.",
             "Created an automatic phishing remediation system using Python to help any user send emails to the application in order to flag and contain emails that may be a potential phishing attack.",
             "Mentored other interns in various programming and technical tasks."
+        ],
+        "technologies": [
+            "Python",
+            "Java",
+            "Cisco Firepower",
+            "Cisco ISE",
+            "Cisco Accent"
         ]
     },
     {
@@ -20,6 +46,26 @@
             "Created a software solution to assist cyber security experts parse thousands of security event logs from firewalls, Cisco Identity Service Engine (ISE) and Splunk servers.",
             "Assisted industry experts to implement, deploy, and troubleshoot Cisco Cisco Firepower Threat Defense (FTD), Cisco ASA, and Cisco ISE technologies on several Cisco customer engagements across the country.",
             "Taught Python frameworks and technologies to other fellow interns, that allowed them to parse and analyze incoming network traffic, as well as providing analytics and insights to other engineers and users."
+        ],
+        "technologies": [
+            "Python",
+            "Cisco Firepower",
+            "Cisco ISE"
+        ]
+    },
+    {
+        "title": "North Carolina State University ASSIST Internship",
+        "type": "Internship",
+        "date": "May 2017 - Aug 2017",
+        "location": "Raleigh, North Carolina, United States",
+        "descriptions": [
+            "Developed a software platform to enable the monitoring of dangerous Volatile Organic Compounds (V.O.C).",
+            "Created real-time multi-threaded application which gathered and processed data from multiple CMUT gas sensors.",
+            "Established live graphing over multiple devices using various file transfer protocols.",
+            "Managed and maintained multiple BLE (Bluetooth Low Energy) connections."
+        ],
+        "technologies": [
+            "Python"
         ]
     },
     {
@@ -30,6 +76,9 @@
         "descriptions": [
             "Developed Arduino programs to maintain and control multiple sensors, relays, and data during a five-hour launch to the stratosphere.",
             "All Arduino controlled subsystems are to withstand sub-zero temperatures of the stratosphere, while recording data from the attached sensors."
+        ],
+        "technologies": [
+            "C++"
         ]
     },
     {
@@ -38,10 +87,16 @@
         "date": "Aug 2014 - May 2018",
         "location": "Wake Technical Community College, North Carolina, United States",
         "descriptions": [
-            "Created an insect tracking algorithm and software written in C++ that is currently being submitted for a patent application with the USPTO",
+            "Created an insect tracking algorithm and software written in C++ that is currently being submitted for a patent application with the USPTO.",
             "Adopted advanced libraries such as Open Computer Vision (OpenCV), and Simple and Fast Multimedia Library (SFML).",
             "Reduced errors commonly found within biology lab experiments when analyzing fruit flies undergoing reactions of ethanol.",
             "Scheduled to succeed currently existing methods used in the biology labs."
+        ],
+        "technologies": [
+            "C++",
+            "Python",
+            "OpenCV",
+            "SFML"
         ]
     },
     {
@@ -53,28 +108,24 @@
             "Led a team of software developers to improve efficiency and flow of information for the club.",
             "Maintained announcements, important dates, and valuable information concerning ongoing projects throughout the club.",
             "Developed an online store for the Engineering Club to sell merchandise to individuals around the club environment."
+        ],
+        "technologies": [
+            "HTML",
+            "Nginx",
+            "CSS"
         ]
     },
     {
-        "title": "Trebuchet Firing Mechanism Python",
+        "title": "Trebuchet Firing Mechanism",
         "type": "",
-        "date": "Aug 2014 - May 2018",
+        "date": "Aug 2017 - May 2018",
         "location": "Wake Technical Community College, North Carolina, United States",
         "descriptions": [
             "Developed and deployed a firing mechanism within a trebuchet using Raspberry Pi and IoT devices.",
             "Increased safety of work environment when outfitting the trebuchet with the mechanism using both software and hardware techniques."
-        ]
-    },
-    {
-        "title": "North Carolina State University",
-        "type": "Intern",
-        "date": "May 2017 - Aug 2017",
-        "location": "North Carolina State University, North Carolina, United States",
-        "descriptions": [
-            "Developed a software platform to enable the monitoring of dangerous Volatile Organic Compounds (V.O.C).",
-            "Created real-time multi-threaded application which gathered and processed data from multiple CMUT gas sensors.",
-            "Established live graphing over multiple devices using various file transfer protocols.",
-            "Managed and maintained multiple BLE (Bluetooth Low Energy) connections."
+        ],
+        "technologies": [
+            "Python"
         ]
     },
     {
@@ -85,6 +136,9 @@
         "descriptions": [
             "Completed Cisco's DevNet APIC-EM Northbound REST API learning labs.",
             "Gained experience with APIC-EM and its RESTful APIs to create custom applications that could interact with the controller or add dynamic software defined networking (SDN) functionality."
+        ],
+        "technologies": [
+            "Rest APIs"
         ]
     }
 ]

@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Scrum Master - Senior Project",
+        "date": "Aug 2020 - Dec 2020",
+        "location": "University of North Carolina - Charlotte",
+        "description": [
+            "Managed and guided a team of six developers using the scrum agile framework."
+        ]
+    },
+    {
+        "title": "Lead Computer Science Advisor",
+        "date": "Aug 2016 - May 2018",
+        "location": "North WTCC Engineering Club",
+        "description": [
+            "Oversaw all computer science related activities currently taking place within the environment."
+        ]
+    },
+    {
+        "title": "Inducted Member of The National Society of Leadership and Success",
+        "date": "Aug 2016 - May 2018",
+        "location": "WTCC",
+        "description": [
+            "Identified and improved goals for group of peers to achieve long term personal success."
+        ]
+    }
+]

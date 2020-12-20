@@ -2,4 +2,5 @@ flask
 python-dotenv
 uwsgi
 requests
+python-docx
 pytest
