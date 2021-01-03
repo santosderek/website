@@ -2,26 +2,27 @@
 
 {% block content %}
 
-<div class="row">
-    <div class="col-sm-12 col-md-12 col-lg-12 m-3 text-center">
-        <h1>Vitality</h3>
-            <p>
-                An all in one platform allowing users to connect to nearby trainers, schedule meetings, share workouts,
-                and encourage healthy dieting.
-            </p>
+<div class="row mt-4">
+    <div class="col-sm-12 col-md-12 col-lg-12 mt-3 text-center">
+        <h1>Vitality</h1>
+        <p class="w-50">
+            An all in one platform allowing users to connect to nearby trainers, schedule meetings, share workouts,
+            and encourage healthy dieting.
+        </p>
     </div>
 </div>
 
-<div class="row">
-    <div class="col-sm-12 col-md-12 col-lg-12 m-3 text-center">
-        <h3>Mission</h3>
+<div class="row  mb-4">
+    <div class="col-sm-12 col-md-12 col-lg-12 mt-3 text-center">
+        <h2>Mission</h2>
     </div>
-    <div class="col-sm-12 col-md-6 col-lg-6 text-center">
-        <img src="{{ url_for('static', filename='images/vitality/FrontPage.png') }}" alt="Viality Front Page"
-            class="w-75 img-border">
-    </div>
-    <div class="col-sm-12 col-md-6 col-lg-6">
-        <p class="pl-3 pr-3 description">
+</div>
+
+<div class="row mb-4">
+    <div class="col-sm-12 col-md-12 text-center mission">
+        <img src="{{ url_for('static', filename='images/vitality/FrontPage.png') }}" alt="Viality Front Page">
+
+        <p class="text-center w-50 mt-4">
             A <b>free and centralized</b> web application that allows users to take charge of
             their health by connecting with real trainers, recieve personalized workouts, and guidance with dietary
             plans recommended to you. Users can also find gyms and recreation centers in your area, and ultimately
@@ -31,33 +32,72 @@
 </div>
 
 <div class="row">
-    <div class="col-sm-12 col-md-12 col-lg-12 m-3 text-center">
-        <h3>Features</h3>
+    <div class="col-sm-12 col-md-12 col-lg-12 mt-3 text-center">
+        <h2>Features</h2>
     </div>
-
-    <div class="col-sm-12 col-md-6 col-lg-6">
-        <p class="pl-3 pr-3 description">
-            <b>Invite and connect</b> with trainers near you, and AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        </p>
-    </div>
-    <div class="col-sm-12 col-md-6 col-lg-6 text-center">
-        <img src="{{ url_for('static', filename='images/vitality/ShowTrainers.png') }}" alt="Viality Front Page"
-            class="w-75 img-border">
-    </div>
-
-
 </div>
 
-<div class="row">
-    <div class="col-sm-12 col-md-12 col-lg-12 m-3 text-center">
-        <h3>Live Demo</h3>
+<div class="row mt-3">
+    <!-- Invite trainers near you -->
+    <div class="col-sm-12 col-md-6 text-center feature">
+        <img src="{{ url_for('static', filename='images/vitality/ShowTrainers.png') }}" alt="Viality Front Page"
+            class="w-75">
+
+        <p class="text-center w-75 pt-4">
+            <b>Invite and connect</b> with trainers near you by searching through our diverse set of trainers ready to
+            guide you through workouts. Search is based on username or full names, where a trainee can send an
+            invitation to connect.
+        </p>
     </div>
 
+    <!-- Search on a map for trainers near you -->
+    <div class="col-sm-12 col-md-6 text-center feature">
+        <img src="{{ url_for('static', filename='images/vitality/TrainersNearYou.png') }}" alt="Viality Front Page"
+            class="w-75">
+
+        <p class="text-center w-75 pt-4">
+            Integration with <b>Google Maps</b> allows trainees the ability to get a sense of the availability around
+            their area. Insipired by Tesla's Supercharger Map, trainees can select points within the map to view
+            trainer names around their area.
+        </p>
+    </div>
+
+    <!-- Create Events -->
+    <div class="col-sm-12 col-md-6 text-center feature">
+        <img src="{{ url_for('static', filename='images/vitality/CreateEvents.png') }}" alt="Viality Front Page"
+            class="w-75">
+
+        <p class="text-center w-75 pt-4">
+            <b>Schedule meetings</b> with trainers detailing specific workouts and meeting times to added trainers.
+        </p>
+    </div>
+
+    <!-- Get Recommended Diets -->
+    <div class="col-sm-12 col-md-6 text-center feature">
+        <img src="{{ url_for('static', filename='images/vitality/Diets.png') }}" alt="Viality Front Page" class="w-75">
+
+        <p class="text-center w-75 pt-4">
+            View diets from select categories through <b>Youtube recommendations</b> on diets and workouts.
+        </p>
+    </div>
+
+    <!-- Create, Search, View Workouts -->
+    <div class="col-sm-12 col-md-6 text-center feature">
+        <img src="{{ url_for('static', filename='images/vitality/Workouts.png') }}" alt="Viality Front Page"
+            class="w-75">
+        <p class="text-center w-75 pt-4">
+            <b>Create, search, and view</b> workouts from other trainers and earn experience points on the difficulty
+            you could accomplish!
+        </p>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-sm-12 col-md-12 col-lg-12 mt-3 mb-4 text-center">
+        <h2>Live Demo</h2>
+    </div>
     <div class="col-sm-12 mt-4 text-center">
-        <a href="" class="button_link">View the live demo!</a>
+        <a href="https://vitality.santosderek.com" class="button_link">View the live demo!</a>
     </div>
-    
-
-
 </div>
 {% endblock %}

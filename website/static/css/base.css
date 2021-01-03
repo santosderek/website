@@ -52,10 +52,6 @@ hr {
     border-radius: .5em;
 }
 
-.description {
-    text-indent: 2em;
-}
-
 .table td, .table th {
     border: none;
 }
@@ -79,7 +75,7 @@ hr {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(226, 78, 66, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
-.navbar-brand, .nav-link, .nav-item a{
+.navbar-brand, .nav-link, .nav-item a {
     color: black;
 }
 
@@ -100,11 +96,7 @@ hr {
 .introjumbo h2 {
     padding-top: 1%;
     font-size: 2em;
-    color: black; 
-}
-
-.img-border {
-    border: .2em solid #E24E42; 
+    color: black;
 }
 
 .jumbotron {
@@ -121,7 +113,7 @@ hr {
 }
 
 .card {
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
     border: 1px dotted #008F95;
     min-height: 10em;
 }
@@ -183,15 +175,33 @@ hr {
     padding: 0px 15%;
 }
 
+.list-group-item.active {
+    background-color: #E24E42;
+    border-color: #E24E42;
+}
+
+.feature {
+    min-height: 25em;
+}
+
+.feature img {
+    border: .2em solid #E24E42;
+    width: 50em;
+}
+
+.mission {
+    min-height: 25em;
+}
+
+.mission img {
+    border: .2em solid #E24E42;
+    width: 25em;
+}
+
 #pageLocation {
     position: fixed;
     top: 5em;
     left: 2em;
     background-color: #E24E42;
     z-index: 1;
-}
-
-.list-group-item.active {
-    background-color: #E24E42;
-    border-color: #E24E42;
 }
