@@ -1,7 +1,9 @@
 from flask import (
     Flask,
     render_template,
-    redirect
+    redirect, 
+    request,
+    escape
 )
 import json
 import requests
@@ -75,6 +77,13 @@ def create_app():
                                careers=careers,
                                educations=educations,
                                repos=repos)
+
+    @app.route('/project/<string:project>', methods=["GET"])
+    def project(project: str):
+        """This route redirects to my github"""
+
+        project = escape(project)
+        return render_template(f'project/{project}.html')
 
     @app.route('/github', methods=["GET"])
     def github():

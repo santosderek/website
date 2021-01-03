@@ -34,6 +34,10 @@ a:hover {
     border-color: #E24E42;
 }
 
+b {
+    color: #E24E42;
+}
+
 p, ul li {
     font-size: 1em;
 }
@@ -46,6 +50,10 @@ hr {
     padding: 1em 2em;
     border: 2px solid white;
     border-radius: .5em;
+}
+
+.description {
+    text-indent: 2em;
 }
 
 .table td, .table th {
@@ -93,6 +101,10 @@ hr {
     padding-top: 1%;
     font-size: 2em;
     color: black; 
+}
+
+.img-border {
+    border: .2em solid #E24E42; 
 }
 
 .jumbotron {
