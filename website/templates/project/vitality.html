@@ -92,12 +92,44 @@
     </div>
 </div>
 
-<div class="row mt-3">
-    <div class="col-sm-12 col-md-12 col-lg-12 mt-3 mb-4 text-center">
-        <h2>Live Demo</h2>
+<div class="row">
+    <div class="col-sm-12 col-md-12 text-center">
+        <h2>
+            Technologies used
+        </h2>
+
+        <table>
+            <tr>
+                <td>Python</td>
+            </tr>
+            <tr>
+                <td>Flask</td>
+            </tr>
+            <tr>
+                <td>Github Actions</td>
+            </tr>
+            <tr>
+                <td>Docker</td>
+            </tr>
+            <tr>
+                <td>Nginx</td>
+            </tr>
+            <tr>
+                <td>Ansible</td>
+            </tr>
+        </table>
     </div>
-    <div class="col-sm-12 mt-4 text-center">
+</div>
+
+<div class="row mt-3">
+    <div class="col-sm-12 col-md-6 mt-3 text-center">
+        <h2 style="padding-bottom: 1em;">Live Demo</h2>
         <a href="https://vitality.santosderek.com" class="button_link">View the live demo!</a>
+    </div>
+
+    <div class="col-sm-12 col-md-6 mt-3 text-center">
+        <h2 style="padding-bottom: 1em;">Github</h2>
+        <a href="{{url_for('github')}}" class="button_link">View source on github!</a>
     </div>
 </div>
 {% endblock %}
