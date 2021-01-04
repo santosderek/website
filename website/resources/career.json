@@ -26,7 +26,7 @@
         "date": "May 2019 - Aug 2019",
         "location": "Raleigh, North Carolina, United States",
         "descriptions": [
-            "Developed custom software in Java (as a member Cisco’s CX security development team) to help multiple Cisco customers to programmatically interface with Cisco Identity Services Engine (ISE) and Cisco Firepower Management Center (FMC) managing Cisco's Next-Generation Firewalls, Cisco Secure Firewalls, and IPS.",
+            "Developed custom software in Java (as a member Cisco's CX security development team) to help multiple Cisco customers to programmatically interface with Cisco Identity Services Engine (ISE) and Cisco Firepower Management Center (FMC) managing Cisco's Next-Generation Firewalls, Cisco Secure Firewalls, and IPS.",
             "Developed a Webex Teams bot and a custom application in Python to increase the productivity of the team.",
             "Created an automatic phishing mitigation system using Python that helps users to send emails to a sandbox in order to flag and contain emails that may potential be malicious.",
             "Mentored other interns in various programming languages, architectures, and technical tasks."
