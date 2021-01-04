@@ -184,12 +184,12 @@ def education(document):
                                   style='ResumeHeader')
     insertHR(head)
     for item in get_resource_json('education.json'):
-        
+
         title_line = document.add_paragraph('')
         date = title_line.add_run('{}  '.format(item['date']),
                                   'Emphasis')
         title_line.add_run(item['title']).bold = True
-        
+
         date.italic = True
         date.bold = True
         document.add_paragraph(item['degree'])
@@ -220,7 +220,3 @@ def generate_document(location=RESUME_LOCATION):
     education(document)
 
     document.save(RESUME_LOCATION)
-
-
-if __name__ == "__main__":
-    generate_document()
