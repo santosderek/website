@@ -7,7 +7,7 @@
     <header>
         {% include 'navbar.html'%}
     </header>
-    <main>
+    <main >
         <div style="display: none;" id="content">
             <div style="display: none;" id="pageLocation" class="list-group">
                 <a class="list-group-item list-group-item-action" href="#experience">Experience</a>
@@ -19,9 +19,12 @@
                 {% block content %}{% endblock %}
             </div>
         </div>
-        <div id="loading" class="text-center">
-            <p>Loading...</p>
+        <div id="loading" class="row" style="min-height: 80vh;">
+            <div class="col-sm-12 my-auto">
+                <p class="text-center">Loading...</p>
+            </div>
         </div>
     </main>
 </body>
+
 </html>
