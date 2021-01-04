@@ -11,7 +11,8 @@
 <div class="content pt-3">
     <div class="jumbotron pl-5">
         <h1 class="display-4 text-center" id="experience">Experience</h1>
-        <p class="lead text-center">"The only way to know how strong you are is to keep testing your limits." – Jor El</p>
+        <p class="lead text-center">"The only way to know how strong you are is to keep testing your limits." – Jor El
+        </p>
     </div>
 
     <div class="row">
@@ -194,14 +195,14 @@
     </div>
     <div class="row">
         {% for repo in repos %}
-        <a href="{{repo["url"]}}">
-        <div class="card mb-3" style="max-width: 18rem;">
-            <div class="card-header">{{repo['title']}}</div>
-            <div class="card-body">
-              <h5 class="card-title">{{repo['subtitle']}}</h5>
-              <p class="card-text">{{repo['description']}}</p>
+        <a href="{{repo[" url"]}}">
+            <div class="card mb-3" style="max-width: 18rem;">
+                <div class="card-header">{{repo['title']}}</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{repo['subtitle']}}</h5>
+                    <p class="card-text">{{repo['description']}}</p>
+                </div>
             </div>
-          </div>
         </a>
         {% endfor %}
 
@@ -213,6 +214,20 @@
                 ...and {{ github_user_json['public_repos'] }} more on github!
                 {% endif %}
             </a>
+        </div>
+    </div>
+
+    <div class="jumbotron pl-5">
+        <h1 class="display-4 text-center" id="Resume">Resume</h1>
+        <p class="lead text-center">"The Force will be with you. Always." - Obi-Wan Kenobi</p>
+    </div>
+
+    <div class="row text-center">
+        <div class="col-sm-12 col-md-12">
+            <p>
+                My resume is automated to be created based on the contents of this website.<br/>Upon click the download
+                button on <b>either the top right of the navbar</b>, going to <b><a href="{{url_for('resume')}}"> {{url_for('resume')}} </a></b>, or <b><a href="{{url_for('resume')}}">clicking here</a></b>, the Flask application (this website) will generate a formatted Microsoft Word file and send the file to your computer. This will ensure you always get the most up-to-date version of my resume.
+            </p>
         </div>
     </div>
 
