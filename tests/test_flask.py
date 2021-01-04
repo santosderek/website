@@ -1,11 +1,6 @@
 import pytest
-from flask import request, url_for
-from website import (
-    create_app,
-    get_resource_json,
-    get_github_user
-)
-
+from website import create_app
+from website.resources import get_resource_json, get_github_user
 
 @pytest.fixture
 def client():

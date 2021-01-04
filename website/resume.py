@@ -1,4 +1,5 @@
 """Generating a DOCX and converting it to .pdf through python"""
+from .resources import get_resource_json
 from docx import Document
 from docx.enum.style import WD_STYLE_TYPE
 from docx.enum.text import WD_ALIGN_PARAGRAPH
@@ -6,7 +7,6 @@ from docx.oxml.shared import OxmlElement
 from docx.oxml.ns import qn
 from docx.shared import Pt, RGBColor, Cm, Inches
 from os.path import expanduser, join
-from . import get_resource_json
 
 DOWNLOAD_LOCATION = join(expanduser('~'), 'Derek Santos - Resume.docx')
 DEFAULT_SPACING = Cm(0.03)
