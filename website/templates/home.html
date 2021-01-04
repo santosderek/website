@@ -195,7 +195,7 @@
     </div>
     <div class="row">
         {% for repo in repos %}
-        <a href="{{repo[" url"]}}">
+        <a href="{{repo['url']}}">
             <div class="card mb-3" style="max-width: 18rem;">
                 <div class="card-header">{{repo['title']}}</div>
                 <div class="card-body">
@@ -225,8 +225,11 @@
     <div class="row text-center">
         <div class="col-sm-12 col-md-12">
             <p>
-                My resume is automated to be created based on the contents of this website.<br/>Upon click the download
-                button on <b>either the top right of the navbar</b>, going to <b><a href="{{url_for('resume')}}"> {{url_for('resume')}} </a></b>, or <b><a href="{{url_for('resume')}}">clicking here</a></b>, the Flask application (this website) will generate a formatted Microsoft Word file and send the file to your computer. This will ensure you always get the most up-to-date version of my resume.
+                My resume is automated to be created based on the contents of this website.<br />Upon click the download
+                button on <b>either the top right of the navbar</b>, going to <b><a href="{{url_for('resume')}}">
+                        {{url_for('resume')}} </a></b>, or <b><a href="{{url_for('resume')}}">clicking here</a></b>, the
+                Flask application (this website) will generate a formatted Microsoft Word file and send the file to your
+                computer. This will ensure you always get the most up-to-date version of my resume.
             </p>
         </div>
     </div>
