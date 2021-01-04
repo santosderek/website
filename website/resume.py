@@ -1,5 +1,6 @@
 """Generating a DOCX and converting it to .pdf through python"""
 from .resources import get_resource_json
+from .settings import RESUME_DIRECTORY_LOCATION
 from docx import Document
 from docx.enum.style import WD_STYLE_TYPE
 from docx.enum.text import WD_ALIGN_PARAGRAPH
@@ -8,7 +9,9 @@ from docx.oxml.ns import qn
 from docx.shared import Pt, RGBColor, Cm, Inches
 from os.path import expanduser, join
 
-RESUME_DIRECTORY_LOCATION = expanduser('~')
+if RESUME_DIRECTORY_LOCATION == '~' or RESUME_DIRECTORY_LOCATION == None:
+    RESUME_DIRECTORY_LOCATION = expanduser('~')
+
 RESUME_FILENAME = 'Derek Santos - Resume.docx'
 RESUME_LOCATION = join(RESUME_DIRECTORY_LOCATION, RESUME_FILENAME)
 DEFAULT_SPACING = Cm(0.03)
