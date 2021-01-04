@@ -2,10 +2,16 @@ from flask import (
     Flask,
     render_template,
     redirect,
-    escape
+    escape,
+    send_from_directory,
+    abort
 )
 from .resources import get_resource_json, GithubRequestError, get_github_user
-from .resume import generate_document, DOWNLOAD_LOCATION
+from .resume import (
+    generate_document,
+    RESUME_DIRECTORY_LOCATION,
+    RESUME_FILENAME,
+    RESUME_LOCATION)
 from os.path import exists
 
 
@@ -15,7 +21,7 @@ def create_app():
 
     app.logger.info("Creating the resume.")
     generate_document()
-    assert exists(DOWNLOAD_LOCATION)
+    assert exists(RESUME_LOCATION)
     app.logger.info("Resume Created.")
 
     @app.route('/', methods=["GET"])
@@ -63,7 +69,10 @@ def create_app():
     def resume():
         """This route returns a download of my resume."""
 
-        return redirect('https://www.linkedin.com/in/santosderek/')
+        try:
+            return send_from_directory(RESUME_DIRECTORY_LOCATION, filename=RESUME_FILENAME, as_attachment=True)
+        except FileNotFoundError:
+            abort(404)
 
     @app.route('/project/<string:project>', methods=["GET"])
     def project(project: str):

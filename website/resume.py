@@ -8,7 +8,9 @@ from docx.oxml.ns import qn
 from docx.shared import Pt, RGBColor, Cm, Inches
 from os.path import expanduser, join
 
-DOWNLOAD_LOCATION = join(expanduser('~'), 'Derek Santos - Resume.docx')
+RESUME_DIRECTORY_LOCATION = expanduser('~')
+RESUME_FILENAME = 'Derek Santos - Resume.docx'
+RESUME_LOCATION = join(RESUME_DIRECTORY_LOCATION, RESUME_FILENAME)
 DEFAULT_SPACING = Cm(0.03)
 DEFAULT_FONT_NAME = "Calibri Light"
 DEFAULT_FONT_COLOR = RGBColor(0, 0, 0)
@@ -193,7 +195,7 @@ def education(document):
         document.add_paragraph(item['degree'])
 
 
-def generate_document(location=DOWNLOAD_LOCATION):
+def generate_document(location=RESUME_LOCATION):
     """Generate a word document based off the resource documents JSON"""
     # Document Wide Formatting
     document = Document()
@@ -217,7 +219,7 @@ def generate_document(location=DOWNLOAD_LOCATION):
     leadership(document)
     education(document)
 
-    document.save(DOWNLOAD_LOCATION)
+    document.save(RESUME_LOCATION)
 
 
 if __name__ == "__main__":
