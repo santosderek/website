@@ -101,5 +101,4 @@ def create_app():
         return render_template("error/404.html"), 404
 
     app.logger.info("Application Created.")
-
     return app
