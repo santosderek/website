@@ -1,6 +1,5 @@
 """Generating a DOCX and converting it to .pdf through python"""
 from .resources import get_resource_json
-from .settings import RESUME_DIRECTORY_LOCATION
 from docx import Document
 from docx.enum.style import WD_STYLE_TYPE
 from docx.enum.text import WD_ALIGN_PARAGRAPH
@@ -8,8 +7,11 @@ from docx.oxml.shared import OxmlElement
 from docx.oxml.ns import qn
 from docx.shared import Pt, RGBColor, Cm, Inches
 from os.path import expanduser, join
+from sys import platform
 
-if RESUME_DIRECTORY_LOCATION == '~' or RESUME_DIRECTORY_LOCATION == None:
+if platform == "linux":
+    RESUME_DIRECTORY_LOCATION = "/tmp/"
+else:
     RESUME_DIRECTORY_LOCATION = expanduser('~')
 
 RESUME_FILENAME = 'Derek Santos - Resume.docx'
