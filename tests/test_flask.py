@@ -52,6 +52,7 @@ def test_home(client):
 
     for repos in get_resource_json('repos.json'):
         assert bytes(repos['title'], 'utf-8') in returned_value.data
+        assert bytes(repos['url'], 'utf-8') in returned_value.data
 
     for technology in get_resource_json('skills.json')['technologies']:
         assert bytes(technology[0], 'utf-8') in returned_value.data
