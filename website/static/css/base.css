@@ -38,6 +38,14 @@ b {
     color: #E24E42;
 }
 
+b a {
+    color: #E24E42;
+}
+
+b a:hover {
+    color: #008F95;
+}
+
 p, ul li {
     font-size: 1em;
 }
