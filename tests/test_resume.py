@@ -5,5 +5,4 @@ import pytest
 
 def test_generate_document(): 
     generate_document(RESUME_LOCATION)
-
     assert exists(RESUME_LOCATION)
