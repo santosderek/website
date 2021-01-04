@@ -27,7 +27,7 @@ def create_app():
 
     @app.route('/', methods=["GET"])
     def home():
-        """The index / home route of the website"""
+        """The home route of the website"""
 
         # Technology, Stars out of 5
         skills = get_resource_json('skills.json')
