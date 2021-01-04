@@ -1,6 +1,9 @@
-import pytest
+from os.path import exists
 from website import create_app
 from website.resources import get_resource_json, get_github_user
+from website.resume import RESUME_LOCATION
+import pytest
+
 
 @pytest.fixture
 def client():
@@ -78,3 +81,10 @@ def test_get_github_user():
 
     returned_value = get_github_user()
     assert returned_value['login'] == 'santosderek'
+
+
+def test_resume_created(client):
+    """Tests to check weather the application created the resume during creation."""
+
+    # Client application gets generated as a pytest fixture
+    assert exists(RESUME_LOCATION)

@@ -6,6 +6,7 @@ from flask import (
     send_from_directory,
     abort
 )
+from jinja2.exceptions import TemplateNotFound
 from .resources import get_resource_json, GithubRequestError, get_github_user
 from .resume import (
     generate_document,
@@ -78,8 +79,11 @@ def create_app():
     def project(project: str):
         """This route redirects to my github"""
 
-        project = escape(project)
-        return render_template(f'project/{project}.html')
+        try:
+            project = escape(project)
+            return render_template(f'project/{project}.html')
+        except TemplateNotFound:
+            abort(404)
 
     @app.route('/github', methods=["GET"])
     def github():
