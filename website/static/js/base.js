@@ -5,7 +5,7 @@ window.onload = function () {
     let minWidth = 1400; 
 
     // If scroll spy is present
-    if ($('#pageLocation').length > 0) {
+    if ($('#pageLocation').length > 0 && $('#experience').length > 0) {
         $('body').scrollspy({ target: '#pageLocation' })
         // Hide fixed nav if above Experience jumbotron
         $("#pageLocation").hide();

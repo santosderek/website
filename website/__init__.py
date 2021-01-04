@@ -91,4 +91,11 @@ def create_app():
         """This route redirects to my linkedin"""
         return redirect('https://www.linkedin.com/in/santosderek/')
 
+    @app.errorhandler(404)
+    def page_not_found(e):
+        """HTTP Error 404: Not found."""
+        return render_template("error/404.html"), 404
+
+    app.logger.info("Application Created.")
+
     return app
