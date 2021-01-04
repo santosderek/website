@@ -1,6 +1,3 @@
-from dotenv import load_dotenv 
-load_dotenv('.env') # Must load before creating app
-
 from os.path import exists
 from website import create_app
 from website.resources import get_resource_json, get_github_user
