@@ -1,10 +1,8 @@
+from os.path import exists
+from website import create_app
+from website.resources import get_resource_json, get_github_user
+from website.resume import RESUME_LOCATION
 import pytest
-from flask import request, url_for
-from website import (
-    create_app,
-    get_resource_json,
-    get_github_user
-)
 
 
 @pytest.fixture
@@ -83,3 +81,30 @@ def test_get_github_user():
 
     returned_value = get_github_user()
     assert returned_value['login'] == 'santosderek'
+
+
+def test_resume_created(client):
+    """Tests to check weather the application created the resume during creation."""
+
+    # Client application gets generated as a pytest fixture
+    assert exists(RESUME_LOCATION)
+
+
+def test_vitality_projects(client):
+    returned_value = client.get('/project/vitality')
+    assert returned_value.status_code == 200
+    assert b'Create, search, and view' in returned_value.data
+    assert b'Youtube recommendations' in returned_value.data
+    assert b'Schedule meetings' in returned_value.data
+    assert b'Google Maps' in returned_value.data
+    assert b'Invite and connect' in returned_value.data
+    assert b'Features' in returned_value.data
+    assert b'free and centralized' in returned_value.data
+    assert b'Mission' in returned_value.data
+    assert b'Vitality' in returned_value.data
+
+
+def test_project_not_found(client):
+    returned_value = client.get('/project/noproject')
+    assert returned_value.status_code == 404
+    assert b'Sorry! Could not find page!' in returned_value.data

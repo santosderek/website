@@ -1,43 +1,33 @@
 from flask import (
     Flask,
     render_template,
-    redirect
+    redirect,
+    escape,
+    send_from_directory,
+    abort
 )
-import json
-import requests
-
-GITHUB_REPO_LIST_URL = 'https://api.github.com/users/santosderek/repos?page={number}'
-GITHUB_USER_URL = 'https://api.github.com/users/santosderek'
-
-
-class GithubRequestError(Exception):
-    pass
-
-
-def get_github_user():
-    """Requests from the GITHUB API my user data and returns as JSON(Dict)"""
-    returned_value = requests.get(GITHUB_USER_URL)
-
-    if returned_value.status_code != 200:
-        raise GithubRequestError("Error Code != 200")
-
-    return returned_value.json()
-
-
-def get_resource_json(filename: str):
-    "Return the contents of a resource JSON file."
-    with open(f'website/resources/{filename}', 'r') as current_file:
-        data = json.loads(current_file.read())
-        return data
+from jinja2.exceptions import TemplateNotFound
+from .resources import get_resource_json, GithubRequestError, get_github_user
+from .resume import (
+    generate_document,
+    RESUME_DIRECTORY_LOCATION,
+    RESUME_FILENAME,
+    RESUME_LOCATION)
+from os.path import exists
 
 
 def create_app():
     app = Flask(__name__)
     app.config.from_pyfile('settings.py')
 
+    app.logger.info("Creating the resume.")
+    generate_document()
+    assert exists(RESUME_LOCATION)
+    app.logger.info("Resume Created.")
+
     @app.route('/', methods=["GET"])
     def home():
-        """The index / home route of the website"""
+        """The home route of the website"""
 
         # Technology, Stars out of 5
         skills = get_resource_json('skills.json')
@@ -76,6 +66,25 @@ def create_app():
                                educations=educations,
                                repos=repos)
 
+    @app.route('/resume', methods=["GET"])
+    def resume():
+        """This route returns a download of my resume."""
+
+        try:
+            return send_from_directory(RESUME_DIRECTORY_LOCATION, filename=RESUME_FILENAME, as_attachment=True)
+        except FileNotFoundError:
+            abort(404)
+
+    @app.route('/project/<string:project>', methods=["GET"])
+    def project(project: str):
+        """This route redirects to my github"""
+
+        try:
+            project = escape(project)
+            return render_template(f'project/{project}.html')
+        except TemplateNotFound:
+            abort(404)
+
     @app.route('/github', methods=["GET"])
     def github():
         """This route redirects to my github"""
@@ -86,4 +95,10 @@ def create_app():
         """This route redirects to my linkedin"""
         return redirect('https://www.linkedin.com/in/santosderek/')
 
+    @app.errorhandler(404)
+    def page_not_found(e):
+        """HTTP Error 404: Not found."""
+        return render_template("error/404.html"), 404
+
+    app.logger.info("Application Created.")
     return app

@@ -1,4 +1,5 @@
 """Generating a DOCX and converting it to .pdf through python"""
+from .resources import get_resource_json
 from docx import Document
 from docx.enum.style import WD_STYLE_TYPE
 from docx.enum.text import WD_ALIGN_PARAGRAPH
@@ -6,9 +7,10 @@ from docx.oxml.shared import OxmlElement
 from docx.oxml.ns import qn
 from docx.shared import Pt, RGBColor, Cm, Inches
 from os.path import expanduser, join
-from . import get_resource_json
 
-DOWNLOAD_LOCATION = join(expanduser('~'), 'Derek Santos - Resume.docx')
+RESUME_DIRECTORY_LOCATION = expanduser('~')
+RESUME_FILENAME = 'Derek Santos - Resume.docx'
+RESUME_LOCATION = join(RESUME_DIRECTORY_LOCATION, RESUME_FILENAME)
 DEFAULT_SPACING = Cm(0.03)
 DEFAULT_FONT_NAME = "Calibri Light"
 DEFAULT_FONT_COLOR = RGBColor(0, 0, 0)
@@ -182,18 +184,18 @@ def education(document):
                                   style='ResumeHeader')
     insertHR(head)
     for item in get_resource_json('education.json'):
-        
+
         title_line = document.add_paragraph('')
         date = title_line.add_run('{}  '.format(item['date']),
                                   'Emphasis')
         title_line.add_run(item['title']).bold = True
-        
+
         date.italic = True
         date.bold = True
         document.add_paragraph(item['degree'])
 
 
-def generate_document(location=DOWNLOAD_LOCATION):
+def generate_document(location=RESUME_LOCATION):
     """Generate a word document based off the resource documents JSON"""
     # Document Wide Formatting
     document = Document()
@@ -217,8 +219,4 @@ def generate_document(location=DOWNLOAD_LOCATION):
     leadership(document)
     education(document)
 
-    document.save(DOWNLOAD_LOCATION)
-
-
-if __name__ == "__main__":
-    generate_document()
+    document.save(RESUME_LOCATION)

@@ -95,6 +95,10 @@
         [
             "JQuery",
             4
+        ],
+        [
+            "MongoDB",
+            4
         ]
     ],
     "tools": [
