@@ -189,7 +189,7 @@ hr {
 }
 
 .feature {
-    min-height: 25em;
+    min-height: 24em;
 }
 
 .feature img {
@@ -204,6 +204,14 @@ hr {
 .mission img {
     border: .2em solid #E24E42;
     width: 25em;
+}
+
+.project_overview p{
+    text-indent: 2em;
+}
+
+.project_overview img {
+    border: 3px solid #E24E42; 
 }
 
 #pageLocation {

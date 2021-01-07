@@ -92,32 +92,82 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row career">
     <div class="col-sm-12 col-md-12 text-center">
         <h2>
             Technologies used
         </h2>
 
-        <table>
-            <tr>
-                <td>Python</td>
-            </tr>
-            <tr>
-                <td>Flask</td>
-            </tr>
-            <tr>
-                <td>Github Actions</td>
-            </tr>
-            <tr>
-                <td>Docker</td>
-            </tr>
-            <tr>
-                <td>Nginx</td>
-            </tr>
-            <tr>
-                <td>Ansible</td>
-            </tr>
-        </table>
+        <ul>
+            <li>Python</li>
+            <li>Flask</li>
+            <li>Github Actions</li>
+            <li>Docker</li>
+            <li>Nginx</li>
+            <li>Ansible</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row project_overview">
+    <div class="col-sm-12 text-center">
+        <h3>Project Overview</h3>
+    </div>
+    <div class="col-sm-12 col-md-12">
+        <p class="w-75">
+            Vitality is a web application devoted to helping trainers and trainees search and connect with one another,
+            while also providing the means to share schedules, dietary recommendations, and workout information in one
+            centralized user interface. There is a diverse range of exercise applications that exist already but none
+            bring together the ability to search for a trainer, schedule a workout, create a workout with a trainer, and
+            share recommendations through the use of youtube videos within one easy to use interface, independent of
+            what platform users decide to surf the web on.
+        </p>
+        <p class="w-75">
+            Our focus on flexibility allows us to cover a higher demographic of devices than existing mobile
+            applications or desktop applications. Vitality was developed with a responsive design which dynamically
+            adjusts to all ranges of device resolutions and layouts. No matter how a user chooses
+            to view our application, Vitality will automatically adjust and scale to a user’s needs.
+        </p>
+    </div>
+</div>
+<div class="row project_overview">
+    <div class="col-sm-12 text-center">
+        <h3>Deployment Architecture</h3>
+    </div>
+    <div class="pt-4 col-sm-12 text-center">
+        <img class="w-50" src="{{ url_for('static', filename='images/vitality/DeploymentDiagram.png') }}" alt="Deployment Diagram">
+    </div>
+    <div class="pt-4 col-sm-12 col-md-12">
+        <p class="w-75">As soon as the project started within sprint one, our scrum master wanted the
+            deployment to be as automated as soon as possible. This includes unit testing, verification that a code
+            review has been done on each pull request, and deploying the application to a virtual server in the cloud.
+            Because of this, the team has demonstrated excellent use of continuous integration, a practice where all
+            developers are working from one shared repository of changes, and the testing of applications is done before
+            and after each merge to ensure each deployment is pushed with as little non-tested code as possible.</p>
+        <p class="w-75">To make use of continuous integration practice, our project uses three main
+            technologies, Git, Github, and Ansible. Git serves as our version control software which allows the team to
+            create sub-branches of the mainline code being deployed, and tinker with the code before merging back into
+            the master branch. Before each merge, a developer must create a pull request targeting the master branch on
+            Github based on the sub-branch they created earlier. Github runs our unit tests on each pull request to
+            check both the syntax and logic contained within the sub-branch. Once these checks have passed, a code
+            review is then done by a reviewer, usually the scrum master. Once the review has been approved and no
+            changes have been requested, the code changes are finally merged within the master branch, where the unit
+            tests will run once more and any alerts will be presented to the team. The cycle continues for each Github
+            Issue, a set of tasks created by the scrum master which must be completed to be closed, that has been
+            assigned to that individual.</p>
+        <p class="w-75">After a Github pull request has closed, Derek has set up a job within his
+            homelab to run an Ansible script that would connect to a virtual machine in the cloud, update the vitality
+            repository that was previously cloned, and trigger docker-compose to rebuild the repository’s docker
+            container. Upon completion, the new instance of the flask application will be deployed alongside a second
+            docker container hosting MongoDB. As clients interact with the website, the Flask application will connect
+            to MongoDB where all the user and metadata are stored. These containers are also communicating with each
+            other through a Linux bridge set up by Docker. As a result, no outside clients would be able to directly
+            interact with either the Flask application or MongoDB. Because of this, an Nginx reverse proxy must be set
+            up to route and manage all communications to the user.</p>
+        <p class="w-75">Lastly, an Nginx reverse proxy is set up to enable support for HTTPS and
+            redirect all unencrypted traffic to the encrypted channel. The Nginx proxy is independent of the application
+            and is only a means to redirect and encrypt traffic. This means that while new deployments are being made,
+            the Nginx server will be static and not need to be updated as a part of this process.</p>
     </div>
 </div>
 
