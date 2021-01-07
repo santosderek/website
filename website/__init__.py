@@ -1,3 +1,9 @@
+from .resources import get_resource_json, GithubRequestError, get_github_user
+from .resume import (
+    generate_document,
+    RESUME_DIRECTORY_LOCATION,
+    RESUME_FILENAME,
+    RESUME_LOCATION)
 from flask import (
     Flask,
     render_template,
@@ -7,12 +13,6 @@ from flask import (
     abort
 )
 from jinja2.exceptions import TemplateNotFound
-from .resources import get_resource_json, GithubRequestError, get_github_user
-from .resume import (
-    generate_document,
-    RESUME_DIRECTORY_LOCATION,
-    RESUME_FILENAME,
-    RESUME_LOCATION)
 from os.path import exists
 
 
@@ -21,7 +21,7 @@ def create_app():
     app.config.from_pyfile('settings.py')
 
     app.logger.info("Creating the resume.")
-    generate_document()
+    generate_document(RESUME_LOCATION)
     assert exists(RESUME_LOCATION)
     app.logger.info("Resume Created.")
 
