@@ -69,6 +69,10 @@ hr {
     color: black;
 }
 
+.navbar a:hover {
+    color: #E24E42;
+}
+
 .navbar-toggler, .navbar-toggler-icon {
     background-color: #008F95;
     border: none;
