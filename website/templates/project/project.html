@@ -12,11 +12,21 @@
             {% block content %}{% endblock %}
         </div>
         <div id="loading" class="row" style="min-height: 80vh;">
-            <div class="col-sm-12 my-auto">
-                <p class="text-center">Loading...</p>
+            <div class="my-auto text-center">
+                <p>LOADING</p>
+                <div class="spinner-border text-success" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
             </div>
         </div>
     </main>
+    
+    <script>
+        imagesToPreload = {{imagesToPreload|safe}};
+        window.addEventListener("load", () => {
+            revealContent(imagesToPreload);
+        }, false);
+    </script>
 </body>
 
 </html>

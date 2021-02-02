@@ -214,7 +214,7 @@ hr {
     border: 3px solid #E24E42; 
 }
 
-#pageLocation {
+#pageLocationScrollSpy {
     position: fixed;
     top: 5em;
     left: 2em;

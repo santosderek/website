@@ -1,0 +1,88 @@
+{% extends 'project/project.html' %}
+
+{% block content %}
+
+
+<div class="row mt-4">
+    <div class="col-sm-12 col-md-12 col-lg-12 mt-3 text-center">
+        <h1>SantosDerek.com</h1>
+        <p class="w-50">
+            My personal website and dynamic resume.
+        </p>
+    </div>
+</div>
+
+
+<div class="row project_overview">
+    <div class="col-sm-12 text-center">
+        <h3>Project Overview</h3>
+    </div>
+    <div class="pt-4 col-sm-12 col-md-12">
+        <p class="w-75">In order to showcase my projects and experience using specific technologies, I have decided to
+            create a resource where users may view an overview of my latest achievements. This website is also a project
+            within itself since all aspects of the website was created using Python, Docker, Github Actions, and
+            Ansible. Below is a dive into the work, and features this website holds under the hood as well as the
+            deployment of the website itself.</p>
+    </div>
+</div>
+
+
+<div class="row project_overview">
+    <div class="col-sm-12 text-center">
+        <h3>A Dynamic Home Page</h3>
+    </div>
+    <div class="pt-4 col-sm-12 col-md-12">
+        <p class="w-75">Due to the nature of using Flask as a web framework, Jinja is used as the default templating
+            solution for webpages. The landing page of the application is built and populated by two major templates;
+            base.html and home.html which can be viewed within the GitHub repository. Home.html extends the base.html
+            template and populates the page using data declared within the home route's declared function within the
+            Flask application factory, i.e. __init__.py. This allows me to have a general format for the page, but
+            dynamically populate the contents by importing the data into the rendered template at each request.</p>
+
+        <p class="w-75">The data is organized and parsed from a series of JSON files found within the resources folder
+            of the repository. These files are read, parsed into python lists and dictionaries, and sent to the view.
+            When updating the home page of my website, I only need to add or remove entries within these JSON files, and
+            the contents of the page should adjust automatically on the next request.</p>
+    </div>
+</div>
+
+<div class="row project_overview">
+    <div class="col-sm-12 text-center">
+        <h3>Automatic Resume Creator</h3>
+    </div>
+    <div class="pt-4 col-sm-12 col-md-12">
+        <p class="w-75">Upon runtime of the web application, the JSON resource files are used to create a structured and
+            styled Word Document entirely using the python-docx module. This Word Document is the very same file given
+            when visiting <b><a href="{{ url_for('resume')}}">/resume</a></b> route.</p>
+        <p class="w-75"></p>
+    </div>
+</div>
+
+<div class="row project_overview">
+    <div class="col-sm-12 text-center">
+        <h3>Deployment Architecture</h3>
+    </div>
+    <div class="pt-4 col-sm-12 col-md-12 text-center">
+        <img src="{{url_for('static', filename='images/santosderek/santosderekDeployment.png')}}"
+            alt="Santosderek deployment" />
+    </div>
+    <div class="pt-4 col-sm-12 col-md-12">
+        <p class="w-75">The deployment process of the website involves the usage of Github, Github Actions, a
+            DigitalOcean, Ansible, and Docker. When committing changes, I push the respective commits to Github where
+            upon creating a pull request will trigger a workflow to verify all unit tests pass. The workflow also
+            verifies and build the Dockerfile to be deployed. After all checks pass, I accept the pull request and first
+            deploy the updated Docker image to a test environment within my homelab using Ansible. Once my inspection is
+            complete within the test environment, I run a second Ansible script which deploys the code to the Digital
+            Ocean droplet, updating the docker image to the most recent change, and serves the flask application
+            through santosderek.com.</p>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-sm-12 col-md-6 mt-3 text-center">
+        <h2 style="padding-bottom: 1em;">Github</h2>
+        <a href="https://github.com/santosderek/website" class="button_link">View the source on github!</a>
+    </div>
+</div>
+
+{% endblock %}
