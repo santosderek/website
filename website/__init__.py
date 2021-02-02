@@ -79,9 +79,22 @@ def create_app():
     def project(project: str):
         """This route redirects to my github"""
 
+        imagesToPreload = {
+            'vitality': ['/static/images/vitality/FrontPage.png',
+                         '/static/images/vitality/ShowTrainers.png',
+                         '/static/images/vitality/Diets.png',
+                         '/static/images/vitality/Workouts.png'],
+            'santosderek': ['/static/images/santosderek/santosderekDeployment.png']
+        }
+
         try:
             project = escape(project)
-            return render_template(f'project/{project}.html')
+            
+            images = ['/static/images/santosderek.png'] 
+            if project in imagesToPreload: 
+                images += imagesToPreload[project]
+            
+            return render_template(f'project/{project}.html', imagesToPreload=images)
         except TemplateNotFound:
             abort(404)
 
