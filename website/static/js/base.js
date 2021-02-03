@@ -14,19 +14,19 @@ function revealContent(imagesToPreload) {
         preload(imagesToPreload[count]);
     }
 
-    $("#loading").hide();
-    $("#content").show();
-
     let minWidth = 1400; 
 
-    // If scroll spy is present
     if ($('#pageLocationScrollSpy').length > 0) {
-        $('body').scrollspy({ target: '#pageLocationScrollSpy' })
+        $('body').scrollspy({ target: '#pageLocationScrollSpy' });
         // Hide fixed nav if above Experience jumbotron
         $("#pageLocationScrollSpy").hide();
-        var topOfOthDiv = $("#experience").offset().top - 200;
-        $(window).scroll(function () {
-            if ($(window).scrollTop() > topOfOthDiv && $(document).width() > minWidth) {
+        
+        $(window).scroll(() => {
+            let topOfExperienceDiv = $("#experience").offset().top - 200;
+            let isAboveExperienceDiv = $(window).scrollTop() > topOfExperienceDiv;
+            let isMinimumWidth = $(document).width() > minWidth;
+            
+            if (isAboveExperienceDiv && isMinimumWidth) {
                 $("#pageLocationScrollSpy").show();
             }
             else {
@@ -34,5 +34,8 @@ function revealContent(imagesToPreload) {
             }
         });
     }
+
+    $("#loading").hide();
+    $("#content").show();
 }
 
