@@ -12,8 +12,6 @@ html {
 }
 
 body {
-    /* background-color: #565656; */
-    /* background-color: #1b1b1d; */
     background-color: #222222;
     color: white;
     font-size: x-large;
@@ -183,6 +181,14 @@ hr {
     background-size: cover;
 }
 
+/* Turn off parallax scrolling for tablets and phones */
+
+@media only screen and (max-device-width: 1024px) {
+    .parallax {
+        background-attachment: scroll;
+    }
+}
+
 .content {
     padding: 0px 15%;
 }
@@ -210,12 +216,12 @@ hr {
     width: 25em;
 }
 
-.project_overview p{
+.project_overview p {
     text-indent: 2em;
 }
 
 .project_overview img {
-    border: 3px solid #E24E42; 
+    border: 3px solid #E24E42;
 }
 
 #pageLocationScrollSpy {

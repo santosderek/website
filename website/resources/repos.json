@@ -7,7 +7,7 @@
     },
     {
         "title": "santosderek.com",
-        "subtitle": "This website is completely made by me. It was made with Python, Flask, Nginx, and Docker.",
+        "subtitle": "This website was built from the ground up with Python, Flask, Nginx, and Docker.",
         "description": "",
         "url": "/project/santosderek"
     },
