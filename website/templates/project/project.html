@@ -24,6 +24,7 @@
     <script>
         imagesToPreload = {{imagesToPreload|safe}};
         window.addEventListener("load", () => {
+            preload(imagesToPreload);
             revealContent(imagesToPreload);
         }, false);
     </script>
