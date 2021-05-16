@@ -71,7 +71,8 @@ def create_app():
         """This route returns a download of my resume."""
 
         try:
-            return send_from_directory(RESUME_DIRECTORY_LOCATION, filename=RESUME_FILENAME, as_attachment=True)
+            # return send_from_directory(RESUME_DIRECTORY_LOCATION, path=RESUME_FILENAME, filename=RESUME_FILENAME, as_attachment=True)
+            return send_from_directory(RESUME_DIRECTORY_LOCATION, path=RESUME_FILENAME, as_attachment=True)
         except FileNotFoundError:
             abort(404)
 
