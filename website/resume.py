@@ -3,7 +3,9 @@ from .resources import get_resource_json
 from docx import Document
 from docx.enum.style import WD_STYLE_TYPE
 from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.opc.constants import RELATIONSHIP_TYPE
 from docx.oxml.shared import OxmlElement
+from docx.oxml.shared import qn as sharedqn
 from docx.oxml.ns import qn
 from docx.shared import Pt, RGBColor, Cm, Inches
 from os.path import expanduser, join
@@ -21,12 +23,58 @@ DEFAULT_FONT_NAME = "Calibri Light"
 DEFAULT_FONT_COLOR = RGBColor(0, 0, 0)
 DEFAULT_FONT_SIZE_TITLE = Pt(18)
 DEFAULT_FONT_SIZE_SUBTITLE = Pt(8)
-DEFAULT_FONT_SIZE_HEADING = Pt(9)
-DEFAULT_FONT_SIZE_TEXT = Pt(7)
+DEFAULT_FONT_SIZE_HEADING = Pt(8.8)
+DEFAULT_FONT_SIZE_TEXT = Pt(7.5)
 DEFAULT_TOP_MARGIN_LENGTH = Cm(1)
 DEFAULT_BOTTOM_MARGIN_LENGTH = Cm(1)
 DEFAULT_LEFT_MARGIN_LENGTH = Inches(.75)
 DEFAULT_RIGHT_MARGIN_LENGTH = Inches(.75)
+
+
+def add_hyperlink(paragraph, url, text, color, underline):
+    """
+    A function that places a hyperlink within a paragraph object.
+
+    :param paragraph: The paragraph we are adding the hyperlink to.
+    :param url: A string containing the required url
+    :param text: The text displayed for the url
+    :return: The hyperlink object
+    """
+
+    # This gets access to the document.xml.rels file and gets a new relation id value
+    part = paragraph.part
+    r_id = part.relate_to(url, RELATIONSHIP_TYPE.HYPERLINK, is_external=True)
+
+    # Create the w:hyperlink tag and add needed values
+    hyperlink = OxmlElement('w:hyperlink')
+    hyperlink.set(sharedqn('r:id'), r_id, )
+
+    # Create a w:r element
+    new_run = OxmlElement('w:r')
+
+    # Create a new w:rPr element
+    rPr = OxmlElement('w:rPr')
+
+    # Add color if it is given
+    if not color is None:
+        c = OxmlElement('w:color')
+        c.set(sharedqn('w:val'), color)
+        rPr.append(c)
+
+    # Remove underlining if it is requested
+    if not underline:
+        u = OxmlElement('w:u')
+        u.set(sharedqn('w:val'), 'none')
+        rPr.append(u)
+
+    # Join all the xml elements together add add the required text to the w:r element
+    new_run.append(rPr)
+    new_run.text = text
+    hyperlink.append(new_run)
+
+    paragraph._p.append(hyperlink)
+
+    return hyperlink
 
 
 def insertHR(paragraph):
@@ -159,6 +207,9 @@ def experience(document):
             subtext = experience_paragraph.add_run(' {}'.format(tech),
                                                    'Emphasis')
 
+        experience_paragraph.add_run(' - {}'.format(experience['location']),
+                                     'Emphasis')
+
         # experience bullet points - Has to be on its own paragraph
         for bullet in experience['descriptions']:
             document.add_paragraph(bullet, style='List Bullet')
@@ -193,11 +244,11 @@ def education(document):
         title_line = document.add_paragraph('')
         date = title_line.add_run('{}  '.format(item['date']),
                                   'Emphasis')
-        title_line.add_run(item['title']).bold = True
+        title_line.add_run(item['title'] + ' - ').bold = True
+        title_line.add_run(item['degree'], "Emphasis")
 
         date.italic = True
         date.bold = True
-        document.add_paragraph(item['degree'])
 
 
 def generate_document(location=RESUME_LOCATION):
@@ -216,8 +267,21 @@ def generate_document(location=RESUME_LOCATION):
 
     # Title and sub-heading
     document.add_paragraph('Derek Santos', style='ResumeTitle')
-    subtitle = document.add_paragraph('santosderek.com | Raleigh, NC | santos.jon.derek@gmail.com',
-                                      style='ResumeSubtitle')
+
+    subtitle = document.add_paragraph('', style='ResumeSubtitle')
+    add_hyperlink(subtitle, 'https://santosderek.com/',
+                  'santosderek.com',  '568ed2', False)
+
+    subtitle.add_run(' | ')
+    subtitle.add_run('Raleigh, NC | santos.jon.derek@gmail.com')
+
+    subtitle.add_run(' | ')
+    add_hyperlink(subtitle, 'https://www.linkedin.com/in/santosderek/',
+                  'Linkedin',  '568ed2', False)
+
+    subtitle.add_run(' | ')
+    add_hyperlink(subtitle, 'https://github.com/santosderek/',
+                  'Github',  '568ed2', False)
 
     technical_skills(document)
     experience(document)
