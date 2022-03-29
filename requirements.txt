@@ -1,6 +1,7 @@
-flask
+Flask
 python-dotenv
-uwsgi
+# uwsgi
 requests
 python-docx
 pytest
+gunicorn
