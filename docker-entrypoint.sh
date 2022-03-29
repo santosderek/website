@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ "$FLASK_ENV" == "gunicorn" ]]; then
-    gunicorn -w 4 -b 0.0.0.0:8000 --worker-tmp-dir "/tmp" "website:create_app()"
+    gunicorn -w 4 -b 0.0.0.0:8000 --worker-tmp-dir /dev/shm "website:create_app()"
 elif [[ "$FLASK_ENV" == "flask" ]]; then
     export FLASK_APP=website
     export FLASK_ENV=development
