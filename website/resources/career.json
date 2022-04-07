@@ -16,7 +16,8 @@
             "Flask",
             "SQLAlchemy",
             "Marshmallow"
-        ]
+        ],
+        "display": true
     },
     {
         "title": "Author",
@@ -36,7 +37,8 @@
             "tcpdump",
             "Nmap",
             "Tshark"
-        ]
+        ],
+        "display": true
     },
     {
         "title": "Vitality - Senior Project",
@@ -57,7 +59,8 @@
             "Nginx",
             "Ansible",
             "MongoDB"
-        ]
+        ],
+        "display": true
     },
     {
         "title": "Cisco Systems - Security Orchestration",
@@ -77,7 +80,8 @@
             "Cisco ISE",
             "pxGrid",
             "Cisco Secure Firewall"
-        ]
+        ],
+        "display": true
     },
     {
         "title": "Cisco Systems - Advanced Services",
@@ -94,7 +98,8 @@
             "Cisco Firepower",
             "Cisco ISE",
             "Splunk"
-        ]
+        ],
+        "display": true
     },
     {
         "title": "North Carolina NASA Space Grant Consortium",
@@ -107,7 +112,8 @@
         ],
         "technologies": [
             "C++"
-        ]
+        ],
+        "display": true
     },
     {
         "title": "North Carolina State University ASSIST Internship",
@@ -123,7 +129,8 @@
         "technologies": [
             "Python",
             "Bluetooth Low Energy"
-        ]
+        ],
+        "display": true
     },
     {
         "title": "Insect Tracking System and Algorithm",
@@ -141,7 +148,8 @@
             "Python",
             "OpenCV",
             "SFML"
-        ]
+        ],
+        "display": false
     },
     {
         "title": "North Campus Engineering Club Website",
@@ -157,7 +165,8 @@
             "HTML",
             "Nginx",
             "CSS"
-        ]
+        ],
+        "display": false
     },
     {
         "title": "Trebuchet Firing Mechanism",
@@ -170,7 +179,8 @@
         ],
         "technologies": [
             "Python"
-        ]
+        ],
+        "display": false
     },
     {
         "title": "Cisco DevNet APIC-EM",
@@ -183,6 +193,7 @@
         ],
         "technologies": [
             "Rest APIs"
-        ]
+        ],
+        "display": false
     }
 ]
