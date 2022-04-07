@@ -8,10 +8,12 @@ from website.connectors.github import GitHubConnector
 
 website_blueprint = Blueprint(
     'website',
-     __name__, 
-     template_folder='../templates/website', # NOTE: Relative to blueprints root path
-     static_folder='../static'
-     )
+    __name__,
+    # NOTE: Relative to blueprints root path
+    template_folder='../templates/website',
+    static_folder='../static'
+)
+
 
 @website_blueprint.route('/', methods=["GET"])
 def home():
