@@ -3,6 +3,7 @@
         "title": "Full Stack Software Engineer",
         "type": "Full-Time",
         "date": "July 2021 - Present",
+        "location": "Raleigh, North Carolina",
         "description": [
             "Developed and maintained several Python-based applications used by several Fortune 500 companies and other Cisco customers used to automate the configuration and monitoring of large-scale network infrastructure devices.",
             "Tested and deployed applications using CI/CD tools such as Jenkins, Docker, and Kubernetes.",
@@ -21,6 +22,7 @@
         "title": "Author",
         "type": "Freelance",
         "date": "August 2021 - Present",
+        "location": "Remote",
         "description": [
             "Co-Author for the following interactive learning labs on tools for Ethical Hacking:",
             "Ethical Hacking: Introducing Network and Port Scanning using Nmap",
