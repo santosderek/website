@@ -49,6 +49,10 @@
             5
         ],
         [
+            "SQLAlchemy",
+            5
+        ],
+        [
             "Elasticsearch",
             3
         ],
