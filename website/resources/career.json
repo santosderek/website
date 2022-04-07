@@ -4,7 +4,7 @@
         "type": "Full-Time",
         "date": "July 2021 - Present",
         "location": "Raleigh, North Carolina",
-        "description": [
+        "descriptions": [
             "Developed and maintained several Python-based applications used by several Fortune 500 companies and other Cisco customers used to automate the configuration and monitoring of large-scale network infrastructure devices.",
             "Tested and deployed applications using CI/CD tools such as Jenkins, Docker, and Kubernetes.",
             "Worked in a fast, constantly changing environment to deliver new feature requests, including (but not limited to) providing a RESTful API to each feature.",
@@ -23,7 +23,7 @@
         "type": "Freelance",
         "date": "August 2021 - Present",
         "location": "Remote",
-        "description": [
+        "descriptions": [
             "Co-Author for the following interactive learning labs on tools for Ethical Hacking:",
             "Ethical Hacking: Introducing Network and Port Scanning using Nmap",
             "Ethical Hacking: Advanced Nmap Scanning and the Nmap Scripting Engine",
