@@ -5,7 +5,7 @@
         "date": "July 2021 - Present",
         "location": "Raleigh, North Carolina",
         "descriptions": [
-            "Developed and maintained several Python-based applications used by several Fortune 500 companies and other Cisco customers used to automate the configuration and monitoring of large-scale network infrastructure devices.",
+            "Developed and maintained several Python-based applications used by several Fortune 500 companies and other Cisco customers to automate the configuration and monitoring of large-scale network infrastructure devices.",
             "Tested and deployed applications using CI/CD tools such as Jenkins, Docker, and Kubernetes.",
             "Worked in a fast, constantly changing environment to deliver new feature requests, including (but not limited to) providing a RESTful API to each feature.",
             "Led the debugging of complex issues and provided solutions with minimal downtime.",
