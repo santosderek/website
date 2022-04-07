@@ -1,15 +1,17 @@
 """Generating a DOCX and converting it to .pdf through python"""
-from .resources import get_resource_json
+from os.path import expanduser, join
+from sys import platform
+
 from docx import Document
 from docx.enum.style import WD_STYLE_TYPE
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.opc.constants import RELATIONSHIP_TYPE
+from docx.oxml.ns import qn
 from docx.oxml.shared import OxmlElement
 from docx.oxml.shared import qn as sharedqn
-from docx.oxml.ns import qn
-from docx.shared import Pt, RGBColor, Cm, Inches
-from os.path import expanduser, join
-from sys import platform
+from docx.shared import Cm, Inches, Pt, RGBColor
+
+from .resources import get_resource_json
 
 if platform == "linux":
     RESUME_DIRECTORY_LOCATION = "/tmp/"
@@ -195,6 +197,8 @@ def experience(document):
     insertHR(head)
     experiences = get_resource_json("career.json")
     for experience in experiences:
+        if not experience.get('display', True):
+            continue
         experience_paragraph = document.add_paragraph('')
         experience_paragraph.add_run(' {}  '.format(experience['date']),
                                      'Emphasis').bold = True
@@ -213,6 +217,14 @@ def experience(document):
         # experience bullet points - Has to be on its own paragraph
         for bullet in experience['descriptions']:
             document.add_paragraph(bullet, style='List Bullet')
+
+    # Display the "Look to linkedin for more, sentence..."
+    experience_paragraph = document.add_paragraph(
+        'Complete list of experience can be found on '
+    )
+    add_hyperlink(experience_paragraph, 'https://www.linkedin.com/in/santosderek/',
+                  'https://www.linkedin.com/in/santosderek/.',  '568ed2', False)
+    experience_paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
 
 def leadership(document):
