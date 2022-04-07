@@ -1,5 +1,42 @@
 [
     {
+        "title": "Full Stack Software Engineer",
+        "type": "Full-Time",
+        "date": "July 2021 - Present",
+        "description": [
+            "Developed and maintained several Python-based applications used by several Fortune 500 companies and other Cisco customers used to automate the configuration and monitoring of large-scale network infrastructure devices.",
+            "Tested and deployed applications using CI/CD tools such as Jenkins, Docker, and Kubernetes.",
+            "Worked in a fast, constantly changing environment to deliver new feature requests, including (but not limited to) providing a RESTful API to each feature.",
+            "Led the debugging of complex issues and provided solutions with minimal downtime.",
+            "Collaborated in an Agile team using the Scrum framework to manage incoming features and tickets."
+        ],
+        "technologies": [
+            "Python",
+            "Flask",
+            "SQLAlchemy",
+            "Marshmallow"
+        ]
+    },
+    {
+        "title": "Author",
+        "type": "Freelance",
+        "date": "August 2021 - Present",
+        "description": [
+            "Co-Author for the following interactive learning labs on tools for Ethical Hacking:",
+            "Ethical Hacking: Introducing Network and Port Scanning using Nmap",
+            "Ethical Hacking: Advanced Nmap Scanning and the Nmap Scripting Engine",
+            "Ethical Hacking: Web Application Vulnerability Scanning with Nikto",
+            "Ethical Hacking: Capturing and Analyzing Packet Packets with TShark and tcpdump",
+            "Ethical Hacking: Scanning Docker Containers with Grype"
+        ],
+        "technologies": [
+            "Python",
+            "tcpdump",
+            "Nmap",
+            "Tshark"
+        ]
+    },
+    {
         "title": "Vitality - Senior Project",
         "type": "Senior Project",
         "date": "Aug 2020 - Dec 2020",
