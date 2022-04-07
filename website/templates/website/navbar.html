@@ -3,25 +3,25 @@
         <ul class="navbar-nav m-auto">
             <!-- Left of brand if I need it-->
             <li class="nav-item">
-                <a style="padding-right: .5em;" href="{{url_for('home') + '#experience'}}">Experience</a>
+                <a style="padding-right: .5em;" href="{{url_for('website.home') + '#experience'}}">Experience</a>
             </li>
             <li class="nav-item">
-                <a style="padding-right: .5em;" href="{{url_for('home') + '#skills'}}">Skills</a>
+                <a style="padding-right: .5em;" href="{{url_for('website.home') + '#skills'}}">Skills</a>
             </li>
             <li class="nav-item">
-                <a style="padding-right: .5em;" href="{{url_for('home') + '#projects'}}">Projects</a>
+                <a style="padding-right: .5em;" href="{{url_for('website.home') + '#projects'}}">Projects</a>
             </li>
             <li class="nav-item">
-                <a style="padding-right: .5em;" href="{{url_for('home') + '#resume'}}">Resume</a>
+                <a style="padding-right: .5em;" href="{{url_for('website.home') + '#resume'}}">Resume</a>
             </li>
             <li class="nav-item">
-                <a href="{{url_for('home') + '#contact'}}">Contact</a>
+                <a href="{{url_for('website.home') + '#contact'}}">Contact</a>
             </li>
         </ul>
     </div>
     <div class="mx-auto order-0">
         <a class="navbar-brand mx-auto" href="/" style="font-size: xx-large;">
-            <img src="{{ url_for('static', filename='images/santosderek.png')}}" alt="Derek Santos" />
+            <img src="{{ url_for('website.static', filename='images/santosderek.png')}}" alt="Derek Santos" />
         </a>
         <button class="navbar-toggler ml-3" type="button" data-toggle="collapse" data-target=".dual-collapse2">
             <span class="navbar-toggler-icon"></span>
@@ -30,27 +30,27 @@
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('github')}}">
+                <a class="nav-link" href="{{ url_for('website.github')}}">
                     <img style="width: 1.5em; filter: invert(17%) sepia(0%) saturate(1641%) hue-rotate(158deg) brightness(96%) contrast(93%);"
-                        src="{{ url_for('static', filename='images/svg/github.svg') }}" />
+                        src="{{ url_for('website.static', filename='images/svg/github.svg') }}" />
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('linkedin')}}">
+                <a class="nav-link" href="{{ url_for('website.linkedin')}}">
                     <img style="width: 1.5em; filter: invert(17%) sepia(0%) saturate(1641%) hue-rotate(158deg) brightness(96%) contrast(93%);"
-                        src="{{ url_for('static', filename='images/svg/linkedin.svg') }}" />
+                        src="{{ url_for('website.static', filename='images/svg/linkedin.svg') }}" />
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="mailto:santos.jon.derek@gmail.com">
                     <img style="width: 1.5em; filter: invert(17%) sepia(0%) saturate(1641%) hue-rotate(158deg) brightness(96%) contrast(93%);"
-                        src="{{ url_for('static', filename='images/svg/envelope.svg') }}" />
+                        src="{{ url_for('website.static', filename='images/svg/envelope.svg') }}" />
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('resume') }}">
+                <a class="nav-link" href="{{ url_for('website.resume') }}">
                     <img style="width: 1.5em; filter: invert(17%) sepia(0%) saturate(1641%) hue-rotate(158deg) brightness(96%) contrast(93%);"
-                        src="{{ url_for('static', filename='images/svg/download.svg') }}" />
+                        src="{{ url_for('website.static', filename='images/svg/download.svg') }}" />
                 </a>
             </li>
         </ul>

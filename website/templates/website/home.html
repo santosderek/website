@@ -207,7 +207,7 @@
         {% endfor %}
 
         <div class="col-sm-12 text-center mt-4 mb-5">
-            <a class="button_link" href="{{ url_for('github')}}">
+            <a class="button_link" href="{{ url_for('website.github')}}">
                 {% if github_user_json|length == 0 %}
                 ...and many more!
                 {% else %}
@@ -226,8 +226,8 @@
         <div class="col-sm-12 col-md-12">
             <p>
                 My resume is automated to be created based on the contents of this website.<br />Upon clicking the download
-                button on <b>either the top right of the navbar</b>, going to <b><a href="{{url_for('resume')}}">
-                        {{url_for('resume')}} </a></b>, or <b><a href="{{url_for('resume')}}">clicking here</a></b>, the
+                button on <b>either the top right of the navbar</b>, going to <b><a href="{{url_for('website.resume')}}">
+                        {{url_for('website.resume')}} </a></b>, or <b><a href="{{url_for('website.resume')}}">clicking here</a></b>, the
                 Flask application (this website) will generate a formatted Microsoft Word file and send the file to your
                 computer. This will ensure you always get the most up-to-date version of my resume.
             </p>
@@ -245,13 +245,13 @@
             <p>The best way to contact me is through email or linkedin!</p>
             <a href="mailto:santos.jon.derek@gmail.com">
                 <img style="width: 1.5em; filter: invert(17%) sepia(0%) saturate(1641%) hue-rotate(158deg) brightness(96%) contrast(93%);"
-                    src="{{ url_for('static', filename='images/svg/envelope.svg') }}" />
+                    src="{{ url_for('website.static', filename='images/svg/envelope.svg') }}" />
                 <span>santos.jon.derek@gmail.com</span>
             </a>
             <br />
             <a href="https://www.linkedin.com/in/santosderek/">
                 <img style="width: 1.5em; filter: invert(17%) sepia(0%) saturate(1641%) hue-rotate(158deg) brightness(96%) contrast(93%);"
-                    src="{{ url_for('static', filename='images/svg/linkedin.svg') }}" />
+                    src="{{ url_for('website.static', filename='images/svg/linkedin.svg') }}" />
                 <span>https://www.linkedin.com/in/santosderek/</span>
             </a>
         </div>
