@@ -2,8 +2,9 @@ from flask import (Blueprint, abort, escape, redirect, render_template,
                    send_from_directory)
 from jinja2.exceptions import TemplateNotFound
 
-from website.resources import GithubRequestError, get_github_user, get_resource_json
+from website.resources import get_resource_json
 from website.resume import RESUME_DIRECTORY_LOCATION, RESUME_FILENAME
+from website.connectors.github import GitHubConnector
 
 website_blueprint = Blueprint(
     'website',
@@ -37,11 +38,7 @@ def home():
     tools_right = tools[len(tools) // 2:]
 
     # Get my github public info
-    github_user_json = {}
-    try:
-        github_user_json = get_github_user()
-    except GithubRequestError:
-        github_user_json = {}
+    github_user_json = GitHubConnector().user
 
     return render_template('home.html',
                            technologies_left=technologies_left,
