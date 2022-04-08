@@ -12,4 +12,4 @@ Feel free to look around the source.
 
 --- 
 
-*NOTE: I will not be apporving pull requests as everything is subject to change at any moment.*
+*NOTE: I will not be approving pull requests as everything is subject to change at any moment.*
