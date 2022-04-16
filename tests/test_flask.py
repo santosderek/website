@@ -1,6 +1,7 @@
 from os.path import exists
 from website import create_app
-from website.resources import get_resource_json, get_github_user
+from website.resources import get_resource_json
+from website.connectors.github import GitHubConnector
 from website.resume import RESUME_LOCATION
 import pytest
 
@@ -80,7 +81,7 @@ def test_get_resource_json():
 def test_get_github_user():
     """Tests whether my github user data can be retrieved"""
 
-    returned_value = get_github_user()
+    returned_value = GitHubConnector().user
     assert returned_value['login'] == 'santosderek'
 
 
