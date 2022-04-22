@@ -1,29 +1,11 @@
 from os.path import exists
+
 from website import create_app
-from website.resources import get_resource_json
 from website.connectors.github import GitHubConnector
+from website.resources import get_resource_json
 from website.resume import RESUME_LOCATION
-import pytest
 
-
-@pytest.fixture
-def client():
-    app = create_app()
-    app.config['TESTING'] = True
-
-    def setup():
-        """ Code run after client has been used """
-        teardown()
-
-    def teardown():
-        """ Code run after client has been used """
-        pass
-
-    with app.test_client() as client:
-        with app.app_context():
-            setup()
-            yield client
-            teardown()
+from ._shared import client
 
 
 def test_github(client):
