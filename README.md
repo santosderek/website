@@ -37,7 +37,7 @@ The workflow consists of:
 1. Pulling and installing all dependencies.
 2. Testing Python unit tests with the popular PyTest package.
 3. Tests my Python resume generation.
-4. Building the docker container.
+4. Tests Dockerfile build of image.
 5. Pushing the code to [DigitalOcean](https://www.digitalocean.com/). (Now handled by DigitalOcean's SaaS platform.)
 
 ## Deployment
