@@ -1,11 +1,5 @@
 [
     {
-        "title": "Vitality",
-        "subtitle": "A workout companion app focused on managing user fitness and trainer information.",
-        "description": "",
-        "url": "/project/vitality"
-    },
-    {
         "title": "santosderek.com",
         "subtitle": "This website was built from the ground up with Python, Flask, Nginx, and Docker.",
         "description": "",
@@ -16,6 +10,12 @@
         "subtitle": "Download Imgur albums and images to desired folder.",
         "description": "",
         "url": "https://github.com/santosderek/Imgur-To-Folder"
+    },
+    {
+        "title": "Vitality",
+        "subtitle": "A workout companion app focused on managing user fitness and trainer information.",
+        "description": "",
+        "url": "/project/vitality"
     },
     {
         "title": "Fruit Fly Tracking",
