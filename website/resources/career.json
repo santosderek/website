@@ -1,8 +1,29 @@
 [
     {
-        "title": "Full Stack Software Engineer",
+        "title": "Software Engineer III - Cisco Systems",
         "type": "Full-Time",
-        "date": "July 2021 - Present",
+        "date": "August 2022 - Present",
+        "location": "Raleigh, North Carolina",
+        "descriptions": [
+            "Pioneered advancements in automation enabling reuse business-wide and saving network engineers hundreds of hours of network troubleshooting.",
+            "Co-Created automation and coding standards revolving around automated testing frameworks.",
+            "Developed and maintained a 30+ microservice application used by thousands of users at an international scale."
+        ],
+        "technologies": [
+            "Python",
+            "Flask",
+            "SQLAlchemy",
+            "Marshmallow",
+            "MariaDB",
+            "Docker",
+            "Kubernetes"
+        ],
+        "display": true
+    },
+    {
+        "title": "Full Stack Software Engineer - Cisco Systems [Collabera]",
+        "type": "Full-Time",
+        "date": "July 2021 - August 2022",
         "location": "Raleigh, North Carolina",
         "descriptions": [
             "Developed and maintained several Python-based applications used by several Fortune 500 companies and other Cisco customers to automate the configuration and monitoring of large-scale network infrastructure devices.",
