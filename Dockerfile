@@ -9,7 +9,7 @@ FROM ${RUNTIME_IMAGE} as install-requirements
             -r requirements.txt \
         ;
 
-    COPY website ./
+    COPY ["website", "docker-entrypoint.sh" "./"]
     ENTRYPOINT [ "./docker-entrypoint.sh" ]
     EXPOSE 8000
     ENV FLASK_ENV=gunicorn
