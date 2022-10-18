@@ -6,6 +6,15 @@ from website.resources import get_resource_json
 from website.resume import RESUME_LOCATION
 
 from ._shared import client
+from pathlib import Path
+
+def test_robots(client):
+    returned_value = client.get('/robots.txt')
+
+    robots_file = Path('website/static/txt/robots.txt')
+    assert robots_file.exists()
+    with robots_file.open('r') as current_file:
+        assert returned_value.data.decode('utf-8') == current_file.read()
 
 
 def test_github(client):
@@ -28,20 +37,20 @@ def test_home(client):
     assert returned_value.status_code == 200
 
     for client in get_resource_json('career.json'):
-        assert bytes(client['title'], 'utf-8') in returned_value.data
+        assert client['title'] in returned_value.data.decode('utf-8')
 
     for education in get_resource_json('education.json'):
-        assert bytes(education['title'], 'utf-8') in returned_value.data
+        assert education['title'] in returned_value.data.decode('utf-8')
 
     for repos in get_resource_json('repos.json'):
-        assert bytes(repos['title'], 'utf-8') in returned_value.data
-        assert bytes(repos['url'], 'utf-8') in returned_value.data
+        assert repos['title'] in returned_value.data.decode('utf-8')
+        assert repos['url'] in returned_value.data.decode('utf-8')
 
     for technology in get_resource_json('skills.json')['technologies']:
-        assert bytes(technology[0], 'utf-8') in returned_value.data
+        assert technology[0] in returned_value.data.decode('utf-8')
 
     for technology in get_resource_json('skills.json')['tools']:
-        assert bytes(technology[0], 'utf-8') in returned_value.data
+        assert technology[0] in returned_value.data.decode('utf-8')
 
 
 def test_get_resource_json():
@@ -77,18 +86,18 @@ def test_resume_created(client):
 def test_vitality_projects(client):
     returned_value = client.get('/project/vitality')
     assert returned_value.status_code == 200
-    assert b'Create, search, and view' in returned_value.data
-    assert b'Youtube recommendations' in returned_value.data
-    assert b'Schedule meetings' in returned_value.data
-    assert b'Google Maps' in returned_value.data
-    assert b'Invite and connect' in returned_value.data
-    assert b'Features' in returned_value.data
-    assert b'free and centralized' in returned_value.data
-    assert b'Mission' in returned_value.data
-    assert b'Vitality' in returned_value.data
+    assert 'Create, search, and view' in returned_value.data.decode('utf-8')
+    assert 'Youtube recommendations' in returned_value.data.decode('utf-8')
+    assert 'Schedule meetings' in returned_value.data.decode('utf-8')
+    assert 'Google Maps' in returned_value.data.decode('utf-8')
+    assert 'Invite and connect' in returned_value.data.decode('utf-8')
+    assert 'Features' in returned_value.data.decode('utf-8')
+    assert 'free and centralized' in returned_value.data.decode('utf-8')
+    assert 'Mission' in returned_value.data.decode('utf-8')
+    assert 'Vitality' in returned_value.data.decode('utf-8')
 
 
 def test_project_not_found(client):
     returned_value = client.get('/project/noproject')
     assert returned_value.status_code == 404
-    assert b'Sorry! Could not find page!' in returned_value.data
+    assert 'Sorry! Could not find page!' in returned_value.data.decode('utf-8')

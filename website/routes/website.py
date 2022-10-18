@@ -1,5 +1,5 @@
 from flask import (Blueprint, abort, escape, redirect, render_template,
-                   send_from_directory)
+                   send_from_directory, url_for)
 from jinja2.exceptions import TemplateNotFound
 
 from website.resources import get_resource_json
@@ -13,6 +13,12 @@ website_blueprint = Blueprint(
     template_folder='../templates/website',
     static_folder='../static'
 )
+
+
+@website_blueprint.route('/robots.txt', methods=["GET"])
+def robots():
+    """A file for search engines."""
+    return send_from_directory('static/txt', 'robots.txt')
 
 
 @website_blueprint.route('/', methods=["GET"])
