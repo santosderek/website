@@ -75,10 +75,10 @@
     background-color: #ccc;
 }
 
-.control-item .control-close {
-  font-size: 20px;
+.control-close {
+  font-size: 3rem;
   font-weight: 500;
-  line-height: 28px;
+  padding-top: 0;
 }
 
 .control-close:hover {
