@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+.terminal-section {
+    background-color: #292e33;
+    padding-top: 20vh;
+    padding-bottom: 20%;
+}
+
+.terminal {
+    width: 65%;
+    background-color: #222222;
+    border: 1px solid #c9c9c9;
+    box-shadow: 7px 7px 0 rgba(250, 250, 250, 0.2);
+    transition: all ease-in-out .3s;
+    border-radius: 10px;
+    min-height: 50vh;
+    font-family: 'VT323', monospace;
+    font-size: 2rem;
+}
+
+.terminal-header {
+    background-color: #eee;
+    height: 3vh;
+    border-radius: 10px 10px 0 0;
+}
+
+.terminal-header-buttons {
+    display: flex;
+    height: 100%;
+    color: black;
+    justify-content: flex-end;
+}
+
+.terminal-flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 30%;
+}
+
+.terminal-flex-item-1 {
+    flex-grow: 1;
+    min-width: 20rem;
+    min-height: 30rem;
+    padding-top: 15rem;
+    padding-left: 2rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.terminal-flex-item-2 {
+    flex-grow: 2;
+}
+
+.terminal-body-description span {
+    color: #E24E42;
+    font-style: italic;
+    padding-left: 2rem;
+
+}
+
+.control-item {
+    margin: 0;
+    width: 30px;
+    height: 100%;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    text-align: center;
+    color: #333;
+    transition: all ease-in .15s;
+    cursor: pointer;
+}
+
+.control-item:hover {
+    background-color: #ccc;
+}
+
+.control-item .control-close {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.control-close:hover {
+    background-color: #ec6060;
+    border-top-right-radius: 10px;
+    color: #fff;
+}
+
+.control-item.control-maximize { line-height: 19px; }
+.control-item.control-minimize { line-height: 22px; }
+
+.window-cursor {
+    padding-bottom: 1.5rem;
+}
+
+.window-cursor .i-cursor-indicator {
+    color: #fff;
+    font-size: 1.5rem;
+    font-family: 'Consolas', monospace;
+    margin-left: 1.5rem;
+}
+.window-cursor .i-cursor-underscore {
+    font-size: 2rem;
+    margin-left: 5px;
+    animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to { visibility: hidden; }
+}
+
+
