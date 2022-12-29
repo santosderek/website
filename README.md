@@ -1,7 +1,7 @@
 [![santosderek banner](website/static/images/santosderek.png)](https://santosderek.com)
 
 
-![Build Passing](https://img.shields.io/github/actions/workflow/status/santosderek/website/tests.yml?branch=main&style=for-the-badge) ![Languages Count](https://img.shields.io/github/languages/count/santosderek/website?style=for-the-badge)
+![Build Passing](https://img.shields.io/github/actions/workflow/status/santosderek/website/tests.yml?branch=master&style=for-the-badge) ![Languages Count](https://img.shields.io/github/languages/count/santosderek/website?style=for-the-badge)
 ![Total Lines](https://img.shields.io/tokei/lines/github/santosderek/website?style=for-the-badge)
 
 The following repo is the source code to my [personal website](https://santosderek.com) intended to be the main area where people can get to know me and my past experiences, and is able to generate a DOCX of my resume for me.
