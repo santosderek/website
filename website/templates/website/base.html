@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="en">
 
-{% include 'header.html' %}
+{% include 'head.html' %}
 
 <body id="my-scrollbar">
     <header>
         {% include 'navbar.html'%}
+        <!-- Block for child templates to use for additional header statements -->
+        {% block inherited_header %}{% endblock %}
     </header>
     <main>
         <div style="display: none;" id="content">

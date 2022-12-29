@@ -1,12 +1,41 @@
 {% extends 'base.html' %}
+{% block inherited_header %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/terminal.css')}}">
+{% endblock %}
+
 {% block content %}
-<div class="row parallax" style="min-height: 95vh;">
-    <div class="col text-center introjumbo">
-        <h2>Derek Santos</h2>
-        <h3 class="w-75">A software developer with a passion for automation and orchestration.</h3>
-        <p style="color: #8d8d8d;">Scroll below to see my work!</p>
+
+<section class="terminal-section">
+    <div class="terminal">
+        <div class="terminal-header">
+            <nav class="terminal-header-buttons">
+                <span class="control-item control-minimize">‒</span>
+                <span class="control-item control-maximize">□</span>
+                <span class="control-item control-close">˟</span>
+            </nav>
+        </div>
+        <main class="terminal-body">
+            <div class="window-cursor">
+                <span class="i-cursor-indicator">> who -u | pixelify</span>
+            </div>
+            <div class="terminal-flex-container">
+                <div class="terminal-flex-item-1 terminal-body-header">
+                    <p>Derek Santos</p>
+                </div>
+                <div class="terminal-flex-item-2 terminal-body-description">
+                    <p>A software developer with a passion for automation and orchestration.</p>
+                    <p><span>Title:</span> Full-Stack Software Engineer</p>
+                    <p><span>Coding Experience:</span> 10+ years</p>
+                    <p><span>Passions:</span> Python, Rust, MicroServices</p>
+                </div>
+            </div>
+            <div class="window-cursor">
+                <span class="i-cursor-indicator">></span>
+                <span class="i-cursor-underscore">_</span>
+            </div>
+        </main>
     </div>
-</div>
+</section>
 
 <div class="content pt-3">
     <div class="jumbotron pl-5">
