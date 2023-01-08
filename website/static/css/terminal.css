@@ -52,6 +52,17 @@
     flex-grow: 2;
 }
 
+@media only screen and (max-width: 1024px) {
+    .terminal-flex-container, .terminal-flex-container div {
+        flex-direction: column;
+        padding: 0 5%;
+    }
+
+    .terminal-flex-item-1 {
+        min-height: 5rem;
+    }
+}
+
 .terminal-body-description span {
     color: #E24E42;
     font-style: italic;
