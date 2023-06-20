@@ -1,10 +1,10 @@
 from flask import (Blueprint, abort, escape, redirect, render_template,
-                   send_from_directory, url_for)
+                   send_from_directory)
 from jinja2.exceptions import TemplateNotFound
 
+from website.connectors.github import GitHubConnector
 from website.resources import get_resource_json
 from website.resume import RESUME_DIRECTORY_LOCATION, RESUME_FILENAME
-from website.connectors.github import GitHubConnector
 
 website_blueprint = Blueprint(
     'website',
