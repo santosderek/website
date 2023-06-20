@@ -3,13 +3,14 @@ from os.path import exists
 from flask import Flask, render_template
 
 from .api.v1 import api
-
 from .resume import RESUME_LOCATION, generate_document
 from .routes.website import website_blueprint
+from .sitemap import sitemap
 
 
 def create_app():
     app = Flask(__name__)
+
     app.config.from_pyfile('settings.py')
 
     app.logger.info("Creating the resume.")
@@ -19,6 +20,8 @@ def create_app():
 
     app.register_blueprint(website_blueprint)
     app.register_blueprint(api)
+
+    sitemap.init_app(app)
 
     @app.errorhandler(404)
     def page_not_found(e):
