@@ -5,8 +5,6 @@ from website.spa import send_spa_index
 website_blueprint = Blueprint(
     'website',
     __name__,
-    # NOTE: Relative to blueprints root path
-    template_folder='../templates/website',
     static_folder='../static'
 )
 

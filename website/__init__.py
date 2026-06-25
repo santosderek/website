@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from flask import Flask, render_template
+from flask import Flask
 
 from .api.v1 import api
 from .resume import generate_document
@@ -51,7 +51,7 @@ def create_app(config_overrides=None):
     @app.errorhandler(404)
     def page_not_found(e):
         """HTTP Error 404: Not found."""
-        return render_template("error/404.html"), 404
+        return '<p class="text-center">Sorry! Could not find page!</p>', 404
 
     app.logger.info("Application Created.")
     return app
