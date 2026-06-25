@@ -1,0 +1,98 @@
+tests/test_api_resume.py
+  s_52e1aa8775975e::t_f8faebc6892d75 74-80
+frontend/src/components/SectionHeader.jsx
+  s_52e1aa8775975e::t_12291abe02106a 1-8
+frontend/package.json
+  s_52e1aa8775975e::t_21bfb9fefa07d9 1-12,18-19,24-25
+  s_52e1aa8775975e::t_1969b1ac2e8fa3 13-17,20-23
+frontend/vite.config.js
+  s_52e1aa8775975e::t_08b92c6d9d9247 1-29
+frontend/src/styles/terminal.css
+  s_52e1aa8775975e::t_7b74c9ac7bbe15 1
+frontend/src/App.jsx
+  s_52e1aa8775975e::t_b602c37d90c40f 1-30
+frontend/src/components/ProjectsSection.jsx
+  s_52e1aa8775975e::t_fb236ee5d64cae 1-41
+frontend/src/main.jsx
+  s_52e1aa8775975e::t_ae8a6b0da3b041 1-15
+frontend/src/components/Navbar.jsx
+  s_52e1aa8775975e::t_12e5b8d456bfac 3-9,13-14,16-27,29-31,33-42
+  s_52e1aa8775975e::t_404cff97322120 1-2,10-12,15,28,32
+frontend/src/routes/Home.jsx
+  s_52e1aa8775975e::t_cfd158150866bb 1-50
+tests/test_spa.py
+  s_52e1aa8775975e::t_058b1631a0e652 1-16
+frontend/src/routes/NotFound.jsx
+  s_52e1aa8775975e::t_edda799d803901 1-11
+frontend/src/components/LoadingScreen.jsx
+  s_52e1aa8775975e::t_91771c2c769a22 1-12
+website/settings.py
+  s_52e1aa8775975e::t_b64fe49eb4489b 33
+website/routes/website.py
+  s_52e1aa8775975e::t_f98912cfbff3ef 1,3,13,24-25,46,49
+website/api/v1/github.py
+  s_52e1aa8775975e::t_6c5f2f0b80dc37 1-11
+tests/test_flask.py
+  s_52e1aa8775975e::t_29ebd161ad6205 29-30,33-34,58,64,70
+.dockerignore
+  s_52e1aa8775975e::t_717c1b712f37eb 6-7
+frontend/src/components/TerminalHero.jsx
+  s_52e1aa8775975e::t_522dd8d9490913 1-28
+frontend/src/api/client.js
+  s_52e1aa8775975e::t_93e2b464d6333c 1-23
+frontend/src/data/projects.js
+  s_52e1aa8775975e::t_799ec9f1c327fe 1-84
+frontend/src/components/ResumeSection.jsx
+  s_52e1aa8775975e::t_2a6e3ce6a583e1 1-20
+website/spa.py
+  s_52e1aa8775975e::t_ac35aaf909e14a 1-19
+frontend/src/components/ContactSection.jsx
+  s_52e1aa8775975e::t_c0401c67e43a24 1-30
+.env.example
+  s_52e1aa8775975e::t_697a456b5376c1 8
+tests/conftest.py
+  s_52e1aa8775975e::t_c50bfcc5e9a478 18-25,31
+website/api/v1/__init__.py
+  s_52e1aa8775975e::t_a0efbcf23eceb2 5
+frontend/src/routes/ProjectPage.jsx
+  s_52e1aa8775975e::t_7a3f4b95df2988 1-93
+frontend/src/styles/base.css
+  s_52e1aa8775975e::t_32a642d59adbbc 3-4
+README.md
+  s_52e1aa8775975e::t_4026060044ebcc 22-24,44-46,49-62,96,107-109,120
+.gitignore
+  s_52e1aa8775975e::t_6b518a8edacc9f 72-75
+frontend/src/App.test.jsx
+  s_52e1aa8775975e::t_2e1a0fb2998bf5 1,36-48
+  s_52e1aa8775975e::t_cc312ffc823042 2-31,33-35,49-65
+  s_52e1aa8775975e::t_ef218e3fe1a735 32
+Dockerfile
+  s_52e1aa8775975e::t_a440e2d8188bf5 1,4-10,21
+frontend/src/components/ExperienceSection.jsx
+  s_52e1aa8775975e::t_18c1bf755595cc 1-40
+frontend/index.html
+  s_52e1aa8775975e::t_1f908fb7c91db3 1-21
+frontend/src/components/ScrollSpy.jsx
+  s_52e1aa8775975e::t_d399dececeb631 1-49
+frontend/src/test/setup.js
+  s_52e1aa8775975e::t_bcba1a4f1acd82 1
+  s_52e1aa8775975e::t_6cc9aaeab44d02 2-7
+frontend/src/components/SkillsSection.jsx
+  s_52e1aa8775975e::t_8c2795b20cbf10 1-54
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.13",
+  "base_commit_sha": "7dde545049a83706cfe3d595c02ec15d3a15e933",
+  "prompts": {},
+  "sessions": {
+    "s_52e1aa8775975e": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "019eff86-9e73-74df-82ae-404c2bc88a43",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Derek Santos <dersanto@cisco.com>"
+    }
+  }
+}
