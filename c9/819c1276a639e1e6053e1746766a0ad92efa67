@@ -1,0 +1,78 @@
+.dockerignore
+  s_52e1aa8775975e::t_dc9d687f956340 3-5
+website/sitemap/website.py
+  s_b5c4547833b14d::t_c8d404db176e82 1-2,16
+docker-entrypoint.sh
+  s_b5c4547833b14d::t_093d5d0cc6ffdd 14,16-18
+  s_b5c4547833b14d::t_6c0abea6937a37 2-5,9-10,13,15
+website/__init__.py
+  s_b5c4547833b14d::t_6dfee1a155f9fa 27-30
+  s_b5c4547833b14d::t_3043d2914bf029 1,6,11,15-16,33-44
+  s_52e1aa8775975e::t_db3ad332b10757 18-26,31-32
+.github/workflows/tests.yml
+  s_b5c4547833b14d::t_06108528ff91b2 3-4,18,20-21,23,26,28-30,33,41-42,44,47,50
+Dockerfile
+  s_b5c4547833b14d::t_9b95f0323639e0 6,13
+requirements.txt
+  s_52e1aa8775975e::t_c4737e38725d4f 1-23
+tests/test_github_connector.py
+  s_52e1aa8775975e::t_ec26a4b7457e73 1-71
+website/connectors/github.py
+  s_b5c4547833b14d::t_cf210668508da0 1-46
+tests/test_resources.py
+  s_52e1aa8775975e::t_bc6887dc006b2b 1-46
+tests/conftest.py
+  s_b5c4547833b14d::t_35d4282c86f179 1-32
+website/resources.py
+  s_b5c4547833b14d::t_fd34c31056b71b 1-55
+website/resume.py
+  s_b5c4547833b14d::t_e61429986a28d4 2,14,74,171,180,296-299
+  s_b5c4547833b14d::t_031a9dbf9e619f 95-97,166,190,227,246
+website/api/v1/resume.py
+  s_b5c4547833b14d::t_c28ecc03087142 7-19,28-29,39,50,61,72,83
+.env.example
+  s_b5c4547833b14d::t_472eddca796ea4 2-7
+website/sitemap/__init__.py
+  s_b5c4547833b14d::t_860c1db354c0b4 7
+website/settings.py
+  s_b5c4547833b14d::t_7e16a1f544f624 1-11,15-32
+website/api/v1/__init__.py
+  s_b5c4547833b14d::t_53fbcb2b9ec487 5
+tests/test_api_resume.py
+  s_b5c4547833b14d::t_2dde26679898dc 1-4,9,12-17,28,38,48,58,68
+requirements.in
+  s_b5c4547833b14d::t_3ff6b798d86eb9 1-7
+README.md
+  s_b5c4547833b14d::t_f421e055ab2dc0 1-115
+tests/test_flask.py
+  s_b5c4547833b14d::t_9b309a5ef99b47 1-9,11-104
+  s_52e1aa8775975e::t_927ff6bbcbe3c5 10
+website/routes/website.py
+  s_b5c4547833b14d::t_acb88d097d65c0 1-110
+tests/test_resume.py
+  s_52e1aa8775975e::t_9cdc4efd3916a2 1,3-4,7-68
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.13",
+  "base_commit_sha": "c9819c1276a639e1e6053e1746766a0ad92efa67",
+  "prompts": {},
+  "sessions": {
+    "s_52e1aa8775975e": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "019eff86-9e73-74df-82ae-404c2bc88a43",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Derek Santos <dersanto@cisco.com>"
+    },
+    "s_b5c4547833b14d": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "019eff8e-6543-7d98-a5dc-545a8f869efb",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Derek Santos <dersanto@cisco.com>"
+    }
+  }
+}
