@@ -31,7 +31,7 @@ export default function ProjectsSection({ repos }) {
         ))}
 
         <div className="col-sm-12 text-center mt-4 mb-5">
-          <a className="button_link" href="/github">
+          <a className="button_link" href="https://github.com/santosderek">
             {githubUser.public_repos ? `...and ${githubUser.public_repos} more on github!` : '...and many more!'}
           </a>
         </div>

@@ -30,4 +30,3 @@ GENERATE_RESUME_ON_STARTUP = environ.get('GENERATE_RESUME_ON_STARTUP', 'true').l
     'on',
 }
 GITHUB_TIMEOUT_SECONDS = float(environ.get('GITHUB_TIMEOUT_SECONDS', '5'))
-SPA_DIST_DIR = environ.get('SPA_DIST_DIR', str(BASE_DIR / 'static' / 'spa'))

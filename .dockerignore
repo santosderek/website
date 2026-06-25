@@ -4,4 +4,4 @@ __pycache__/
 recon/
 .venv/
 frontend/node_modules/
-website/static/spa/
+frontend/dist/

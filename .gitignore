@@ -71,7 +71,7 @@ recon/
 
 # Frontend build artifacts
 frontend/node_modules/
-website/static/spa/
+frontend/dist/
 
 # Scrapy stuff:
 .scrapy

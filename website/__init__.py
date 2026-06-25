@@ -4,8 +4,7 @@ from flask import Flask
 
 from .api.v1 import api
 from .resume import generate_document
-from .routes.website import website_blueprint
-from .sitemap import sitemap
+from .routes.backend import backend_blueprint
 
 
 def create_app(config_overrides=None):
@@ -43,10 +42,8 @@ def create_app(config_overrides=None):
             raise RuntimeError(f"Resume was not created at {generated_location}")
         app.logger.info("Resume Created.")
 
-    app.register_blueprint(website_blueprint)
     app.register_blueprint(api)
-
-    sitemap.init_app(app)
+    app.register_blueprint(backend_blueprint)
 
     @app.errorhandler(404)
     def page_not_found(e):

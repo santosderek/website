@@ -31,8 +31,8 @@ export default function Navbar() {
       </div>
       <div className={`${collapseClassName} order-3`}>
         <ul className="navbar-nav ml-auto">
-          <li className="nav-item"><a className="nav-link" aria-label="GitHub" href="/github"><Icon src="/static/images/svg/github.svg" alt="GitHub" /></a></li>
-          <li className="nav-item"><a className="nav-link" aria-label="LinkedIn" href="/linkedin"><Icon src="/static/images/svg/linkedin.svg" alt="LinkedIn" /></a></li>
+          <li className="nav-item"><a className="nav-link" aria-label="GitHub" href="https://github.com/santosderek"><Icon src="/static/images/svg/github.svg" alt="GitHub" /></a></li>
+          <li className="nav-item"><a className="nav-link" aria-label="LinkedIn" href="https://www.linkedin.com/in/santosderek/"><Icon src="/static/images/svg/linkedin.svg" alt="LinkedIn" /></a></li>
           <li className="nav-item"><a className="nav-link" aria-label="Email" href="mailto:santos.jon.derek@gmail.com"><Icon src="/static/images/svg/envelope.svg" alt="Email" /></a></li>
           <li className="nav-item"><a className="nav-link" aria-label="Download resume" href="/resume"><Icon src="/static/images/svg/download.svg" alt="Download resume" /></a></li>
         </ul>
