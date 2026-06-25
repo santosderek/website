@@ -1,0 +1,33 @@
+README.md
+  s_52e1aa8775975e::t_64d27af1ddeb10 1,49,62,65-66,93,105,117
+website/__init__.py
+  s_52e1aa8775975e::t_fc73bc913b4c6c 7,46
+frontend/vite.config.js
+  s_52e1aa8775975e::t_bc4cc5b8c5f1da 4,8,10,17-18
+website/routes/backend.py
+  s_52e1aa8775975e::t_7cacd5e5156dbe 1-16
+frontend/src/components/Navbar.jsx
+  s_52e1aa8775975e::t_6d766b0126598a 34-35
+frontend/src/components/ProjectsSection.jsx
+  s_52e1aa8775975e::t_0bb6ea07eea7b9 34
+Dockerfile
+  s_52e1aa8775975e::t_085a6516495af0 3
+frontend/public/sitemap.xml
+  s_52e1aa8775975e::t_1d5df6044de8c3 1-7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.13",
+  "base_commit_sha": "35ea1be69d9c66876d4d77ac3a656fb72aee5633",
+  "prompts": {},
+  "sessions": {
+    "s_52e1aa8775975e": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "019eff86-9e73-74df-82ae-404c2bc88a43",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Derek Santos <dersanto@cisco.com>"
+    }
+  }
+}
