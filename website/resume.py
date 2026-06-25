@@ -1,6 +1,5 @@
 """Generating a DOCX and converting it to .pdf through python"""
-from os.path import expanduser, join
-from sys import platform
+from pathlib import Path
 
 from docx import Document
 from docx.enum.style import WD_STYLE_TYPE
@@ -12,14 +11,7 @@ from docx.oxml.shared import qn as sharedqn
 from docx.shared import Cm, Inches, Pt, RGBColor
 
 from .resources import get_resource_json
-
-if platform == "linux":
-    RESUME_DIRECTORY_LOCATION = "/tmp/"
-else:
-    RESUME_DIRECTORY_LOCATION = expanduser('~')
-
-RESUME_FILENAME = 'Derek Santos - Resume.docx'
-RESUME_LOCATION = join(RESUME_DIRECTORY_LOCATION, RESUME_FILENAME)
+from .settings import RESUME_DIRECTORY_LOCATION, RESUME_FILENAME, RESUME_LOCATION
 DEFAULT_SPACING = Cm(0.03)
 DEFAULT_FONT_NAME = "Calibri Light"
 DEFAULT_FONT_COLOR = RGBColor(0, 0, 0)
@@ -79,7 +71,7 @@ def add_hyperlink(paragraph, url, text, color, underline):
     return hyperlink
 
 
-def insertHR(paragraph):
+def insert_hr(paragraph):
     p = paragraph._p  # p is the <w:p> XML element
     pPr = p.get_or_add_pPr()
     pBdr = OxmlElement('w:pBdr')
@@ -98,6 +90,9 @@ def insertHR(paragraph):
     bottom.set(qn('w:space'), '1')
     bottom.set(qn('w:color'), 'auto')
     pBdr.append(bottom)
+
+
+insertHR = insert_hr
 
 
 def style_document(document):
@@ -168,13 +163,12 @@ def style_document(document):
 def technical_skills(document):
     head = document.add_paragraph('Technical Skills',
                                   style='ResumeHeader')
-    insertHR(head)
+    insert_hr(head)
     # Technologies
     document.add_paragraph('').add_run('Technologies').bold = True
     technologies = document.add_paragraph('')
     skills_json = get_resource_json('skills.json')
-    technology_list = skills_json['technologies']
-    technology_list.sort(key=lambda x: x[1], reverse=True)
+    technology_list = sorted(skills_json['technologies'], key=lambda x: x[1], reverse=True)
     for pos, item in enumerate(technology_list):
         if pos != 0:
             technologies.add_run(', ')
@@ -183,8 +177,7 @@ def technical_skills(document):
     # Tools
     document.add_paragraph('').add_run('Tools').bold = True
     tools = document.add_paragraph('')
-    tools_list = skills_json['tools']
-    tools_list.sort(key=lambda x: x[1], reverse=True)
+    tools_list = sorted(skills_json['tools'], key=lambda x: x[1], reverse=True)
     for pos, item in enumerate(tools_list):
         if pos != 0:
             tools.add_run(', ')
@@ -194,7 +187,7 @@ def technical_skills(document):
 def experience(document):
     head = document.add_paragraph('Experience',
                                   style='ResumeHeader')
-    insertHR(head)
+    insert_hr(head)
     experiences = get_resource_json("career.json")
     for experience in experiences:
         if not experience.get('display', True):
@@ -231,7 +224,7 @@ def leadership(document):
     # Leadership
     head = document.add_paragraph('Leadership',
                                   style='ResumeHeader')
-    insertHR(head)
+    insert_hr(head)
     for item in get_resource_json('leadership.json'):
         leadership_paragraph = document.add_paragraph('')
         date = leadership_paragraph.add_run('{}  '.format(item['date']),
@@ -250,7 +243,7 @@ def education(document):
     # Education
     head = document.add_paragraph('Education',
                                   style='ResumeHeader')
-    insertHR(head)
+    insert_hr(head)
     for item in get_resource_json('education.json'):
 
         title_line = document.add_paragraph('')
@@ -300,4 +293,7 @@ def generate_document(location=RESUME_LOCATION):
     leadership(document)
     education(document)
 
-    document.save(RESUME_LOCATION)
+    output_path = Path(location)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    document.save(str(output_path))
+    return output_path

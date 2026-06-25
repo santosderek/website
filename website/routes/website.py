@@ -1,10 +1,7 @@
-from flask import (Blueprint, abort, escape, redirect, render_template,
-                   send_from_directory)
-from jinja2.exceptions import TemplateNotFound
+from flask import Blueprint, abort, current_app, redirect, render_template, send_from_directory
 
 from website.connectors.github import GitHubConnector
 from website.resources import get_resource_json
-from website.resume import RESUME_DIRECTORY_LOCATION, RESUME_FILENAME
 
 website_blueprint = Blueprint(
     'website',
@@ -13,6 +10,26 @@ website_blueprint = Blueprint(
     template_folder='../templates/website',
     static_folder='../static'
 )
+
+PROJECT_PAGES = {
+    'project': {
+        'template': 'project/project.html',
+        'images': [],
+    },
+    'santosderek': {
+        'template': 'project/santosderek.html',
+        'images': ['/static/images/santosderek/santosderekDeployment.png'],
+    },
+    'vitality': {
+        'template': 'project/vitality.html',
+        'images': [
+            '/static/images/vitality/FrontPage.png',
+            '/static/images/vitality/ShowTrainers.png',
+            '/static/images/vitality/Diets.png',
+            '/static/images/vitality/Workouts.png',
+        ],
+    },
+}
 
 
 @website_blueprint.route('/robots.txt', methods=["GET"])
@@ -27,17 +44,13 @@ def home():
 
     # Technology, Stars out of 5
     skills = get_resource_json('skills.json')
-    technologies = skills['technologies']
-    tools = skills['tools']
+    technologies = sorted(skills['technologies'], key=lambda x: x[1], reverse=True)
+    tools = sorted(skills['tools'], key=lambda x: x[1], reverse=True)
 
     # Get career info from JSON file
     careers = get_resource_json('career.json')
     educations = get_resource_json('education.json')
     repos = get_resource_json('repos.json')
-
-    # Sorting lists by number of stars decending
-    technologies.sort(key=lambda x: x[1], reverse=True)
-    tools.sort(key=lambda x: x[1], reverse=True)
 
     # Splitting to two columns
     technologies_left = technologies[:len(technologies) // 2]
@@ -64,34 +77,25 @@ def resume():
     """This route returns a download of my resume."""
 
     try:
-        # return send_from_directory(RESUME_DIRECTORY_LOCATION, path=RESUME_FILENAME, filename=RESUME_FILENAME, as_attachment=True)
-        return send_from_directory(RESUME_DIRECTORY_LOCATION, path=RESUME_FILENAME, as_attachment=True)
+        return send_from_directory(
+            current_app.config['RESUME_DIRECTORY_LOCATION'],
+            path=current_app.config['RESUME_FILENAME'],
+            as_attachment=True,
+        )
     except FileNotFoundError:
         abort(404)
 
 
 @website_blueprint.route('/project/<string:project>', methods=["GET"])
 def project(project: str):
-    """This route redirects to my github"""
+    """This route renders project pages."""
 
-    imagesToPreload = {
-        'vitality': ['/static/images/vitality/FrontPage.png',
-                     '/static/images/vitality/ShowTrainers.png',
-                     '/static/images/vitality/Diets.png',
-                     '/static/images/vitality/Workouts.png'],
-        'santosderek': ['/static/images/santosderek/santosderekDeployment.png']
-    }
-
-    try:
-        project = escape(project)
-
-        images = ['/static/images/santosderek.png']
-        if project in imagesToPreload:
-            images += imagesToPreload[project]
-
-        return render_template(f'project/{project}.html', imagesToPreload=images)
-    except TemplateNotFound:
+    project_page = PROJECT_PAGES.get(project)
+    if project_page is None:
         abort(404)
+
+    images = ['/static/images/santosderek.png', *project_page['images']]
+    return render_template(project_page['template'], imagesToPreload=images)
 
 
 @website_blueprint.route('/github', methods=["GET"])

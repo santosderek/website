@@ -65,6 +65,10 @@ db.sqlite3-journal
 instance/
 .webassets-cache
 
+# Local agent/recon artifacts
+.pi/
+recon/
+
 # Scrapy stuff:
 .scrapy
 

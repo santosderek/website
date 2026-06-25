@@ -1,3 +1,5 @@
+from website.routes.website import PROJECT_PAGES
+
 from . import sitemap
 
 
@@ -11,10 +13,5 @@ def website_generator():
     yield 'website.home', {}
 
     # Dynamic pages
-
-    for project in (
-        'project',
-        'santosderek',
-        'vitality'
-    ):
+    for project in PROJECT_PAGES:
         yield 'website.project', {'project': project}

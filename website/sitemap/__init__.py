@@ -4,4 +4,4 @@ from flask_sitemap import Sitemap
 sitemap = Sitemap()
 
 
-from .website import *
+from . import website as website_sitemap
