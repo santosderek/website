@@ -1,7 +1,6 @@
-from flask import Blueprint, abort, current_app, redirect, render_template, send_from_directory
+from flask import Blueprint, abort, current_app, redirect, send_from_directory
 
-from website.connectors.github import GitHubConnector
-from website.resources import get_resource_json
+from website.spa import send_spa_index
 
 website_blueprint = Blueprint(
     'website',
@@ -11,25 +10,7 @@ website_blueprint = Blueprint(
     static_folder='../static'
 )
 
-PROJECT_PAGES = {
-    'project': {
-        'template': 'project/project.html',
-        'images': [],
-    },
-    'santosderek': {
-        'template': 'project/santosderek.html',
-        'images': ['/static/images/santosderek/santosderekDeployment.png'],
-    },
-    'vitality': {
-        'template': 'project/vitality.html',
-        'images': [
-            '/static/images/vitality/FrontPage.png',
-            '/static/images/vitality/ShowTrainers.png',
-            '/static/images/vitality/Diets.png',
-            '/static/images/vitality/Workouts.png',
-        ],
-    },
-}
+PROJECT_PAGES = ('project', 'santosderek', 'vitality')
 
 
 @website_blueprint.route('/robots.txt', methods=["GET"])
@@ -40,36 +21,8 @@ def robots():
 
 @website_blueprint.route('/', methods=["GET"])
 def home():
-    """The home route of the website"""
-
-    # Technology, Stars out of 5
-    skills = get_resource_json('skills.json')
-    technologies = sorted(skills['technologies'], key=lambda x: x[1], reverse=True)
-    tools = sorted(skills['tools'], key=lambda x: x[1], reverse=True)
-
-    # Get career info from JSON file
-    careers = get_resource_json('career.json')
-    educations = get_resource_json('education.json')
-    repos = get_resource_json('repos.json')
-
-    # Splitting to two columns
-    technologies_left = technologies[:len(technologies) // 2]
-    technologies_right = technologies[len(technologies) // 2:]
-    tools_left = tools[:len(tools) // 2]
-    tools_right = tools[len(tools) // 2:]
-
-    # Get my github public info
-    github_user_json = GitHubConnector().user
-
-    return render_template('home.html',
-                           technologies_left=technologies_left,
-                           technologies_right=technologies_right,
-                           tools_left=tools_left,
-                           tools_right=tools_right,
-                           github_user_json=github_user_json,
-                           careers=careers,
-                           educations=educations,
-                           repos=repos)
+    """Serve the React Router single-page app."""
+    return send_spa_index()
 
 
 @website_blueprint.route('/resume', methods=["GET"])
@@ -90,12 +43,10 @@ def resume():
 def project(project: str):
     """This route renders project pages."""
 
-    project_page = PROJECT_PAGES.get(project)
-    if project_page is None:
+    if project not in PROJECT_PAGES:
         abort(404)
 
-    images = ['/static/images/santosderek.png', *project_page['images']]
-    return render_template(project_page['template'], imagesToPreload=images)
+    return send_spa_index()
 
 
 @website_blueprint.route('/github', methods=["GET"])

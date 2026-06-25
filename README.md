@@ -19,6 +19,9 @@ Feel free to look around the source.
 The major key technologies and dependencies for the website are:
 
 - Flask
+- React
+- React Router
+- Vite
 - Docker
 - DigitalOcean
 - AWS Route53
@@ -38,9 +41,25 @@ python3.10 -m venv .venv
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 python -m pytest -v
+npm ci --prefix frontend
+npm run build --prefix frontend
+npm test --prefix frontend
 ```
 
-To run the Flask development server locally:
+The Flask app serves the built React Router app from `website/static/spa`. During frontend-only development, you can run Vite with API/static proxies to Flask:
+
+```bash
+# terminal 1
+. .venv/bin/activate
+export FLASK_APP=website
+export FLASK_ENV=flask
+flask run --host 127.0.0.1 --port 8000
+
+# terminal 2
+npm run dev --prefix frontend
+```
+
+To run the Flask development server locally with the production frontend build:
 
 ```bash
 . .venv/bin/activate
@@ -74,6 +93,7 @@ Configuration can be supplied through environment variables or explicit app-fact
 | `RESUME_FILENAME` | `Derek Santos - Resume.docx` | Public download filename for `/resume`. |
 | `GENERATE_RESUME_ON_STARTUP` | `true` | Generates the DOCX resume when the app starts. Tests can disable this. |
 | `GITHUB_TIMEOUT_SECONDS` | `5` | Timeout for GitHub API requests used by the home page. |
+| `SPA_DIST_DIR` | `website/static/spa` | Directory containing the built React Router app served for `/` and known `/project/*` routes. |
 
 ## Build
 
@@ -84,8 +104,9 @@ The workflow consists of:
 1. Pulling and installing pinned dependencies.
 2. Running `python -m pip check`.
 3. Testing Python unit tests with PyTest.
-4. Testing Dockerfile build of image.
-5. Pushing the code to [DigitalOcean](https://www.digitalocean.com/). (Now handled by DigitalOcean's SaaS platform.)
+4. Installing and building the React Router frontend.
+5. Testing Dockerfile build of image.
+6. Pushing the code to [DigitalOcean](https://www.digitalocean.com/). (Now handled by DigitalOcean's SaaS platform.)
 
 ## Docker
 
@@ -96,7 +117,7 @@ docker build -t santosderek-website .
 docker run --rm -p 8000:8000 santosderek-website
 ```
 
-The Docker image defaults to `FLASK_ENV=gunicorn`, which starts Gunicorn through `docker-entrypoint.sh`. Set `FLASK_ENV=flask` to run the Flask development server in the container.
+The Docker image builds the React Router frontend in a Node stage, copies the generated `website/static/spa` files into the Python runtime image, and defaults to `FLASK_ENV=gunicorn`, which starts Gunicorn through `docker-entrypoint.sh`. Set `FLASK_ENV=flask` to run the Flask development server in the container.
 
 ## Deployment
 

@@ -71,3 +71,10 @@ def test_api_skills(client):
     assert returned_value_json is not None
     assert isinstance(returned_value_json, dict)
     assert len(returned_value_json) > 0
+
+
+def test_api_github_user_falls_back_when_network_is_unavailable(client):
+    returned_value = client.get('/api/v1/github/user')
+    assert_json_response(returned_value)
+
+    assert returned_value.json == {}

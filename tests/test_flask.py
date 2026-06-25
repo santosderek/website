@@ -1,6 +1,5 @@
 from pathlib import Path
 
-from website.resources import get_resource_json
 from website.resume import generate_document
 
 
@@ -27,27 +26,12 @@ def test_linkedin(client):
     assert returned_value.location == 'https://www.linkedin.com/in/santosderek/'
 
 
-def test_home(client):
-    """Testing that the page renders when GitHub is unavailable."""
+def test_home_serves_react_app_shell(client):
+    """Testing that the home route serves the React app shell."""
     returned_value = client.get('/')
+
     assert returned_value.status_code == 200
-
-    page_text = returned_value.data.decode('utf-8')
-    for career in get_resource_json('career.json'):
-        assert career['title'] in page_text
-
-    for education in get_resource_json('education.json'):
-        assert education['title'] in page_text
-
-    for repo in get_resource_json('repos.json'):
-        assert repo['title'] in page_text
-        assert repo['url'] in page_text
-
-    for technology in get_resource_json('skills.json')['technologies']:
-        assert technology[0] in page_text
-
-    for tool in get_resource_json('skills.json')['tools']:
-        assert tool[0] in page_text
+    assert 'React App Shell' in returned_value.data.decode('utf-8')
 
 
 def test_resume_download(client, app):
@@ -71,26 +55,19 @@ def test_resume_missing_returns_404(client):
 def test_project_page_renders(client):
     returned_value = client.get('/project/project')
     assert returned_value.status_code == 200
+    assert 'React App Shell' in returned_value.data.decode('utf-8')
 
 
 def test_santosderek_projects(client):
     returned_value = client.get('/project/santosderek')
     assert returned_value.status_code == 200
-    assert 'santosderek.com' in returned_value.data.decode('utf-8')
+    assert 'React App Shell' in returned_value.data.decode('utf-8')
 
 
 def test_vitality_projects(client):
     returned_value = client.get('/project/vitality')
     assert returned_value.status_code == 200
-    assert 'Create, search, and view' in returned_value.data.decode('utf-8')
-    assert 'Youtube recommendations' in returned_value.data.decode('utf-8')
-    assert 'Schedule meetings' in returned_value.data.decode('utf-8')
-    assert 'Google Maps' in returned_value.data.decode('utf-8')
-    assert 'Invite and connect' in returned_value.data.decode('utf-8')
-    assert 'Features' in returned_value.data.decode('utf-8')
-    assert 'free and centralized' in returned_value.data.decode('utf-8')
-    assert 'Mission' in returned_value.data.decode('utf-8')
-    assert 'Vitality' in returned_value.data.decode('utf-8')
+    assert 'React App Shell' in returned_value.data.decode('utf-8')
 
 
 def test_project_not_found(client):

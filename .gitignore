@@ -69,6 +69,10 @@ instance/
 .pi/
 recon/
 
+# Frontend build artifacts
+frontend/node_modules/
+website/static/spa/
+
 # Scrapy stuff:
 .scrapy
 
