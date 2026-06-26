@@ -1,0 +1,26 @@
+frontend/src/App.test.jsx
+  s_52e1aa8775975e::t_aac7c7eff2f667 57-59,61-62
+  s_52e1aa8775975e::t_8ecf35e038e91d 54
+  s_52e1aa8775975e::t_943dcdb1068fa7 49,53,55
+frontend/src/components/TuiWorkspace.jsx
+  s_52e1aa8775975e::t_254971889dc7ec 71
+frontend/src/styles/base.css
+  s_52e1aa8775975e::t_b9a757a31d867d 1002-1005
+  s_52e1aa8775975e::t_2466356ac4e649 1113-1115,1233
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "1c1fb2206a2169328a9b25becd70351813ce10b6",
+  "prompts": {},
+  "sessions": {
+    "s_52e1aa8775975e": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "019eff86-9e73-74df-82ae-404c2bc88a43",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Derek Santos <dersanto@cisco.com>"
+    }
+  }
+}
