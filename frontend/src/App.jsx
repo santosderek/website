@@ -2,7 +2,6 @@ import { Route, Routes } from 'react-router-dom';
 
 import CommandPalette from './components/CommandPalette.jsx';
 import InteractiveBackground from './components/InteractiveBackground.jsx';
-import Navbar from './components/Navbar.jsx';
 import ScrollSpy from './components/ScrollSpy.jsx';
 import Home from './routes/Home.jsx';
 import NotFound from './routes/NotFound.jsx';
@@ -13,9 +12,6 @@ export default function App() {
     <>
       <InteractiveBackground />
       <CommandPalette />
-      <header>
-        <Navbar />
-      </header>
       <main>
         <Routes>
           <Route path="/" element={<Home />} />

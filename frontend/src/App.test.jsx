@@ -46,17 +46,20 @@ describe('App', () => {
     expect(screen.getAllByText('Python').length).toBeGreaterThan(0);
   });
 
-  it('toggles mobile navigation without Bootstrap JavaScript', () => {
+  it('uses the TUI font family for the left navigation', async () => {
     mockFetch();
     render(<MemoryRouter initialEntries={['/']}><App /></MemoryRouter>);
 
-    const toggle = screen.getByRole('button', { name: /toggle navigation/i });
-    expect(toggle).toHaveAttribute('aria-expanded', 'false');
+    const sidebar = await screen.findByLabelText('Portfolio sections');
+    expect(within(sidebar).getByText('Overview').closest('button')).toHaveClass('tui-nav-button');
+  });
 
-    fireEvent.click(toggle);
+  it('does not render the old top navigation bar', () => {
+    mockFetch();
+    render(<MemoryRouter initialEntries={['/']}><App /></MemoryRouter>);
 
-    expect(toggle).toHaveAttribute('aria-expanded', 'true');
-    expect(document.querySelectorAll('.navbar-collapse.show')).toHaveLength(2);
+    expect(screen.queryByRole('button', { name: /toggle navigation/i })).not.toBeInTheDocument();
+    expect(document.querySelector('.navbar')).not.toBeInTheDocument();
   });
 
   it('opens command palette from keyboard shortcut', async () => {

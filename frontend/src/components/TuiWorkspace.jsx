@@ -68,7 +68,7 @@ export default function TuiWorkspace({ resumeData, selectedSkill, onSelectSkill 
               <button
                 key={candidate.id}
                 type="button"
-                className={candidate.id === activePanel ? 'active' : ''}
+                className={`tui-nav-button ${candidate.id === activePanel ? 'active' : ''}`}
                 onClick={() => activatePanel(candidate.id)}
               >
                 <span>▸</span>{candidate.label}
