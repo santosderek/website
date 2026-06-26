@@ -1,18 +1,13 @@
 import { useEffect, useState } from 'react';
 
 import { getResumeData } from '../api/client.js';
-import ContactSection from '../components/ContactSection.jsx';
-import ExperienceSection from '../components/ExperienceSection.jsx';
 import LoadingScreen from '../components/LoadingScreen.jsx';
-import ProjectsSection from '../components/ProjectsSection.jsx';
-import ResumeSection from '../components/ResumeSection.jsx';
-import ScrollSpy from '../components/ScrollSpy.jsx';
-import SkillsSection from '../components/SkillsSection.jsx';
-import TerminalHero from '../components/TerminalHero.jsx';
+import TuiWorkspace from '../components/TuiWorkspace.jsx';
 
 export default function Home() {
   const [resumeData, setResumeData] = useState(null);
   const [error, setError] = useState(null);
+  const [selectedSkill, setSelectedSkill] = useState('all');
 
   useEffect(() => {
     let isMounted = true;
@@ -30,21 +25,5 @@ export default function Home() {
     return <LoadingScreen />;
   }
 
-  return (
-    <>
-      <ScrollSpy />
-      <div id="content">
-        <div className="scrollspy">
-          <TerminalHero />
-          <div className="content pt-3">
-            <ExperienceSection careers={resumeData.career} educations={resumeData.education} />
-            <SkillsSection skills={resumeData.skills} />
-            <ProjectsSection repos={resumeData.repos} />
-            <ResumeSection />
-            <ContactSection />
-          </div>
-        </div>
-      </div>
-    </>
-  );
+  return <TuiWorkspace resumeData={resumeData} selectedSkill={selectedSkill} onSelectSkill={setSelectedSkill} />;
 }

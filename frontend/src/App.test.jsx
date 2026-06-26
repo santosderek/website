@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it, vi } from 'vitest';
 
@@ -24,15 +24,25 @@ function mockFetch() {
   });
 }
 
+async function openPanel(name) {
+  const sidebar = await screen.findByLabelText('Portfolio sections');
+  fireEvent.click(within(sidebar).getByText(name));
+}
+
 describe('App', () => {
-  it('renders home content from the Flask API', async () => {
+  it('renders the TUI workspace and API-backed panels', async () => {
     mockFetch();
     render(<MemoryRouter initialEntries={['/']}><App /></MemoryRouter>);
 
     await waitFor(() => expect(screen.getAllByText('Full-Stack Software Engineer').length).toBeGreaterThan(0));
-    expect(screen.getByText('Website')).toBeInTheDocument();
-    expect(screen.getByText('Python')).toBeInTheDocument();
+    expect(screen.getByText('DEREK.OS // PORTFOLIO.EXE')).toBeInTheDocument();
+
+    await openPanel('Projects');
+    expect(await screen.findByText('Website')).toBeInTheDocument();
     expect(await screen.findByText('...and 42 more on github!')).toBeInTheDocument();
+
+    await openPanel('Skills');
+    expect(screen.getAllByText('Python').length).toBeGreaterThan(0);
   });
 
   it('toggles mobile navigation without Bootstrap JavaScript', () => {
@@ -46,6 +56,65 @@ describe('App', () => {
 
     expect(toggle).toHaveAttribute('aria-expanded', 'true');
     expect(document.querySelectorAll('.navbar-collapse.show')).toHaveLength(2);
+  });
+
+  it('opens command palette from keyboard shortcut', async () => {
+    mockFetch();
+    render(<MemoryRouter initialEntries={['/']}><App /></MemoryRouter>);
+
+    fireEvent.keyDown(window, { key: 'k', ctrlKey: true });
+
+    expect(screen.getByRole('dialog', { name: /command palette/i })).toBeInTheDocument();
+    expect(screen.getByPlaceholderText('> search site...')).toBeInTheDocument();
+  });
+
+  it('filters project cards by selected skill', async () => {
+    mockFetch();
+    render(<MemoryRouter initialEntries={['/']}><App /></MemoryRouter>);
+
+    await openPanel('Skills');
+    fireEvent.click(screen.getByRole('button', { name: 'Python' }));
+    await openPanel('Projects');
+
+    expect(await screen.findByText('Website')).toBeInTheDocument();
+    expect(screen.getByText('Website').closest('article')).toHaveClass('is-highlighted');
+  });
+
+  it('opens the project drawer', async () => {
+    mockFetch();
+    render(<MemoryRouter initialEntries={['/']}><App /></MemoryRouter>);
+
+    await openPanel('Projects');
+    await screen.findByText('Website');
+    fireEvent.click(screen.getByRole('button', { name: /inspect/i }));
+
+    const drawer = screen.getByRole('dialog', { name: /website project details/i });
+    expect(within(drawer).getByText('PROJECT MODULE')).toBeInTheDocument();
+  });
+
+  it('copies email from the contact module', async () => {
+    mockFetch();
+    Object.assign(navigator, { clipboard: { writeText: vi.fn(() => Promise.resolve()) } });
+    render(<MemoryRouter initialEntries={['/']}><App /></MemoryRouter>);
+
+    await openPanel('Contact');
+    fireEvent.click(await screen.findByRole('button', { name: 'copy' }));
+
+    expect(navigator.clipboard.writeText).toHaveBeenCalledWith('santos.jon.derek@gmail.com');
+    expect(await screen.findByRole('status')).toHaveTextContent('TRANSMISSION COPIED');
+  });
+
+  it('minimizes and restores the terminal hero', async () => {
+    mockFetch();
+    render(<MemoryRouter initialEntries={['/']}><App /></MemoryRouter>);
+
+    await openPanel('Overview');
+    await screen.findByText('Derek Santos');
+    fireEvent.click(screen.getByRole('button', { name: /minimize terminal/i }));
+    expect(screen.getByText(/DEREK.OS minimized/i)).toBeInTheDocument();
+
+    fireEvent.click(screen.getByText(/DEREK.OS minimized/i));
+    expect(screen.getByRole('button', { name: /maximize terminal/i })).toBeInTheDocument();
   });
 
   it('renders project routes', () => {

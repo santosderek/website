@@ -1,5 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 
+import CommandPalette from './components/CommandPalette.jsx';
+import InteractiveBackground from './components/InteractiveBackground.jsx';
 import Navbar from './components/Navbar.jsx';
 import ScrollSpy from './components/ScrollSpy.jsx';
 import Home from './routes/Home.jsx';
@@ -9,6 +11,8 @@ import ProjectPage from './routes/ProjectPage.jsx';
 export default function App() {
   return (
     <>
+      <InteractiveBackground />
+      <CommandPalette />
       <header>
         <Navbar />
       </header>

@@ -6,6 +6,11 @@ function Icon({ src, alt }) {
   return <img style={{ width: '1.5em', filter: iconFilter }} src={src} alt={alt} />;
 }
 
+function navigateSection(section) {
+  window.history.replaceState(null, '', `/#${section}`);
+  window.dispatchEvent(new CustomEvent('derekos:navigate-section', { detail: section }));
+}
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const collapseClassName = `navbar-collapse collapse w-100 dual-collapse2 ${isOpen ? 'show' : ''}`;
@@ -14,11 +19,11 @@ export default function Navbar() {
     <nav className="navbar navbar-expand-lg my-auto">
       <div className={`${collapseClassName} order-1 order-lg-0`}>
         <ul className="navbar-nav m-auto">
-          <li className="nav-item"><a style={{ paddingRight: '.5em' }} href="/#experience">Experience</a></li>
-          <li className="nav-item"><a style={{ paddingRight: '.5em' }} href="/#skills">Skills</a></li>
-          <li className="nav-item"><a style={{ paddingRight: '.5em' }} href="/#projects">Projects</a></li>
-          <li className="nav-item"><a style={{ paddingRight: '.5em' }} href="/#resume">Resume</a></li>
-          <li className="nav-item"><a href="/#contact">Contact</a></li>
+          <li className="nav-item"><button type="button" style={{ paddingRight: '.5em' }} onClick={() => navigateSection('experience')}>Experience</button></li>
+          <li className="nav-item"><button type="button" style={{ paddingRight: '.5em' }} onClick={() => navigateSection('skills')}>Skills</button></li>
+          <li className="nav-item"><button type="button" style={{ paddingRight: '.5em' }} onClick={() => navigateSection('projects')}>Projects</button></li>
+          <li className="nav-item"><button type="button" style={{ paddingRight: '.5em' }} onClick={() => navigateSection('resume')}>Resume</button></li>
+          <li className="nav-item"><button type="button" onClick={() => navigateSection('contact')}>Contact</button></li>
         </ul>
       </div>
       <div className="mx-auto order-0">

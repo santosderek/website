@@ -188,3 +188,44 @@
         padding-top: 2rem;
     }
 }
+
+.terminal-header-buttons button {
+    border: 0;
+    background: transparent;
+    font-family: inherit;
+}
+
+.terminal-expanded {
+    width: min(1180px, calc(100% - 1rem));
+    min-height: 68vh;
+}
+
+.terminal-mode-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin: 0 0 1.2rem 1.5rem;
+}
+
+.terminal-mode-row span,
+.terminal-minimized {
+    margin: 0;
+    border: 1px solid rgba(0, 245, 212, 0.38);
+    border-radius: 999px;
+    padding: 0.42rem 0.8rem;
+    color: var(--cyan);
+    background: rgba(0, 245, 212, 0.08);
+    box-shadow: var(--shadow-cyan);
+    letter-spacing: 0.08em;
+}
+
+.terminal-section-minimized {
+    min-height: 28vh;
+    padding: 8vh 1rem;
+}
+
+.terminal-minimized {
+    cursor: pointer;
+    font-family: 'VT323', monospace;
+    font-size: 1.8rem;
+}
