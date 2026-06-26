@@ -65,6 +65,14 @@ db.sqlite3-journal
 instance/
 .webassets-cache
 
+# Local agent/recon artifacts
+.pi/
+recon/
+
+# Frontend build artifacts
+frontend/node_modules/
+frontend/dist/
+
 # Scrapy stuff:
 .scrapy
 

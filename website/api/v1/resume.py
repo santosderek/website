@@ -4,6 +4,19 @@ from website.resources import get_resource_json
 from . import api
 
 
+RESOURCE_ENDPOINTS = {
+    'career': 'career.json',
+    'education': 'education.json',
+    'leadership': 'leadership.json',
+    'repos': 'repos.json',
+    'skills': 'skills.json',
+}
+
+
+def _resource(name):
+    return get_resource_json(RESOURCE_ENDPOINTS[name])
+
+
 @api.route('/resume', methods=['GET'])
 def resume():
     """
@@ -12,15 +25,8 @@ def resume():
     Returns:
         Response: The JSON-ified response of all resource files.
     """
-    return jsonify(
-        {
-            'career': get_resource_json('career.json'),
-            'education': get_resource_json('education.json'),
-            'leadership': get_resource_json('leadership.json'),
-            'repos': get_resource_json('repos.json'),
-            'skills': get_resource_json('skills.json'),
-        }
-    )
+    return jsonify({name: _resource(name) for name in RESOURCE_ENDPOINTS})
+
 
 @api.route('/career', methods=['GET'])
 def career():
@@ -30,7 +36,7 @@ def career():
     Returns:
         Response: The JSON-ified file wrapped in a Response object.
     """
-    return jsonify(get_resource_json('career.json'))
+    return jsonify(_resource('career'))
 
 
 @api.route('/education', methods=['GET'])
@@ -41,7 +47,7 @@ def education():
     Returns:
         Response: The JSON-ified file wrapped in a Response object.
     """
-    return jsonify(get_resource_json('education.json'))
+    return jsonify(_resource('education'))
 
 
 @api.route('/leadership', methods=['GET'])
@@ -52,7 +58,7 @@ def leadership():
     Returns:
         Response: The JSON-ified file wrapped in a Response object.
     """
-    return jsonify(get_resource_json('leadership.json'))
+    return jsonify(_resource('leadership'))
 
 
 @api.route('/repos', methods=['GET'])
@@ -63,7 +69,7 @@ def repos():
     Returns:
         Response: The JSON-ified file wrapped in a Response object.
     """
-    return jsonify(get_resource_json('repos.json'))
+    return jsonify(_resource('repos'))
 
 
 @api.route('/skills', methods=['GET'])
@@ -74,4 +80,4 @@ def skills():
     Returns:
         Response: The JSON-ified file wrapped in a Response object.
     """
-    return jsonify(get_resource_json('skills.json'))
+    return jsonify(_resource('skills'))

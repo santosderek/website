@@ -1,5 +1,8 @@
-
 import requests
+from flask import current_app, has_app_context
+
+from website.settings import GITHUB_TIMEOUT_SECONDS
+
 
 class StatusCodeError(Exception):
     """
@@ -7,24 +10,28 @@ class StatusCodeError(Exception):
     """
     pass
 
-class BaseConnector():
 
-    headers = {
+class BaseConnector:
+    default_headers = {
         'Content-Type': 'application/json'
     }
 
-    def _get(self, url: str, headers: dict = None, raw_response: bool = False, **kwargs):
+    @staticmethod
+    def _timeout():
+        if has_app_context():
+            return current_app.config.get('GITHUB_TIMEOUT_SECONDS', GITHUB_TIMEOUT_SECONDS)
+        return GITHUB_TIMEOUT_SECONDS
 
-        if headers is not None:
-            self.headers.update(headers)
-        
-        response = requests.get(url=url, headers=headers, **kwargs)
+    def _get(self, url: str, headers: dict = None, raw_response: bool = False, **kwargs):
+        request_headers = {**self.default_headers, **(headers or {})}
+        kwargs.setdefault('timeout', self._timeout())
+
+        response = requests.get(url=url, headers=request_headers, **kwargs)
 
         if response.status_code != 200:
             raise StatusCodeError('Was not able to get user information.')
 
-        return response if raw_response else response.json() 
-
+        return response if raw_response else response.json()
 
 
 class GitHubConnector(BaseConnector):
@@ -35,6 +42,5 @@ class GitHubConnector(BaseConnector):
     def user(self):
         try:
             return self._get(self.github_user_url)
-        except StatusCodeError:
+        except (StatusCodeError, requests.RequestException, ValueError):
             return {}
-

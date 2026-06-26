@@ -1,2 +1,7 @@
 .git/
 __pycache__/
+.pi/
+recon/
+.venv/
+frontend/node_modules/
+frontend/dist/
