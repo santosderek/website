@@ -1103,3 +1103,140 @@ hr {
         display: none;
     }
 }
+
+/* Full-screen centered TUI refinement */
+.tui-workspace {
+    height: calc(100vh - 6.25rem);
+    width: min(1500px, calc(100vw - 1.5rem));
+    padding: 0.75rem 0 1rem;
+    display: grid;
+    place-items: center;
+}
+
+.tui-window {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+}
+
+.tui-body,
+.tui-main {
+    min-height: 0;
+}
+
+.tui-content {
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-color: rgba(0, 245, 212, 0.65) rgba(15, 23, 42, 0.48);
+    scrollbar-width: thin;
+}
+
+.tui-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.tui-content::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.48);
+}
+
+.tui-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--cyan), var(--purple));
+    border-radius: 999px;
+}
+
+.overview-panel {
+    min-height: 100%;
+    display: grid;
+    align-content: center;
+    gap: 1.25rem;
+    padding: clamp(1rem, 4vw, 3rem);
+    border: 1px solid rgba(0, 245, 212, 0.24);
+    border-radius: 1.2rem;
+    background:
+        radial-gradient(circle at 16% 20%, rgba(0, 245, 212, 0.14), transparent 28rem),
+        radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.1), transparent 24rem),
+        rgba(5, 9, 18, 0.4);
+}
+
+.overview-kicker,
+.overview-hint,
+.overview-terminal-lines span {
+    color: var(--muted);
+    font-family: 'VT323', monospace;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.9fr) minmax(320px, 1.1fr);
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.overview-identity,
+.overview-terminal-lines {
+    margin: 0;
+    border: 1px solid rgba(0, 245, 212, 0.24);
+    border-radius: 1rem;
+    padding: clamp(1rem, 3vw, 2rem);
+    background: rgba(15, 23, 42, 0.48);
+    box-shadow: var(--shadow-cyan);
+}
+
+.pixel-avatar {
+    width: 7rem;
+    height: 7rem;
+    display: grid;
+    place-items: center;
+    margin: 0 0 1rem;
+    border: 2px solid var(--cyan);
+    border-radius: 1rem;
+    color: var(--cyan);
+    background: rgba(0, 245, 212, 0.08);
+    box-shadow: var(--shadow-cyan), 10px 10px 0 rgba(255, 77, 90, 0.12);
+    font-family: 'VT323', monospace;
+    font-size: 3rem;
+    image-rendering: pixelated;
+}
+
+.overview-identity h1 {
+    font-family: 'VT323', monospace;
+    font-size: clamp(3rem, 9vw, 6rem);
+    line-height: 0.9;
+    margin: 0 0 1rem;
+}
+
+.overview-terminal-lines p {
+    margin: 0.9rem 0;
+    font-family: 'VT323', monospace;
+    font-size: clamp(1.3rem, 3vw, 1.9rem);
+}
+
+.overview-terminal-lines span {
+    display: inline-block;
+    min-width: 12rem;
+    color: var(--coral);
+}
+
+.overview-hint {
+    border-left: 3px solid var(--cyan);
+    padding-left: 1rem;
+}
+
+@media (max-width: 900px) {
+    .tui-workspace {
+        height: calc(100vh - 5rem);
+        width: calc(100vw - 0.6rem);
+        padding: 0.3rem 0;
+    }
+
+    .overview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .overview-terminal-lines span {
+        display: block;
+        min-width: 0;
+    }
+}

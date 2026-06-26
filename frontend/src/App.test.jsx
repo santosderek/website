@@ -36,6 +36,7 @@ describe('App', () => {
 
     await waitFor(() => expect(screen.getAllByText('Full-Stack Software Engineer').length).toBeGreaterThan(0));
     expect(screen.getByText('DEREK.OS // PORTFOLIO.EXE')).toBeInTheDocument();
+    expect(screen.getByText('DEREK.OS BOOT SEQUENCE')).toBeInTheDocument();
 
     await openPanel('Projects');
     expect(await screen.findByText('Website')).toBeInTheDocument();
@@ -104,17 +105,14 @@ describe('App', () => {
     expect(await screen.findByRole('status')).toHaveTextContent('TRANSMISSION COPIED');
   });
 
-  it('minimizes and restores the terminal hero', async () => {
+  it('switches overview content without nesting another window', async () => {
     mockFetch();
     render(<MemoryRouter initialEntries={['/']}><App /></MemoryRouter>);
 
     await openPanel('Overview');
-    await screen.findByText('Derek Santos');
-    fireEvent.click(screen.getByRole('button', { name: /minimize terminal/i }));
-    expect(screen.getByText(/DEREK.OS minimized/i)).toBeInTheDocument();
 
-    fireEvent.click(screen.getByText(/DEREK.OS minimized/i));
-    expect(screen.getByRole('button', { name: /maximize terminal/i })).toBeInTheDocument();
+    expect(screen.getByText('DEREK.OS BOOT SEQUENCE')).toBeInTheDocument();
+    expect(document.querySelector('.tui-content .terminal')).not.toBeInTheDocument();
   });
 
   it('renders project routes', () => {
