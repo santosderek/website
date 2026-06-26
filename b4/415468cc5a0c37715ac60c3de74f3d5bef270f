@@ -1,0 +1,23 @@
+frontend/src/App.test.jsx
+  s_52e1aa8775975e::t_e92815b64cf742 39,108,114-115
+frontend/src/styles/base.css
+  s_52e1aa8775975e::t_4aa971e88e329b 1106-1242
+frontend/src/components/TerminalHero.jsx
+  s_52e1aa8775975e::t_33e903e4cd7f17 3-9,11-21,23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "b4415468cc5a0c37715ac60c3de74f3d5bef270f",
+  "prompts": {},
+  "sessions": {
+    "s_52e1aa8775975e": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "019eff86-9e73-74df-82ae-404c2bc88a43",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Derek Santos <dersanto@cisco.com>"
+    }
+  }
+}
